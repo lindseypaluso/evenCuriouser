@@ -7,6 +7,6 @@ const parentSchema = new Schema({
   email: { type: String, required: true }
 });
 
-const Book = sequelize.model("Parent", cleverSchema);
+const Book = sequelize.model("Parent", parentSchema);
 
 module.exports = Parent;

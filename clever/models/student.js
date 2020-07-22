@@ -7,6 +7,6 @@ const studentSchema = new Schema({
   email: { type: String, required: true }
 });
 
-const Student = sequelize.model("Student",cleverSchema);
+const Student = sequelize.model("Student", studentSchema);
 
 module.exports = Student;
