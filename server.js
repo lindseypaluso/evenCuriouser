@@ -1,15 +1,22 @@
 const express = require("express");
-const path = require("path");
+const morgan = require("morgan");
+const helmet = require("helmet");
+const { join } = require("path");
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const logger = require("morgan")
+const logger = require("morgan");
+
 // Initialize Express
 const app = express();
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
+
 //Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(morgan("dev"));
+app.use(helmet());
+app.use(express.static(join(__dirname, "build")));
 
 // Routes
 const apiRoutes = require("./routes/API");
