@@ -3,14 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
     "start": "react-scripts start",
     "test": "react-scripts test",
-=======
-    "start": "npm-run-all --parallel spa api-server",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
->>>>>>> 48c6b6721ccfc6cd58e05c2dd4083c1ced571ef6
     "eject": "react-scripts eject",
     "spa": "react-scripts start",
     "server": "node server.js",
