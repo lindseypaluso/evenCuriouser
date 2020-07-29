@@ -38,7 +38,7 @@ class Hero extends React.Component{
           <div className="container">
               <div className="row">
                   <div className="col-4">
-                      <div className="card">
+                      <div className="card chat-card">
                           <div className="card-body">
                               <div className="card-title">Class Chat</div>
                               <hr/>
@@ -50,7 +50,7 @@ class Hero extends React.Component{
                                   })}
                               </div>
                           </div>
-                          <div className="card-footer">
+                          <div className="card-footer chat-footer">
                                   <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
                                   <br/>
                                   <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
