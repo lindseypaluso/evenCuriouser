@@ -1,0 +1,166 @@
+/* ============================Styling for landing page============================ */
+body {
+    background-color: #fde774;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #8d46b4;
+    color: white;
+    text-align: center;
+}
+.bunny1 {
+    /* /* position: fixed; */
+    width: 100%;
+    object-fit: cover;
+    height: 900px;
+}
+/* body {
+} */
+.login-display {
+    background-color: #81edbe;
+    min-height: 900px;
+}
+.login-card {
+    width: 75%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.login {
+    background-color: #fe42ab;
+    min-height: 50px;
+    /* border-radius: 25px;
+    border: 2px solid #fe42ab; */
+}
+.card-body {
+    min-height: 200px;
+}
+.sign-in-btn {
+    background-color: #fef0a6;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* ============================Styling for Dashboard============================ */
+.dashboard-card {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+.hero-image {
+    background-image: url("../images/warhol-bunnies.png");
+    background-repeat: repeat;
+    min-height: 850px;
+}
+.dashboard{
+    background-color: #8d46b4;
+    min-height: 80px;
+    border-radius: 25px;
+    color: #fde774;
+}
+.dashboard-btn {
+    background-color: #fe42ab;
+    width: 159px;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+/* ============================Styling for Classes Page============================ */
+.navbar {
+    background-color: #8d46b4;
+    color: white;
+    text-align: center;
+}
+.form-control {
+    border-radius: 25px;
+}
+.navbar-header {
+    color: #fde774;
+}
+.class-card-header {
+    background-color: #fe42ab;
+    height: 120px;
+}
+.main {
+    background-color: white;
+    min-height: 500px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.class-card {
+    width: 33%;
+}
+.class-card-footer {
+    text-align: right;
+}
+#user-avatar {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    border: none;
+    padding: 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px -15px;
+    background-color: #fe42ab;
+}
+.navbar-brand {
+    position: relative;
+    text-align: center;
+    color: azure;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ============================Styling for Class Page============================ */
+.nav-mini {
+    font-size: 8pt;
+}
+.dropdown-menu {
+    background-color: #8d46b4;
+    padding: 5px;
+}
+.nav-text {
+    text-decoration: none;
+    color: white;
+}
+tr {
+    border-bottom: solid 0.5px #fed79f;
+}
+
+
+/* ============================Styling for Assignments Page============================ */
+.assignment-toggle, .sort-toggle{
+    text-decoration: none;
+    color: grey;
+}
+a:hover {
+    text-decoration: none;
+    color: rgb(181, 179, 179);
+}
+#create-assignment {
+    background-color: #fe42ab;
+    width: 100%;
+    border-radius: 10px;
+}
+.create-assignment-specifics {
+    border: solid 1px grey;
+}
+/* .form-padding-right {
+    margin-right: 10px;
+} */
