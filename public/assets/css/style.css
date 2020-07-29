@@ -164,3 +164,22 @@ a:hover {
 /* .form-padding-right {
     margin-right: 10px;
 } */
+
+.chat-card {
+    max-height: 300px;
+    min-height: 300px;
+    overflow-x: scroll;
+    position: unset !important;
+    padding-bottom: 180px;
+    margin-bottom: 185px;
+}
+
+.chat-footer{
+    position: absolute;
+    bottom: 0px;
+    width: 91.5%;
+    background-color: #8d46b4;
+    color: white;
+    
+}
+
