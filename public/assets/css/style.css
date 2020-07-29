@@ -166,16 +166,20 @@ a:hover {
 } */
 
 .chat-card {
-    max-height: 500px;
-    min-height: 500px;
+    max-height: 300px;
+    min-height: 300px;
     overflow-x: scroll;
+    position: unset !important;
+    padding-bottom: 180px;
+    margin-bottom: 185px;
 }
 
 .chat-footer{
-    position: sticky;
-    position: -webkit-sticky;
-    width: 100%;
-    bottom: 0;
+    position: absolute;
+    bottom: 0px;
+    width: 91.5%;
     background-color: #8d46b4;
     color: white;
+    
 }
+
