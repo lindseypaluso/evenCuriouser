@@ -16,8 +16,8 @@ class WarholBunnies extends Component {
 
     render() {
         return (
-            <div>
-                
+            <div class="hero-image">
+                <br/>
             </div>
         )
     }

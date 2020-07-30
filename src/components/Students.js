@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
+import StudentCard from "StudentCard.js";
+
 class Assignments extends Component {
     state = {
-        buttons : []
+        students: []
     };
 
     componentDidMount() {
@@ -16,8 +18,13 @@ class Assignments extends Component {
 
     render() {
         return (
-            <div>
-                
+            <div class="container main">
+                {this.state.students.map(studentCard =>
+                    <StudentCard
+                        studentName={studentCard.name}
+                        studentGrade={studentCard.grade}
+                    />
+                )}
             </div>
         )
     }
