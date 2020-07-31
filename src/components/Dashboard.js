@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DashboardButton from "DashboardButton.js";
+import DashboardButton from "./DashboardButton.js";
 
 class Dashboard extends Component {
     state = {
@@ -83,6 +83,6 @@ class Dashboard extends Component {
             </div>
         )
     }
-}
+};
 
 export default Dashboard;

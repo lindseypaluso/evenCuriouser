@@ -8,6 +8,6 @@ class DashboardButton extends Component {
             </div>
         )
     }
-}
+};
 
 export default DashboardButton;
