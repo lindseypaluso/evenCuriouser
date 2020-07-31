@@ -35,10 +35,10 @@ class Hero extends React.Component{
 
   render(){
       return (
-          <div className="container-fluid">
+          <div className="container">
               <div className="row">
                   <div className="col-8"></div>
-                  <div className="col-4 float-right">
+                  <div className="col-4">
                       <div className="card chat-card">
                           <div className="card-body">
                               <div className="card-title">Class Chat</div>
