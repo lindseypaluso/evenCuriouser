@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import StudentCard from "StudentCard.js";
+import StudentCard from "./StudentCard.js";
 
 class Assignments extends Component {
     state = {
@@ -18,7 +18,7 @@ class Assignments extends Component {
 
     render() {
         return (
-            <div class="container main">
+            <div className="container main">
                 {this.state.students.map(studentCard =>
                     <StudentCard
                         studentName={studentCard.name}
