@@ -1,26 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-class WarholBunnies extends Component {
-    state = {
-        buttons : []
-    };
+function WarholBunnies(children) {
 
-    componentDidMount() {
-        var user = this.props.user;
-        if (user === "teacher") {
-            this.setState({})
-        } else {
-            this.setState({})
-        }
-    }
-
-    render() {
-        return (
-            <div class="hero-image">
-                <br/>
-            </div>
-        )
-    }
+    return (
+        <div className="hero-image">
+            {children}
+        </div>
+    )
+    
 }
 
-export default WarholBunnies;
+export default WarholBunnies();
