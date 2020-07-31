@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import Dashboard from "../components/Dashboard";
-
+import Hero from "../components/Hero";
 
 const Home = () => (
  
@@ -10,7 +10,7 @@ const Home = () => (
     
     <Dashboard />
     <hr />
-    
+    <Hero />
   </Fragment>
 );
 
