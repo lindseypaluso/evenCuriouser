@@ -70,15 +70,13 @@ const NavBar = () => {
                 </li>
             </ul>
             
-    
-    
 
-      <Navbar color="light" light expand="md">
+      {/* <Navbar color="light" light expand="md">
         <Container>
           <NavbarBrand className="logo" />
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+            <Nav className="mr-auto" navbar> */}
               {/* <NavItem>
                 <NavLink
                   tag={RouterNavLink}
@@ -89,7 +87,7 @@ const NavBar = () => {
                   Home
                 </NavLink>
               </NavItem> */}
-              {isAuthenticated && (
+              {/* {isAuthenticated && (
                 <NavItem>
                   <NavLink
                     tag={RouterNavLink}
@@ -200,7 +198,7 @@ const NavBar = () => {
             )}
           </Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
     </div>
     </nav>
   );
