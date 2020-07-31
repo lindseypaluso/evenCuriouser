@@ -6,7 +6,7 @@ class Hero extends React.Component{
       super(props);
 
       this.state = {
-          username: '',
+          
           message: '',
           messages: []
       };
