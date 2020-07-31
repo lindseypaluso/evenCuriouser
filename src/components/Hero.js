@@ -1,7 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import io from "socket.io-client";
+import { useAuth0 } from "@auth0/auth0-react";
 
-class Hero extends React.Component{
+class Hero extends Component{
+  var {
+    user,
+    isAuthenticated,
+  } = useAuth0();
+
   constructor(props){
       super(props);
 
