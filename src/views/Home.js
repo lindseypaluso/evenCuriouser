@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 
 import Hero from "../components/Hero";
-import Content from "../components/Content";
+import Dashboard from "../components/Dashboard";
 
 const Home = () => (
   <Fragment>
-    <Hero />
+    
     <hr />
-    <Content />
+    <Dashboard />
   </Fragment>
 );
 
