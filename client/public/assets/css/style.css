@@ -23,9 +23,9 @@ body {
     background-color: #fde774;
 }
 .footer {
-    position: fixed;
+    /* position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
     width: 100%;
     background-color: #8d46b4;
     color: white;
@@ -56,8 +56,8 @@ body {
     border: none;
 }
 .login-bunny {
-  background-image: url("../images/yellow-bunny.jpg");
-  background-position: 50% 50%;
+  background-image: url("../images/yellow-bunny-wide.jpg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px;
