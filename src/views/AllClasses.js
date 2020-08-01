@@ -1,15 +1,14 @@
 import React, { Fragment } from "react";
-
 import WarholBunnies from "../components/WarholBunnies";
-import Dashboard from "../components/Dashboard";
+import Classes from "../components/Classes";
 
-const Home = () => (
+const AllClasses = () => (
   <Fragment>
     
     <hr />
-      <Dashboard />
+        <Classes />
     
   </Fragment>
 );
 
-export default Home;
+export default AllClasses;

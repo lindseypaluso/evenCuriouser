@@ -3,7 +3,7 @@ import ClassCard from "./ClassCard.js";
 
 class Classes extends Component {
     state = {
-        buttons : []
+        ClassCard : []
     };
 
     componentDidMount() {
