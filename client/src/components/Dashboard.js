@@ -63,7 +63,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container pt-5">
                 <div className="dashboard-card card text-center">
                     <div className="dashboard card-header pt-4">
                         <h2><strong>Welcome!</strong></h2>

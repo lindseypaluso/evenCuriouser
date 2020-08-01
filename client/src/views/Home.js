@@ -4,11 +4,13 @@ import WarholBunnies from "../components/WarholBunnies";
 import Dashboard from "../components/Dashboard";
 
 const Home = () => (
-  <WarholBunnies>
+  <div className="hero-image">
   <Fragment>
+    
     <Dashboard />
+   
   </Fragment>
-  </WarholBunnies>
+  </div>
 );
 
 export default Home;

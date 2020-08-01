@@ -30,9 +30,6 @@ class Gradebook extends Component {
                                     <td>Lisa S</td>
                                 </tr>
                                 <tr>
-                                    <td>Cass Wolff</td>
-                                </tr>
-                                <tr>
                                     <td>Khan</td>
                                 </tr>
                                 <tr>
@@ -64,6 +61,9 @@ class Gradebook extends Component {
                                 </tr>
                                 <tr>
                                     <td>Abby Nielson</td>
+                                </tr>
+                                <tr>
+                                    <td>Bob Parr</td>
                                 </tr>
                             </tbody>
                         </table>
