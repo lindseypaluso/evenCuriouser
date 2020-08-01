@@ -63,7 +63,6 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="container">
                 <div className="dashboard-card card text-center">
                     <div className="dashboard card-header pt-4">
                         <h2><strong>Welcome!</strong></h2>
@@ -80,7 +79,6 @@ class Dashboard extends Component {
                         <img src="./assets/images/curious-bunny.png" alt="EvenCuriouser logo" width="50px" />
                     </div>
                 </div>
-            </div>
         )
     }
 }

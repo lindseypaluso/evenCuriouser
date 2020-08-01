@@ -36,77 +36,103 @@ const NavBar = () => {
     });
 
   return (
-    
-      <nav className="navbar navbar-expand-sm navbar-dark">
-        <div className="container">
-            <div className="navbar-header">
-                <a className="navbar-brand ml-4" href="/teacher-classes.html"><img src="./assets/images/curious-bunny.png" alt="EvenCuriouser logo" width="50px" id="bunny-logo"/><p className="centered">EvenCuriouser</p></a>
-            </div>
-            <ul className="navbar-nav ml-5">
-                <li className="nav-item active">
-                  <a className="nav-link" href="#">Classes</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Gradebook</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Calendars</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Messages</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">News</a>
-                </li>
-            </ul>
-            <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                    <form className="form-inline md-form form-sm mt-0 nav-link mr-2">
-                        <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"/>
-                    </form>
-                </li>
-                <li className="nav-item">
-                    <p className="nav-link" id="user-avatar"></p>
-                </li>
-            </ul>
-            
-
-      {/* <Navbar color="light" light expand="md">
+    <>
+      <Navbar className="navbar navbar-expand-sm navbar-dark" expand="md">
         <Container>
-          <NavbarBrand className="logo" />
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar> */}
-              {/* <NavItem>
+            <Nav className="mr-auto navbar-nav ml-5" navbar>
+              <NavItem>
                 <NavLink
                   tag={RouterNavLink}
                   to="/"
                   exact
                   activeClassName="router-link-exact-active"
                 >
-                  Home
+                  <div className="navbar-brand ml-4">
+                    <img src="./assets/images/curious-bunny.png" alt="EvenCuriouser logo" width="50px" id="bunny-logo" />
+                    <p className="centered">EvenCuriouser</p>
+                  </div>
                 </NavLink>
-              </NavItem> */}
-              {/* {isAuthenticated && (
-                <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to="/external-api"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    External API
+              </NavItem>
+            </Nav>
+
+            <Nav className="mr-auto main-nav">
+              {isAuthenticated && (
+                <>
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/classes"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      Classes
                   </NavLink>
-                </NavItem>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/gradebook"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      Gradebook
+                  </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/calendar"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      Calendar
+                  </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/messages"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      Messages
+                  </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/news"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      News
+                  </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/news"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      <form className="">
+                        <input className="form-control form-control-sm" type="text" placeholder="Search" aria-label="Search" />
+                      </form>
+                    </NavLink>
+                  </NavItem>
+                </>
               )}
             </Nav>
+
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
                   <Button
                     id="qsLoginBtn"
                     color="primary"
-                    className="btn-margin"
+                    className="btn-margin btn-login"
                     onClick={() => loginWithRedirect()}
                   >
                     Log in
@@ -172,7 +198,7 @@ const NavBar = () => {
                       className="nav-user-profile d-inline-block rounded-circle mr-3"
                       width="50"
                     />
-                    <h6 className="d-inline-block">{user.name}</h6>
+                    <h6 className="d-inline-block text-light">{user.name}</h6>
                   </span>
                 </NavItem>
                 <NavItem>
@@ -198,9 +224,8 @@ const NavBar = () => {
             )}
           </Collapse>
         </Container>
-      </Navbar> */}
-    </div>
-    </nav>
+      </Navbar>
+    </>
   );
 };
 

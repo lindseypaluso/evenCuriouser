@@ -1,3 +1,23 @@
+/* ============================Styling for navbar============================ */
+.nav-item a {
+  color: white;
+}
+.nav-link {
+  padding: .5rem 1.1rem;
+}
+.btn-login {
+  background-color: #fe42ab;
+  border: none;
+  padding: 5px 30px;
+  font-size: 18px;
+}
+.btn-login:hover {
+  background-color: #ff6cbf;
+}
+.dropdown-header {
+  color: white;
+}
+
 /* ============================Styling for landing page============================ */
 body {
     background-color: #fde774;
@@ -47,7 +67,7 @@ body {
 }
 
 /* ============================Styling for Dashboard============================ */
-.dashboard-card {
+/* .dashboard-card {
     margin: 0;
     position: absolute;
     top: 45%;
@@ -55,7 +75,12 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 90%;
+} */
+.dashboard-card {
+  margin: auto;
+  width: 70%;
 }
+
 .hero-image {
     background-image: url("../images/warhol-bunnies.png");
     background-repeat: repeat;
