@@ -18,7 +18,7 @@ const Login = () => {
     });
 
   return (
-    <div className="row no-gutters text-center login-container mt-2">
+    <div className="row no-gutters text-center login-container">
       <div className="col-md-6 col-lg-5 col-xl-4 login-display ">
         <div className="login-card card m-auto align-middle">
           <div className="login card-header">

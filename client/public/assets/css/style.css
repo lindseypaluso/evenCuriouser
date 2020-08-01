@@ -40,11 +40,11 @@ body {
 /* body {
 } */
 .login-container {
-  margin-bottom: 100px;
+  height: 100%;
 }
 .login-display {
     background-color: #81edbe;
-    padding: 60px;
+    padding: 70px;
 }
 .login-card {
     width: 75%;
@@ -57,9 +57,10 @@ body {
 }
 .login-bunny {
   background-image: url("../images/yellow-bunny.jpg");
-  background-position: center;
+  background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 500px;
 }
 .login {
     background-color: #fe42ab;
@@ -94,7 +95,7 @@ body {
 .hero-image {
     background-image: url("../images/warhol-bunnies.png");
     background-repeat: repeat;
-    min-height: 850px;
+    height: 100%;
 }
 .dashboard{
     background-color: #8d46b4;
