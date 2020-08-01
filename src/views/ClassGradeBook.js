@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import Dashboard from "../components/Dashboard";
+import Gradebook from "../components/Gradebook";
 // Still need to create the components for rendering the Grade Book
 
 const ClassGradeBook = () => (
   <Fragment>
     
     <hr />
-    <Dashboard />
+    <Gradebook />
   </Fragment>
 );
 

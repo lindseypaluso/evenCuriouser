@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import Dashboard from "../components/Dashboard";
+import StudentPage from "../components/StudentPage";
 // Still need to create the components for rendering student profile
 
 const StudentProfile = () => (
   <Fragment>
     
     <hr />
-    <Dashboard />
+    <StudentPage />
     
   </Fragment>
 );
