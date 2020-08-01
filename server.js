@@ -35,7 +35,8 @@ if (process.env.NODE_ENV === "production") {
 }
 // Routes
 // =============================================================
-// require("./routes.js")(app);
+const routes = require("./routes") 
+app.use(routes)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
