@@ -119,6 +119,9 @@ body {
     border-radius: 5px;
     font-size: 20px;
 }
+.dashboard-btn:hover {
+    background-color: #ce2283;
+}
 
 /* ============================Styling for Classes Page============================ */
 .navbar {

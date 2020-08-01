@@ -9,7 +9,7 @@ export const ProfileComponent = () => {
   const { user } = useAuth0();
 
   return (
-    <Container className="mb-5">
+    <Container className="my-5">
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md={2}>
           <img
