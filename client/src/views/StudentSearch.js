@@ -5,10 +5,7 @@ import Students from "../components/Students";
 const StudentSearch = () => (
   <Fragment>
     
-    <hr />
-    <WarholBunnies>
-        <Students />
-    </WarholBunnies>
+    <Students />
     
   </Fragment>
 );
