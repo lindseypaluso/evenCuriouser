@@ -7,10 +7,17 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
+import Login from "./views/Login";
 import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 
+import AllClasses from "./views/AllClasses";
+import ClassAssignments from "./views/ClassAssignments";
+import ClassGradeBook from "./views/ClassGradeBook";
+import ClassView from "./views/ClassView";
+import StudentProfile from "./views/StudentProfile";
+import StudentSearch from "./views/StudentSearch";
 
 // styles
 import "./App.css";
@@ -34,11 +41,24 @@ const App = () => {
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
         <NavBar />
+<<<<<<< HEAD
         
+=======
+        <Container className="flex-grow-1 mt-5 mt-lg-4">
+>>>>>>> af6330ced205ef5624aa5d8beb554840499d8095
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/profile" component={Profile} />
+            <Route path="/login" component={Login} />
             <Route path="/external-api" component={ExternalApi} />
+
+            <Route path="/classes" component={AllClasses} />
+            <Route path="/assignments" component={ClassAssignments} />
+            <Route path="/gradebook" component={ClassGradeBook} />
+            <Route path="/class-list" component={ClassView} />
+            <Route path="/student-profile" component={StudentProfile} />
+            <Route path="/student-search" component={StudentSearch} />
+
           </Switch>
         
         <Footer />

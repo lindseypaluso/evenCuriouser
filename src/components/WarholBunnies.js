@@ -7,6 +7,7 @@ function WarholBunnies(children) {
             {children}
         </div>
     )
-};
+    
+}
 
-export default WarholBunnies;
+export default WarholBunnies();

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import StudentCard from "StudentCard.js";
+import StudentCard from "./StudentCard.js";
 
-class Assignments extends Component {
+class Students extends Component {
     state = {
         students: []
     };
@@ -18,7 +18,7 @@ class Assignments extends Component {
 
     render() {
         return (
-            <div class="container main">
+            <div className="container main">
                 {this.state.students.map(studentCard =>
                     <StudentCard
                         studentName={studentCard.name}
@@ -30,4 +30,4 @@ class Assignments extends Component {
     }
 }
 
-export default Assignments;
+export default Students;
