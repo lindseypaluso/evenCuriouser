@@ -35,21 +35,31 @@ body {
     /* /* position: fixed; */
     width: 100%;
     object-fit: cover;
-    height: 900px;
+    height: 600px;
 }
 /* body {
 } */
+.login-container {
+  margin-bottom: 100px;
+}
 .login-display {
     background-color: #81edbe;
-    min-height: 900px;
+    padding: 60px;
 }
 .login-card {
     width: 75%;
-    position: absolute;
+    /* position: absolute;
     top: 40%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    border: none;
+}
+.login-bunny {
+  background-image: url("../images/yellow-bunny.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .login {
     background-color: #fe42ab;
