@@ -4,6 +4,8 @@ import WarholBunnies from "../components/WarholBunnies";
 import Dashboard from "../components/Dashboard";
 
 const Home = () => (
+ 
+  
   <Fragment>
     
     <hr />
