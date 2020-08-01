@@ -1,6 +1,5 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { Container } from "reactstrap";
 
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
@@ -9,9 +8,10 @@ import Home from "./views/Home";
 import Login from "./views/Login";
 import Profile from "./views/Profile";
 import ExternalApi from "./views/ExternalApi";
+import Chat from "./views/Chat";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
-
+import WarholBunnies from "./components/WarholBunnies";
 import AllClasses from "./views/AllClasses";
 import ClassAssignments from "./views/ClassAssignments";
 import ClassGradeBook from "./views/ClassGradeBook";
@@ -24,6 +24,7 @@ import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
+
 initFontAwesome();
 
 const App = () => {
@@ -41,7 +42,8 @@ const App = () => {
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
         <NavBar />
-        <Container className="flex-grow-1 mt-5">
+        
+        <div className="flex-grow-1">
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/profile" component={Profile} />
@@ -54,7 +56,8 @@ const App = () => {
             <Route path="/student-profile" component={StudentProfile} />
             <Route path="/student-search" component={StudentSearch} />
           </Switch>
-        </Container>
+        </div>
+        
         <Footer />
       </div>
     </Router>
