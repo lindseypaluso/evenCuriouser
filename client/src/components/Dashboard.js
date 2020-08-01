@@ -42,18 +42,22 @@ class Dashboard extends Component {
                 buttons: [
                     {
                         buttonText: "Classes",
+                        icon: "fa-users",
                         URL: "#"
                     },
                     {
                         buttonText: "Calendar",
+                        icon: "fa-calendar",
                         URL: "#"
                     },
                     {
                         buttonText: "Messages",
+                        icon: "fa-envelope",
                         URL: "#"
                     },
                     {
                         buttonText: "News",
+                        icon: "fa-newspaper-o",
                         URL: "#"
                     }
                 ]
@@ -64,7 +68,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="container pt-5">
-                <div className="dashboard-card card text-center">
+                <div className="col-md-9 col-lg-7 px-0 dashboard-card card text-center shadow">
                     <div className="dashboard card-header pt-4">
                         <h2><strong>Welcome!</strong></h2>
                     </div>
@@ -72,6 +76,7 @@ class Dashboard extends Component {
                         { this.state.buttons.map( button =>  
                             <DashboardButton 
                                 buttonText = {button.buttonText}
+                                icon = {button.icon}
                                 URL = {button.URL}
                             /> 
                         )}

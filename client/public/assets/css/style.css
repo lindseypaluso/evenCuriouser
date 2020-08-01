@@ -72,9 +72,16 @@ body {
     min-height: 200px;
 }
 .sign-in-btn {
-    background-color: #fef0a6;
+    background-color: #ffeb88;
     margin-top: 20px;
     border-radius: 10px;
+    font-size: 20px;
+    color: #542a6b;
+}
+
+.sign-in-btn:hover {
+  background-color: #ffe45c;
+  color: white;
 }
 
 /* ============================Styling for Dashboard============================ */
@@ -89,7 +96,9 @@ body {
 } */
 .dashboard-card {
   margin: auto;
-  width: 70%;
+  /* width: 70%; */
+  border: none;
+  margin-bottom: 40px;
 }
 
 .hero-image {
@@ -105,9 +114,10 @@ body {
 }
 .dashboard-btn {
     background-color: #fe42ab;
-    width: 159px;
+    width: 50%;
     margin-top: 7px;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 /* ============================Styling for Classes Page============================ */
