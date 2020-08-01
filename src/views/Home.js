@@ -6,7 +6,6 @@ import Dashboard from "../components/Dashboard";
 const Home = () => (
   <Fragment>
     
-    <hr />
       <Dashboard />
   
   </Fragment>
