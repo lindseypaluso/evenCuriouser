@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Assignments extends Component {
+class AssignmentCategory extends Component {
     state = {
         buttons : []
     };
@@ -47,4 +47,4 @@ class Assignments extends Component {
     }
 }
 
-export default Assignments;
+export default AssignmentCategory;

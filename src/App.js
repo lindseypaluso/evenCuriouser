@@ -12,6 +12,13 @@ import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 
+import AllClasses from "./views/AllClasses";
+import ClassAssignments from "./views/ClassAssignments";
+import ClassGradeBook from "./views/ClassGradeBook";
+import ClassView from "./views/ClassView";
+import StudentProfile from "./views/StudentProfile";
+import StudentSearch from "./views/StudentSearch";
+
 // styles
 import "./App.css";
 
@@ -40,6 +47,14 @@ const App = () => {
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
             <Route path="/external-api" component={ExternalApi} />
+
+            <Route path="/classes" component={AllClasses} />
+            <Route path="/assignments" component={ClassAssignments} />
+            <Route path="/gradebook" component={ClassGradeBook} />
+            <Route path="/class-list" component={ClassView} />
+            <Route path="/student-profile" component={StudentProfile} />
+            <Route path="/student-search" component={StudentSearch} />
+
           </Switch>
         </Container>
         <Footer />
