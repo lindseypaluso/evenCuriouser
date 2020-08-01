@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import StudentCard from "./StudentCard.js";
 
-class Students extends Component {
+class Assignments extends Component {
     state = {
         students: []
     };
@@ -30,4 +30,4 @@ class Students extends Component {
     }
 }
 
-export default Students;
+export default Assignments;

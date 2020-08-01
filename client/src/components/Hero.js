@@ -37,7 +37,6 @@ class Hero extends React.Component{
       return (
           <div className="container">
               <div className="row">
-                  <div className="col-8"></div>
                   <div className="col-4">
                       <div className="card chat-card">
                           <div className="card-body">
