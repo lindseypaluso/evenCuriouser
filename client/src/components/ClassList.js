@@ -44,6 +44,12 @@ class ClassList extends Component {
                         <td><i className="fa fa-comments" aria-hidden="true"></i></td>
                     </tr>
                     <tr>
+                        <td>Cass Wolff</td>
+                        <td>A+</td>
+                        <td>0</td>
+                        <td><i className="fa fa-comments" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
                         <td>Attila</td>
                         <td>F</td>
                         <td>10</td>
