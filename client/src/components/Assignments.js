@@ -2,18 +2,6 @@ import React, { Component } from "react";
 import AssignmentCategory from "./AssignmentCategory.js";
 
 class Assignments extends Component {
-    state = {
-        buttons: []
-    };
-
-    componentDidMount() {
-        var user = this.props.user;
-        if (user === "teacher") {
-            this.setState({})
-        } else {
-            this.setState({})
-        }
-    }
 
     render() {
         return (

@@ -1,18 +1,6 @@
 import React, { Component } from "react";
 
 class ClassList extends Component {
-    state = {
-        buttons: []
-    };
-
-    componentDidMount() {
-        var user = this.props.user;
-        if (user === "teacher") {
-            this.setState({})
-        } else {
-            this.setState({})
-        }
-    }
 
     render() {
         return (
@@ -40,12 +28,6 @@ class ClassList extends Component {
                     <tr>
                         <td>Lisa Swindler</td>
                         <td>A</td>
-                        <td>0</td>
-                        <td><i className="fa fa-comments" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Cass Wolff</td>
-                        <td>A+</td>
                         <td>0</td>
                         <td><i className="fa fa-comments" aria-hidden="true"></i></td>
                     </tr>
