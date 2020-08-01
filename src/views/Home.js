@@ -8,7 +8,7 @@ const Home = () => (
     
     <hr />
       <Dashboard />
-    
+  
   </Fragment>
 );
 
