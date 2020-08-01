@@ -1,0 +1,31 @@
+{
+  "name": "mern",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8080/",
+  "dependencies": {
+    "@auth0/auth0-react": "^1.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.18.0",
+    "highlight.js": "^10.1.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^2.1.1",
+    "reactstrap": "^8.5.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
