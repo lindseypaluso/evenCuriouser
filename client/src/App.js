@@ -8,7 +8,7 @@ import Home from "./views/Home";
 import Login from "./views/Login";
 import Profile from "./views/Profile";
 import ExternalApi from "./views/ExternalApi";
-import Chat from "./views/Chat";
+// import Chat from "./views/Chat";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import WarholBunnies from "./components/WarholBunnies";

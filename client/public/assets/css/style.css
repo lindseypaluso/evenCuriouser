@@ -23,9 +23,9 @@ body {
     background-color: #fde774;
 }
 .footer {
-    position: fixed;
+    /* position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
     width: 100%;
     background-color: #8d46b4;
     color: white;
@@ -40,11 +40,11 @@ body {
 /* body {
 } */
 .login-container {
-  margin-bottom: 100px;
+  height: 100%;
 }
 .login-display {
     background-color: #81edbe;
-    padding: 60px;
+    padding: 70px;
 }
 .login-card {
     width: 75%;
@@ -56,10 +56,11 @@ body {
     border: none;
 }
 .login-bunny {
-  background-image: url("../images/yellow-bunny.jpg");
+  background-image: url("../images/yellow-bunny-wide.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 500px;
 }
 .login {
     background-color: #fe42ab;
@@ -71,9 +72,16 @@ body {
     min-height: 200px;
 }
 .sign-in-btn {
-    background-color: #fef0a6;
+    background-color: #ffeb88;
     margin-top: 20px;
     border-radius: 10px;
+    font-size: 20px;
+    color: #542a6b;
+}
+
+.sign-in-btn:hover {
+  background-color: #ffe45c;
+  color: white;
 }
 
 /* ============================Styling for Dashboard============================ */
@@ -88,13 +96,15 @@ body {
 } */
 .dashboard-card {
   margin: auto;
-  width: 70%;
+  /* width: 70%; */
+  border: none;
+  margin-bottom: 40px;
 }
 
 .hero-image {
     background-image: url("../images/warhol-bunnies.png");
     background-repeat: repeat;
-    min-height: 850px;
+    height: 100%;
 }
 .dashboard{
     background-color: #8d46b4;
@@ -104,9 +114,13 @@ body {
 }
 .dashboard-btn {
     background-color: #fe42ab;
-    width: 159px;
+    width: 50%;
     margin-top: 7px;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.dashboard-btn:hover {
+    background-color: #ce2283;
 }
 
 /* ============================Styling for Classes Page============================ */
