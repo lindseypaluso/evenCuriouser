@@ -11,7 +11,7 @@ const socket = require("socket.io");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
-
+const server = require("http").createServer(app);
 //Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -38,20 +38,7 @@ if (process.env.NODE_ENV === "production") {
 // =============================================================
 // require("./routes.js")(app);
 
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-db.sequelize.sync({ force: true }).then(function () {
-  app.listen(PORT, function () {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
-});
-
-// const server = app.listen(port, () => console.log(`API Server listening on port ${port}`));
-
-const io = socket(app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
-);
+const io = socket(server);
 
 io.on("connection", (socket) => {
   console.log(socket.id);
@@ -60,3 +47,14 @@ io.on("connection", (socket) => {
     io.emit("RECEIVE_MESSAGE", data);
   })
 });
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: true }).then(function () {
+  server.listen(PORT, function () {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
+});
+
+// const server = app.listen(port, () => console.log(`API Server listening on port ${port}`));
+
+
