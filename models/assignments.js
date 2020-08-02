@@ -1,14 +1,20 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Assignments = sequelize.define('Assignments', {
+  const Assignment = sequelize.define('Assignment', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     topic: DataTypes.STRING,
     due_date: DataTypes.DATE,
     points: DataTypes.INTEGER
   }, {});
-  Assignments.associate = function(models) {
-    // associations can be defined here
+  Assignment.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Assignment.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
-  return Assignments;
+  return Assignment;
 };
