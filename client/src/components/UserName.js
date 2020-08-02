@@ -1,7 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
-
-import Highlight from "./Highlight";
 import Loading from "./Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 

@@ -5,7 +5,7 @@ import StudentPage from "../components/StudentPage";
 const StudentProfile = () => (
   <Fragment>
     
-    <hr />
+
     <StudentPage />
     
   </Fragment>
