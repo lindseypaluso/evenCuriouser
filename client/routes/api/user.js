@@ -5,10 +5,7 @@ router
   .route("/")
   .post(userController.create)
 
-router
-  .route("/login/redirect")
-  .get(userController.create)
-
+// Matches with "/api/books/:id"
 router
   .route("/:email")
   .get(userController.findByEmail)
