@@ -38,7 +38,7 @@ const NavBar = () => {
   return (
     <>
       <Navbar className="navbar navbar-expand-sm navbar-dark" expand="md">
-        <Container>
+
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto navbar-nav ml-5" navbar>
@@ -141,7 +141,8 @@ const NavBar = () => {
                 </NavItem>
               )}
               {isAuthenticated && (
-                <UncontrolledDropdown nav inNavbar>
+                <UncontrolledDropdown nav inNavbar
+                className="mr-5">
                   <DropdownToggle nav caret id="profileDropDown">
                     <img
                       src={user.picture}
@@ -224,7 +225,7 @@ const NavBar = () => {
               </Nav>
             )}
           </Collapse>
-        </Container>
+
       </Navbar>
     </>
   );
