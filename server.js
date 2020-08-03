@@ -10,7 +10,7 @@ const logger = require("morgan");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
-
+const server = require("http").createServer(app);
 //Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -38,10 +38,22 @@ if (process.env.NODE_ENV === "production") {
 const routes = require("./routes"); 
 app.use(routes);
 
+const io = socket(server);
+
+io.on("connection", (socket) => {
+  console.log(socket.id);
+
+  socket.on("SEND_MESSAGE", function(data){
+    io.emit("RECEIVE_MESSAGE", data);
+  })
+});
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function () {
-  app.listen(PORT, function () {
+  server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
-});
+
+
+
+

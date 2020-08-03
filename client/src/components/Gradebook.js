@@ -9,7 +9,7 @@ class Gradebook extends Component {
                     <h3>Gradebook for <span id="gradebook-name">Miss P's First Grade</span></h3>
                 </nav>
                 <div class="gradebook-display m-2 row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3"> 
                         <table class="table table-striped table-bordered table-sm table-1 text-left" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
@@ -18,7 +18,7 @@ class Gradebook extends Component {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Jordan</td>
+                                    <td>Jordan C</td>
                                 </tr>
                                 <tr>
                                     <td>Abby N</td>
@@ -36,22 +36,22 @@ class Gradebook extends Component {
                                     <td>Attila</td>
                                 </tr>
                                 <tr>
-                                    <td>Abby Nielson</td>
+                                    <td>Peter Vankman</td>
                                 </tr>
                                 <tr>
-                                    <td>Jordan</td>
+                                    <td>Egon Spangler</td>
                                 </tr>
                                 <tr>
-                                    <td>Abby N</td>
+                                    <td>Ray Stantz</td>
                                 </tr>
                                 <tr>
-                                    <td>Lindsey P</td>
+                                    <td>Armando Salazar</td>
                                 </tr>
                                 <tr>
                                     <td>Lisa S</td>
                                 </tr>
                                 <tr>
-                                    <td>Cass Wolff</td>
+                                    <td>Ryan C</td>
                                 </tr>
                                 <tr>
                                     <td>Khan</td>
@@ -63,7 +63,13 @@ class Gradebook extends Component {
                                     <td>Abby Nielson</td>
                                 </tr>
                                 <tr>
-                                    <td>Bob Parr</td>
+                                    <td>Jack Parr</td>
+                                </tr>
+                                <tr>
+                                    <td>Dashel Parr</td>
+                                </tr>
+                                <tr>
+                                    <td>Violet Parr</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -312,6 +318,34 @@ class Gradebook extends Component {
                                     <td>10/10</td>
                                     <td>10/10</td>
                                 </tr>
+                                <tr>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                </tr>
+                                <tr>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                    <td>10/10</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -326,6 +360,16 @@ class Gradebook extends Component {
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>100</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>100</td>
+                                    <td>A</td>
+                                </tr>
                                 <tr>
                                     <td>0</td>
                                     <td>100</td>

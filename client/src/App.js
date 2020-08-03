@@ -8,7 +8,7 @@ import Home from "./views/Home";
 import Login from "./views/Login";
 import Profile from "./views/Profile";
 import ExternalApi from "./views/ExternalApi";
-// import Chat from "./views/Chat";
+import Chat from "./views/Chat";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import AllClasses from "./views/AllClasses";
@@ -54,6 +54,7 @@ const App = () => {
             <Route path="/class-list" component={ClassView} />
             <Route path="/student-profile" component={StudentProfile} />
             <Route path="/student-search" component={StudentSearch} />
+            <Route path="/chat" component={Chat} />
           </Switch>
         </div>
         

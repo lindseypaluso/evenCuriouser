@@ -215,6 +215,7 @@ a:hover {
     margin-right: 10px;
 } */
 
+/* Styling for the Chat board */
 .chat-card {
     max-height: 300px;
     min-height: 300px;
@@ -233,3 +234,14 @@ a:hover {
     
 }
 
+/* Styling for the Gradebook */
+.gradebook-display {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    max-height: 525px;
+}
+
+.table-wrapper {
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
