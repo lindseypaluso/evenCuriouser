@@ -6,6 +6,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const socket = require("socket.io");
+const userSeeds = require("./seeders/20200731013520-Users");
+const assignmentSeeds = require("./seeders/20200729180756-Assignments");
 
 // Initialize Express
 const app = express();
@@ -53,5 +55,7 @@ io.on("connection", (socket) => {
 db.sequelize.sync({ force: true }).then(function () {
   server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+    userSeeds.up(db.User);
+    assignmentSeeds.up(db.Assignment);
   });
 });
