@@ -17,6 +17,7 @@ import ClassGradeBook from "./views/ClassGradeBook";
 import ClassView from "./views/ClassView";
 import StudentProfile from "./views/StudentProfile";
 import StudentSearch from "./views/StudentSearch";
+import Calendar from "./components/Calendar";
 
 // styles
 import "./App.css";
@@ -54,7 +55,8 @@ const App = () => {
             <Route path="/class-list" component={ClassView} />
             <Route path="/student-profile" component={StudentProfile} />
             <Route path="/student-search" component={StudentSearch} />
-            <Route path="/chat" component={Chat} />
+            <Route path="/messages" component={Chat} />
+            <Route path="/calendar" component={Calendar} />
           </Switch>
         </div>
         

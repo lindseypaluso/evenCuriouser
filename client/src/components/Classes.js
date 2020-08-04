@@ -6,14 +6,14 @@ class Classes extends Component {
         classCard : []
     };
 
-    componentDidMount() {
-        var user = this.props.user;
-        if (user === "teacher") {
-            this.setState({})
-        } else {
-            this.setState({})
-        }
-    }
+    // componentDidMount() {
+    //     var user = this.props.user;
+    //     if (user === "teacher") {
+    //         this.setState({})
+    //     } else {
+    //         this.setState({})
+    //     }
+    // }
 
     render() {
         return (
