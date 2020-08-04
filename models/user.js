@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
+    given_name: DataTypes.STRING,
+    family_name: DataTypes.STRING,
     email: DataTypes.STRING,
-    type: DataTypes.STRING
+    student: DataTypes.STRING
   }, {});
  User.associate = function(models) {
     // Associating Author with Posts
