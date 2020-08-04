@@ -1,6 +1,6 @@
 import React from "react";
+import axios from "axios";
 import { Router, Route, Switch } from "react-router-dom";
-
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -28,7 +28,21 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  const { isLoading, error } = useAuth0();
+  
+  const { user, isLoading, error } = useAuth0();
+  if (user) {
+    axios.post('/api/user', {
+      email: user.email,
+      given_name: user.given_name,
+      family_name: user.family_name
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
   if (error) {
     return <div>Oops... {error.message}</div>;
@@ -42,7 +56,7 @@ const App = () => {
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
         <NavBar />
-        
+
         <div className="flex-grow-1">
           <Switch>
             <Route path="/" exact component={Home} />
@@ -59,7 +73,7 @@ const App = () => {
             <Route path="/calendar" component={Calendar} />
           </Switch>
         </div>
-        
+
         <Footer />
       </div>
     </Router>

@@ -2,7 +2,7 @@
 
 module.exports = {
   up : function (queryInterface, Sequelize) {
-    return queryInterface.bulkCreate('Assignments', [{
+    return queryInterface.bulkCreate([{
       name: "Letter Quiz",
       description: "Match upper and lower case letters in this alphabet review quiz.", 
       topic: "Reading & Writing",
