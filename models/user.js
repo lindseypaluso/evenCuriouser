@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     given_name: DataTypes.STRING,
     family_name: DataTypes.STRING,
     email: DataTypes.STRING,
-    student: DataTypes.STRING
+    role: DataTypes.STRING
   }, {});
  User.associate = function(models) {
     // Associating Author with Posts
