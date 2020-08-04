@@ -1,6 +1,5 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -17,17 +16,32 @@ import ClassGradeBook from "./views/ClassGradeBook";
 import ClassView from "./views/ClassView";
 import StudentProfile from "./views/StudentProfile";
 import StudentSearch from "./views/StudentSearch";
+// import db from "../../models";
 
 // styles
 import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
+// import { use } from '../../routes';
 
 initFontAwesome();
 
 const App = () => {
-  const { isLoading, error } = useAuth0();
+  
+  const { user, isLoading, error } = useAuth0();
+  if (user) {
+    // console.log(db.User);
+  //   app.post("/api/user", function (req, res) {
+  //     db.User.create({
+  //         first_name: user.given_name,
+  //         last_name: user.family_name
+  //         email: user.email
+  //     }).then(function (data) {
+  //         res.redirect('/');
+  //     });
+  // });
+  }
 
   if (error) {
     return <div>Oops... {error.message}</div>;
@@ -41,7 +55,7 @@ const App = () => {
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
         <NavBar />
-        
+
         <div className="flex-grow-1">
           <Switch>
             <Route path="/" exact component={Home} />
@@ -57,7 +71,7 @@ const App = () => {
             <Route path="/chat" component={Chat} />
           </Switch>
         </div>
-        
+
         <Footer />
       </div>
     </Router>

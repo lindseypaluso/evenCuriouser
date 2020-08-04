@@ -5,6 +5,7 @@ const { join } = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
+const socket = require("socket.io");
 
 // Initialize Express
 const app = express();
@@ -53,7 +54,6 @@ db.sequelize.sync({ force: true }).then(function () {
   server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
-
-
+})
 
 
