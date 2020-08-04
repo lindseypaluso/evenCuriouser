@@ -14,6 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
 const server = require("http").createServer(app);
+
 //Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

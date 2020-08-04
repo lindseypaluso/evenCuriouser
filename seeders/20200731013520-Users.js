@@ -6,7 +6,7 @@ module.exports = {
       first_name : "Jordan",
       last_name : "Call",
       email : "jordanccall@gmail.com",
-      student: "Abigail Nielson",
+      role: "Abigail Nielson",
       createdAt : new Date(),
       updatedAt : new Date()
     }], {});
