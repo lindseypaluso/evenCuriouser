@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
@@ -16,14 +17,12 @@ import ClassGradeBook from "./views/ClassGradeBook";
 import ClassView from "./views/ClassView";
 import StudentProfile from "./views/StudentProfile";
 import StudentSearch from "./views/StudentSearch";
-// import db from "../../models";
 
 // styles
 import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
-// import { use } from '../../routes';
 
 initFontAwesome();
 
@@ -31,16 +30,17 @@ const App = () => {
   
   const { user, isLoading, error } = useAuth0();
   if (user) {
-    // console.log(db.User);
-  //   app.post("/api/user", function (req, res) {
-  //     db.User.create({
-  //         first_name: user.given_name,
-  //         last_name: user.family_name
-  //         email: user.email
-  //     }).then(function (data) {
-  //         res.redirect('/');
-  //     });
-  // });
+    axios.post('/api/user', {
+      email: user.email,
+      given_name: user.given_name,
+      family_name: user.family_name
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   if (error) {
