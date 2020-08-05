@@ -44,19 +44,19 @@ class MyCalendar extends Component {
     }
     
     
-    //   onEventResize = (data) => {
-    //     const { start, end } = data;
+      onEventResize = (data) => {
+        const { start, end } = data;
     
-    //     this.setState((state) => {
-    //       state.events[0].start = start;
-    //       state.events[0].end = end;
-    //       return { events: state.events };
-    //     });
-    //   };
+        this.setState((state) => {
+          state.events[0].start = start;
+          state.events[0].end = end;
+          return { events: state.events };
+        });
+      };
     
-    //   onEventDrop = (data) => {
-    //     console.log(data);
-    //   };
+      onEventDrop = (data) => {
+        console.log(data);
+      };
     
       render() {
         return (
