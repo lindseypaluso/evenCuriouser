@@ -3,11 +3,7 @@ const userController = require("../../controllers/userController");
 
 router
   .route("/")
-  .post(userController.create)
-
-router
-  .route("/login/redirect")
-  .get(userController.create)
+  .post(userController.findOrCreate)
 
 router
   .route("/:email")
