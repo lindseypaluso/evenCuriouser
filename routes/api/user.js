@@ -6,7 +6,12 @@ router
   .post(userController.findOrCreate)
 
 router
+  .route("/students")
+  .get(userController.findStudent)
+
+router
   .route("/:email")
   .get(userController.findByEmail)
+
 
 module.exports = router;
