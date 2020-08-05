@@ -9,32 +9,41 @@ class Dashboard extends Component {
     };
 
     componentDidMount() {
-        var user = this.props.user;
-        if (user === "teacher") {
+        if (!this.props.user) {
+          return;
+        }
+        var role = this.props.user.role;
+        if (role === "teacher") {
             this.setState({
                 buttons: [
                     {
                         buttonText: "Classes",
+                        icon: "fa-users",
                         URL: "#"
                     },
                     {
                         buttonText: "Gradebook",
+                        icon: "fa-book",
                         URL: "#"
                     },
                     {
                         buttonText: "Calendar",
+                        icon: "fa-calendar",
                         URL: "#"
                     },
                     {
                         buttonText: "Messages",
+                        icon: "fa-envelope",
                         URL: "#"
                     },
                     {
                         buttonText: "News",
+                        icon: "fa-newspaper-o",
                         URL: "#"
                     },
                     {
                         buttonText: "Student Lookup",
+                        icon: "fa-user",
                         URL: "#"
                     }
                 ]
@@ -80,6 +89,7 @@ class Dashboard extends Component {
                                 buttonText = {button.buttonText}
                                 icon = {button.icon}
                                 URL = {button.URL}
+                                key = {button.buttonText}
                             /> 
                         )}
                     </div>

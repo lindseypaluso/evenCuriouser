@@ -1,4 +1,7 @@
-import React from "react";
+import React, {
+  useState,
+  useEffect,
+} from "react";
 import axios from "axios";
 import { Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loading";
@@ -28,28 +31,36 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-  
+  const [userData, setUserData] = useState(null);
+  const [isProcessing, setIsProcessing] = useState(false);
   const { user, isLoading, error } = useAuth0();
-  if (user) {
-    axios.post('/api/user', {
-      email: user.email,
-      given_name: user.given_name,
-      family_name: user.family_name
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+
+  useEffect(() => {
+    if (user) {
+      setIsProcessing(true);
+      axios.post('/api/user', {
+        email: user.email,
+        given_name: user.given_name,
+        family_name: user.family_name
+      })
+      .then(function (response) {
+        setUserData(response.data[0]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(() => {
+        setIsProcessing(false);
+      });
+    }
+  }, [user]);
+
+  if (isLoading || isProcessing) {
+    return <Loading />;
   }
 
   if (error) {
     return <div>Oops... {error.message}</div>;
-  }
-
-  if (isLoading) {
-    return <Loading />;
   }
 
   return (
@@ -59,7 +70,7 @@ const App = () => {
 
         <div className="flex-grow-1">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact render={() => <Home user={userData}/> }/>
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
             <Route path="/external-api" component={ExternalApi} />
