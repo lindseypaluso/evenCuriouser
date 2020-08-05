@@ -12,5 +12,11 @@ module.exports = {
             .create(req.body)
             .then(dbUser => res.json(dbUser))
             .catch(err => res.status(422).json(err));
+    },
+    findStudent: function (req, res) {
+        db.User
+            .findAll({ where: { role: "student"} })
+            .then(dbUser => res.json(dbUser))
+            .catch(err => res.status(422).json(err));
     }
 };
