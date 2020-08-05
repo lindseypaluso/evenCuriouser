@@ -1,7 +1,27 @@
 import React, { Component } from "react";
 import AssignmentCategory from "./AssignmentCategory.js";
+import AssignmentAPI from '../utils/API-assignments';
 
 class Assignments extends Component {
+    state = {
+        assignments : []
+    };
+    
+
+    componentDidMount() {
+        const example = AssignmentAPI.getAssignmentsByTopic(topic);
+        console.log(example);
+        this.setState({
+            assignments: example
+        });
+        // {
+        //     name: "",
+        //     description: "",
+        //     topic: "",
+        //     dueDate: "",
+        //     points: 0
+        // }
+    }
 
     render() {
         return (
