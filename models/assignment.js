@@ -6,14 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     topic: DataTypes.STRING,
     due_date: DataTypes.DATE,
     points: DataTypes.INTEGER
-  }, {});
+  });
   Assignment.associate = function(models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
-    Assignment.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
+    Assignment.belongsToMany(models.User, {
+      through: "Users_Assignments"
     });
   };
   return Assignment;

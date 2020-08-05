@@ -6,7 +6,7 @@ router
   .get(assignmentsController.findAll)
 
 router
-  .route("/all-assignments/:name")
+  .route("/:name")
   .get(assignmentsController.findByName)
 
 router
@@ -14,11 +14,11 @@ router
   .post(assignmentsController.create)
 
 router
-  .route("/update-assignment")
+  .route("/update-assignment/:name")
   .put(assignmentsController.update)
 
 router
-  .route("/all-assignments")
+  .route("/remove-assignment/:name")
   .delete(assignmentsController.remove)
 
 module.exports = router;
