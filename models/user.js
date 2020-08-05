@@ -3,7 +3,10 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     given_name: DataTypes.STRING,
     family_name: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      unique: true
+    },
     role: DataTypes.STRING
   });
  User.associate = function(models) {
