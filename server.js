@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const socket = require("socket.io");
 const userSeeds = require("./seeders/20200731013520-Users");
-const assignmentSeeds = require("./seeders/20200729180756-Assignments");
+const assignmentSeeds = require("./seeders/20200729180756-Assignment");
 
 // Initialize Express
 const app = express();
@@ -53,7 +53,7 @@ io.on("connection", (socket) => {
 });
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
   server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
     userSeeds.up(db.User);
