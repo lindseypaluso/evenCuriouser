@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
-
-import WarholBunnies from "../components/WarholBunnies";
 import Dashboard from "../components/Dashboard";
 
-const Home = () => (
+const Home = (props) => (
   <div className="hero-image">
   <Fragment>
     
-    <Dashboard />
+    <Dashboard user={props.user}/>
    
   </Fragment>
   </div>

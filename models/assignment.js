@@ -1,7 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Assignment = sequelize.define('Assignment', {
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      unique: true
+    },
     description: DataTypes.STRING,
     topic: DataTypes.STRING,
     due_date: DataTypes.DATE,
