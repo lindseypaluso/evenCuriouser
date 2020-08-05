@@ -11,7 +11,7 @@ module.exports = {
     findByName: function (req, res) {
         db.Assignment
             ///shouldn't id be name if it is matching to name?
-            .findOne({ where: { id: req.params.name } })
+            .findOne({ where: { name: req.params.name } })
             .then(dbAssignments => res.json(dbAssignments))
             .catch(err => res.status(422).json(err));
     },
@@ -32,7 +32,7 @@ module.exports = {
             .destroy({
                 ///shouldn't id be name if it is matching to name?
                 where: {
-                    id: req.params.name,
+                    name: req.params.name,
                 },
             })
             .then(dbAssignments => res.json(dbAssignments))
