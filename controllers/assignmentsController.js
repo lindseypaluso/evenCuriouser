@@ -38,7 +38,7 @@ module.exports = {
     },
     update: function(req, res) {
       db.Assignment
-        .findOneAndUpdate({ _id: req.params.name }, req.body)
+        .findOneAndUpdate({ name: req.params.name }, req.body)
         .then(dbAssignment => res.json(dbAssignment))
         .catch(err => res.status(422).json(err));
     },
