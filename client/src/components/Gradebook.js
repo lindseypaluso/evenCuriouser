@@ -9,8 +9,8 @@ class Gradebook extends Component {
         this.state = {
             assignment: [],
         };
-    
-    // componentDidMount() {
+    }
+    componentDidMount() {
         AssignmentsAPI.getAssignments().then(res => {
             const assignment = res.data.map((data) => ({
               name: data.name,
@@ -20,9 +20,9 @@ class Gradebook extends Component {
               assignment: assignment
             });
           });
-        // }
+        }
           
-        }      
+         
 
     render() {
         return (
@@ -102,7 +102,7 @@ class Gradebook extends Component {
                             <thead>
                                 <tr>
                                     {this.state.assignment.map(item => (
-                                        <th key={item}>{item}</th>
+                                        <h2 key={item}>{item}</h2>
                                     ))}
                                 </tr>
                             </thead>
