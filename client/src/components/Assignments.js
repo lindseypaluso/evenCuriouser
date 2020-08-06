@@ -1,26 +1,22 @@
 import React, { Component } from "react";
 import AssignmentCategory from "./AssignmentCategory.js";
-import AssignmentAPI from '../utils/API-assignments';
+import AssignmentsFilter from "./AssignmentsFilter.js";
+import AssignmentsAPI from '../utils/API-assignments';
 
 class Assignments extends Component {
+    //initialize state with array for each class's assignment topics
     state = {
-        assignments : []
+        topics : []
     };
     
 
     componentDidMount() {
-        const example = AssignmentAPI.getAssignmentsByTopic(topic);
-        console.log(example);
+        //call the util that accesses the controller for getting all topics
+        const classTopics = AssignmentsAPI.getTopics();
         this.setState({
-            assignments: example
+            //match the state with the array of topics
+            topics: classTopics
         });
-        // {
-        //     name: "",
-        //     description: "",
-        //     topic: "",
-        //     dueDate: "",
-        //     points: 0
-        // }
     }
 
     render() {
@@ -40,13 +36,19 @@ class Assignments extends Component {
                         <a className="dropdown-toggle sort-toggle" data-toggle="dropdown" href="#">Sort</a>
                         <ul className="dropdown-menu text-white">
                             <li>All Topics</li>
-                            <li><span id="topic-0">Reading/Writing</span></li>
-                            <li><span id="topic-1">Math</span></li>
-                            <li><span id="topic-2">Science</span></li>
+                            { this.state.topics.map( topic =>
+                              <AssignmentsFilter 
+                                topic = {topic}
+                              />  
+                            )}
                         </ul>
                     </div>
                 </div>
-                <AssignmentCategory />
+                { this.state.topics.map( topic =>
+                    <AssignmentCategory 
+                        topic = {topic}
+                    />
+                )}
             </div>
         )
     }
