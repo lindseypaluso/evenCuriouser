@@ -9,11 +9,11 @@ class Assignments extends Component {
     
 
     componentDidMount() {
-        const example = AssignmentAPI.getAssignmentsByTopic(topic);
-        console.log(example);
-        this.setState({
-            assignments: example
-        });
+        // const example = AssignmentAPI.getAssignmentsByTopic(topic);
+        // console.log(example);
+        // this.setState({
+        //     assignments: example
+        // });
         // {
         //     name: "",
         //     description: "",

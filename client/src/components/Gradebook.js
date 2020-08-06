@@ -1,6 +1,24 @@
 import React, { Component } from "react";
+import AssignmentsAPI from "../utils/API-assignments";
 
 class Gradebook extends Component {
+    state = {
+        assignment: []
+    }
+    
+    componentDidMount() {
+        AssignmentsAPI.getAssignments().then(res => {
+            const assignment = res.data.map((data) => ({
+              title: data.name,
+              }));
+              console.log(assignment)
+            this.setState({
+              assignment: assignment
+            });
+          });
+        }
+    
+
 
     render() {
         return (
@@ -79,18 +97,9 @@ class Gradebook extends Component {
                         <table class="table table-striped table-bordered table-sm table-2">
                             <thead>
                                 <tr>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
-                                    <th>Assignment</th>
+                                    {this.state.assignment.map(item => (
+                                        <th key={item}>{item}</th>
+                                    ))}
                                 </tr>
                             </thead>
                             <tbody>

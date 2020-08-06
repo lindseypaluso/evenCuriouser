@@ -24,22 +24,22 @@ class Dashboard extends Component {
                     {
                         buttonText: "Gradebook",
                         icon: "fa-book",
-                        URL: "#"
+                        URL: "/gradebook"
                     },
                     {
                         buttonText: "Calendar",
                         icon: "fa-calendar",
-                        URL: "#"
+                        URL: "/calendar"
                     },
                     {
                         buttonText: "Messages",
                         icon: "fa-envelope",
-                        URL: "#"
+                        URL: "/messages"
                     },
                     {
-                        buttonText: "News",
+                        buttonText: "Announcments",
                         icon: "fa-newspaper-o",
-                        URL: "#"
+                        URL: "/announcments"
                     },
                     {
                         buttonText: "Student Lookup",
@@ -59,17 +59,17 @@ class Dashboard extends Component {
                     {
                         buttonText: "Calendar",
                         icon: "fa-calendar",
-                        URL: "#"
+                        URL: "/calendar"
                     },
                     {
                         buttonText: "Messages",
                         icon: "fa-envelope",
-                        URL: "#"
+                        URL: "/messages"
                     },
                     {
-                        buttonText: "News",
+                        buttonText: "Announcments",
                         icon: "fa-newspaper-o",
-                        URL: "#"
+                        URL: "/announcements"
                     }
                 ]
             })

@@ -103,17 +103,17 @@ const NavBar = () => {
                   <NavItem>
                     <NavLink
                       tag={RouterNavLink}
-                      to="/news"
+                      to="/announcments"
                       exact
                       activeClassName="router-link-exact-active"
                     >
-                      News
+                      Announcments
                   </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       tag={RouterNavLink}
-                      to="/news"
+                      to="/announcments"
                       exact
                       activeClassName="router-link-exact-active"
                     >

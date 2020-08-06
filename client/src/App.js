@@ -27,6 +27,7 @@ import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
+import Announcements from "./components/Announcements";
 
 initFontAwesome();
 
@@ -82,6 +83,7 @@ const App = () => {
             <Route path="/student-search" component={StudentSearch} />
             <Route path="/messages" component={Chat} />
             <Route path="/calendar" component={Calendar} />
+            <Route path="/announcments" component={Announcements} />
           </Switch>
         </div>
 
