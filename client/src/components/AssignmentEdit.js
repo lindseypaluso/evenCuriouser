@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+//I can pass in one topic, but I don't know how to pass in all topics...
+//need this for the topic dropdown option
+import TopicOptions from "./TopicOptions.js";
 
 class AssignmentEdit extends Component {
     render() {
         return (
-            <div id="editAssignment" className="modal fade" role="dialog">
+            <div id={"editAssignment" + this.props.name} className="modal fade" role="dialog">
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -18,14 +21,14 @@ class AssignmentEdit extends Component {
                                             <label for="edit-assignment-title">Assignment Title</label>
                                             <br/>
                                             <input type="text" id="edit-assignment-title" class="form-control"
-                                                name="edit-assignment-title" placeholder="Enter Title"/>
+                                                name="edit-assignment-title" placeholder={this.props.name}/>
                                         </div>
                                         <div className="form-group">
                                             <label for="edit-assignment-instructions">Instructions</label>
                                             <br/>
                                             <textarea type="text" id="edit-assignment-instructions" class="form-control"
                                                 style="width: 100%; height: 140px;" name="edit-assignment-instructions"
-                                                placeholder="Enter Intrustions"></textarea>
+                                                placeholder={this.props.description}></textarea>
                                         </div>
 
                                     </div>
@@ -40,7 +43,7 @@ class AssignmentEdit extends Component {
                                                 </select>
                                             </div>
                                             <div className="col-sm-6 form-padding-right">
-                                                <label for="edit-category">Category</label>
+                                                <label for="edit-topic">Topic</label>
                                                 <br/>
                                                 <select id="edit-category" className="form-control" name="select-category">
                                                     <option value="edit-category-0">Reading/Writing</option>
@@ -53,12 +56,12 @@ class AssignmentEdit extends Component {
                                             <div className="col-sm-6">
                                                 <label for="edit-assignment-points">Points</label>
                                                 <input type="number" id="edit-assignment-points" className="form-control"
-                                                    name="edit-assignment-points"/>
+                                                    name="edit-assignment-points" placeholder={this.props.points}/>
                                             </div>
                                             <div className="col-sm-6">
                                                 <label for="edit-assignment-date">Due Date</label>
                                                 <input type="date" id="edit-assignment-date" className="form-control"
-                                                    name="edit-assignment-date"/>
+                                                    name="edit-assignment-date" placeholder={this.props.date}/>
                                             </div>
                                         </div>
                                         <div className="row form-group">
