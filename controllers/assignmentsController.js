@@ -14,6 +14,17 @@ module.exports = {
             .then(dbAssignment => res.json(dbAssignment))
             .catch(err => res.status(422).json(err));
     },
+    findTopics: function (req, res) {
+        db.Assignment
+            .findAll({
+                attributes: ['topic'],
+                group: ['topic']
+            })
+            .then(dbAssignment => res.json(
+                dbAssignment.map(dbAssignment => dbAssignment.topic)
+            ))
+            .catch(err => res.status(422).json(err));
+    },
     findByTopic: function (req, res) {
         db.Assignment
             .findAll({where: {topic: req.params.topic} })
