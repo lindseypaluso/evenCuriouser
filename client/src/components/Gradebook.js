@@ -1,34 +1,38 @@
 import React, { Component } from "react";
 import AssignmentsAPI from "../utils/API-assignments";
 
+
 class Gradebook extends Component {
-    state = {
-        assignment: []
-    }
+    constructor(props){
+        super(props);
     
-    componentDidMount() {
+        this.state = {
+            assignment: [],
+        };
+    
+    // componentDidMount() {
         AssignmentsAPI.getAssignments().then(res => {
             const assignment = res.data.map((data) => ({
-              title: data.name,
+              name: data.name,
               }));
-              console.log(assignment)
-            this.setState({
+              console.log(assignment);
+              this.setState({
               assignment: assignment
             });
           });
-        }
-    
-
+        // }
+          
+        }      
 
     render() {
         return (
-            <div class="container main mt-5 text-black text-center p-0">
-                <nav class="main-header text-center">
+            <div className="container main mt-5 text-black text-center p-0">
+                <nav className="main-header text-center">
                     <h3>Gradebook for <span id="gradebook-name">Miss P's First Grade</span></h3>
                 </nav>
-                <div class="gradebook-display m-2 row">
-                    <div class="col-sm-3"> 
-                        <table class="table table-striped table-bordered table-sm table-1 text-left" cellspacing="0" width="100%">
+                <div className="gradebook-display m-2 row">
+                    <div className="col-sm-3"> 
+                        <table className="table table-striped table-bordered table-sm table-1 text-left" cellSpacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Name </th>
@@ -93,8 +97,8 @@ class Gradebook extends Component {
                         </table>
                     </div>
 
-                    <div class="col-sm-6 table-wrapper">
-                        <table class="table table-striped table-bordered table-sm table-2">
+                    <div className="col-sm-6 table-wrapper">
+                        <table className="table table-striped table-bordered table-sm table-2">
                             <thead>
                                 <tr>
                                     {this.state.assignment.map(item => (
@@ -104,74 +108,74 @@ class Gradebook extends Component {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
                                 </tr>
                                 <tr>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
                                 </tr>
                                 <tr>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
                                 </tr>
                                 <tr>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
                                 </tr>
                                 <tr>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
-                                    <td><span class="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
+                                    <td><span className="vertical-data">10/10</span></td>
                                 </tr>
                                 <tr>
                                     <td>10/10</td>
@@ -359,8 +363,8 @@ class Gradebook extends Component {
                         </table>
                     </div>
 
-                    <div class="col-sm-3">
-                        <table class="table table-striped table-bordered table-sm table-3">
+                    <div className="col-sm-3">
+                        <table className="table table-striped table-bordered table-sm table-3">
                             <thead>
                                 <tr>
                                     <th>Missing</th>
