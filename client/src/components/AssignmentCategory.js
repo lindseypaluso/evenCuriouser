@@ -1,35 +1,80 @@
 import React, { Component } from "react";
+//data and buttons for each table row of assignments
+import Assignment from "./Assignment.js";
+//routes for pulling info from db
+import AssignmentsAPI from '../utils/API-assignments';
+//components for CRUD modals for each assignment
+import AssignmentView from "./AssignmentView.js";
+import AssignmentEdit from "./AssignmentView.js";
+import AssignmentDelete from "./AssignmentView.js";
 
 class AssignmentCategory extends Component {
+    
+    state = {
+        class : []
+    };
+
+    componentDidMount() {
+        //call the util that accesses the controller for getting all assignments according to the topic being passed in
+        const t = (this.props.topic);
+
+        //still need to figure out how to pass in the topic pulled at the Assignments component level
+        AssignmentsAPI.getAssignmentsByTopic(t).then(res => {
+            //create an array mapped from the array of assignment objects
+            const assignments = res.data.map(assignment => ({
+                //pair assignment attributes
+                name: assignment.name,
+                description: assignment.description,
+                topic: assignment.topic,
+                dueDate: assignment.due_date,
+                points: assignment.points
+            }));
+            this.setState({
+                //match the state with the mapped data
+                class: assignments
+            });
+        });
+    }
 
     render() {
         return (
             <div >
                 <table style="width: 100%;" className="mt-5">
                     <tr>
-                        <th>Reading/Writing</th>
+                        <th>{this.props.topic}</th>
                         <th>Instructions</th>
                         <th>Location</th>
                         <th>Submitted</th>
                         <th>Due Date</th>
                     </tr>
-                    <tr>
-                        <td>Letter Quiz</td>
-                        <td><a href="#" data-toggle="modal" data-target="#viewAssignment"><i
-                            className="fa fa-ellipsis-h assignment-toggle" aria-hidden="true"></i></a></td>
-                        <td><a href="#"><i class="fa fa-link assignment-toggle" aria-hidden="true"></i></a></td>
-                        <td><span id="submitted-amount">3</span>/<span id="class-size">6</span></td>
-                        <td>August 10
-                            <a class="dropdown-toggle assignment-toggle" data-toggle="dropdown" href="#"></a>
-                            <ul class="dropdown-menu">
-                                <li><a className="nav-text" href="#" data-toggle="modal" data-target="#editAssignment">Edit</a></li>
-                                <li><a className="nav-text" href="#" data-toggle="modal" data-target="#deleteAssignment">Delete</a>
-                                </li>
-                                <li><a className="nav-text" href="#">Grade Submissions</a></li>
-                            </ul>
-                        </td>
-                    </tr>
+                    {this.state.class.map(assignment =>
+                        <Assignment 
+                            name = {assignment.name}
+                            due = {assignment.dueDate}
+                        />
+                    )}
+                    
                 </table>
+                {this.state.class.map(assignment =>
+                    <AssignmentView 
+                        name = {assignment.name}
+                        description = {assignment.description}
+                    />
+                )}
+                {this.state.class.map(assignment =>
+                    <AssignmentEdit 
+                        name = {assignment.name}
+                        description = {assignment.description}
+                        due = {assignment.assignment.dueDate}
+                        topic = {assignment.topic}
+                        points = {assignment.points}
+                    />
+                )}
+                {this.state.class.map(assignment =>
+                    <AssignmentDelete 
+                        name = {assignment.name}
+                    />
+                )}
             </div>
         )
     }

@@ -1,7 +1,24 @@
 import React, { Component } from "react";
 import AssignmentCategory from "./AssignmentCategory.js";
+import AssignmentsFilter from "./AssignmentsFilter.js";
+import AssignmentCreate from "./AssignmentView.js";
+import AssignmentsAPI from '../utils/API-assignments';
 
 class Assignments extends Component {
+    //initialize state with array for each class's assignment topics
+    state = {
+        topics : []
+    };
+    
+
+    componentDidMount() {
+        //call the util that accesses the controller for getting all topics
+        const classTopics = AssignmentsAPI.getTopics();
+        this.setState({
+            //match the state with the array of topics
+            topics: classTopics
+        });
+    }
 
     render() {
         return (
@@ -20,13 +37,20 @@ class Assignments extends Component {
                         <a className="dropdown-toggle sort-toggle" data-toggle="dropdown" href="#">Sort</a>
                         <ul className="dropdown-menu text-white">
                             <li>All Topics</li>
-                            <li><span id="topic-0">Reading/Writing</span></li>
-                            <li><span id="topic-1">Math</span></li>
-                            <li><span id="topic-2">Science</span></li>
+                            { this.state.topics.map( topic =>
+                              <AssignmentsFilter 
+                                topic = {topic}
+                              />  
+                            )}
                         </ul>
                     </div>
                 </div>
-                <AssignmentCategory />
+                { this.state.topics.map( topic =>
+                    <AssignmentCategory 
+                        topic = {topic}
+                    />
+                )}
+                <AssignmentCreate />
             </div>
         )
     }

@@ -10,6 +10,14 @@ router
   .get(assignmentsController.findByName)
 
 router
+  .route("/all-topics")
+  .get(assignmentsController.findTopics)
+
+router
+  .route("/all-assignments/:topic")
+  .get(assignmentsController.findByTopic)
+
+router
   .route("/new-assignment")
   .post(assignmentsController.create)
 
