@@ -41,7 +41,7 @@ class AssignmentCategory extends Component {
     render() {
         return (
             <div >
-                <table className="mt-5">
+                <table className="mt-5 assignmentsTable">
                     <tr>
                         <th>{this.props.topic}</th>
                         <th>Instructions</th>

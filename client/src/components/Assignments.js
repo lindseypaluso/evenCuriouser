@@ -28,9 +28,9 @@ class Assignments extends Component {
                 <div className="row">
                     <div className="col-2">
                         <button className="btn text-white" id="create-assignment" data-toggle="modal"
-                            data-target="#createAssignment">
+                            data-target="#assignmentCreate">
                             <i className="fa fa-plus fa-1x" aria-hidden="true"></i>Create
-                </button>
+                        </button>
                     </div>
                     <div className="col-8 text-center">
                         <h5 className="mt-2">Assignments for <span id="class-name">Miss P's 1st Grade</span></h5>
@@ -52,7 +52,9 @@ class Assignments extends Component {
                         topic = {element.topic}
                     />
                 )}
-                <AssignmentCreate />
+                <AssignmentCreate 
+                    topic = {this.state.topics}
+                />
             </div>
         )
     }

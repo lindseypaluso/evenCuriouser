@@ -224,9 +224,9 @@ a:hover {
 .create-assignment-specifics {
     border: solid 1px grey;
 }
-/* .form-padding-right {
-    margin-right: 10px;
-} */
+.assignmentsTable {
+    width: 100%;
+}
 
 /* Styling for the Chat board */
 .chat-card {
