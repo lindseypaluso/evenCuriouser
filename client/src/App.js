@@ -67,13 +67,12 @@ const App = () => {
   return (
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
-        <NavBar />
-
+        <NavBar user={userData}/>
         <div className="flex-grow-1">
           <Switch>
-            <Route path="/" exact render={() => <Home user={userData}/> }/>
+            <Route path="/" exact component={Login} />
+            <Route path="/dashboard" render={() => <Home user={userData}/> }/>
             <Route path="/profile" component={Profile} />
-            <Route path="/login" component={Login} />
             <Route path="/external-api" component={ExternalApi} />
             <Route path="/classes" component={AllClasses} />
             <Route path="/assignments" component={ClassAssignments} />

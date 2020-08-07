@@ -13,11 +13,13 @@ class Assignments extends Component {
 
     componentDidMount() {
         //call the util that accesses the controller for getting all topics
-        const classTopics = AssignmentsAPI.getTopics();
-        this.setState({
-            //match the state with the array of topics
-            topics: classTopics
-        });
+        AssignmentsAPI.getTopics().then(res => {
+            this.setState({
+                //match the state with the array of topics
+                topics: res.data
+            });
+        })
+        
     }
 
     render() {
@@ -26,9 +28,9 @@ class Assignments extends Component {
                 <div className="row">
                     <div className="col-2">
                         <button className="btn text-white" id="create-assignment" data-toggle="modal"
-                            data-target="#createAssignment">
+                            data-target="#assignmentCreate">
                             <i className="fa fa-plus fa-1x" aria-hidden="true"></i>Create
-                </button>
+                        </button>
                     </div>
                     <div className="col-8 text-center">
                         <h5 className="mt-2">Assignments for <span id="class-name">Miss P's 1st Grade</span></h5>
@@ -37,20 +39,22 @@ class Assignments extends Component {
                         <a className="dropdown-toggle sort-toggle" data-toggle="dropdown" href="#">Sort</a>
                         <ul className="dropdown-menu text-white">
                             <li>All Topics</li>
-                            { this.state.topics.map( topic =>
+                            { this.state.topics.map( element => (
                               <AssignmentsFilter 
-                                topic = {topic}
+                                topic = {element.topic}
                               />  
-                            )}
+                            ))}
                         </ul>
                     </div>
                 </div>
-                { this.state.topics.map( topic =>
+                { this.state.topics.map( element =>
                     <AssignmentCategory 
-                        topic = {topic}
+                        topic = {element.topic}
                     />
                 )}
-                <AssignmentCreate />
+                <AssignmentCreate 
+                    topic = {this.state.topics}
+                />
             </div>
         )
     }

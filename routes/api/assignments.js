@@ -25,8 +25,8 @@ router
   .route("/remove-assignment/:name")
   .delete(assignmentsController.remove)
 
-router
+  router
   .route("/:name")
   .get(assignmentsController.findByName)
-  
-  module.exports = router;
+
+module.exports = router;

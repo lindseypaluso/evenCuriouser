@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     topic: DataTypes.STRING,
     due_date: DataTypes.DATE,
-    points_available: DataTypes.INTEGER
+    points_available: DataTypes.INTEGER,
+    link: DataTypes.STRING
   });
   Assignment.associate = function(models) {
     // We're saying that a Post should belong to an Author

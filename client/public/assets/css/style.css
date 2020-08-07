@@ -29,6 +29,29 @@
   text-decoration: none;
   color: white;
 }
+/* ============================Styling for calendar page============================ */
+.calendar {
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.rbc-btn-group > button, .rbc-btn-group {
+  background-color: #fe42ab;
+  border-radius: 5px;
+  border: none;
+  color: white !important;
+}
+.rbc-btn-group > button:hover {
+  background-color: rgb(214, 66, 150) !important;
+}
+.rbc-toolbar button.rbc-active {
+  background-color: #8d46b4 !important;
+}
+.rbc-month-view {
+  border-radius: 5px;
+  margin-top: 15px;
+}
 
 /* ============================Styling for landing page============================ */
 body {
@@ -49,8 +72,6 @@ body {
     object-fit: cover;
     height: 600px;
 }
-/* body {
-} */
 .login-container {
   height: 100%;
 }
@@ -97,15 +118,7 @@ body {
 }
 
 /* ============================Styling for Dashboard============================ */
-/* .dashboard-card {
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 90%;
-} */
+
 .dashboard-card {
   margin: auto;
   /* width: 70%; */
@@ -211,9 +224,9 @@ a:hover {
 .create-assignment-specifics {
     border: solid 1px grey;
 }
-/* .form-padding-right {
-    margin-right: 10px;
-} */
+.assignmentsTable {
+    width: 100%;
+}
 
 /* Styling for the Chat board */
 .chat-card {

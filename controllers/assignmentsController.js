@@ -1,4 +1,5 @@
 const db = require("../models");
+const { Sequelize } = require("../models");
 
 // Defining methods for the controller
 module.exports = {
@@ -17,12 +18,11 @@ module.exports = {
     findTopics: function (req, res) {
         db.Assignment
             .findAll({
-                attributes: ['topic'],
-                group: ['topic']
+                attributes: [
+                    [Sequelize.fn("DISTINCT", Sequelize.col('topic')), 'topic']
+                ]
             })
-            .then(dbAssignment => res.json(
-                dbAssignment.map(dbAssignment => dbAssignment.topic)
-            ))
+            .then(dbAssignment => res.json(dbAssignment))
             .catch(err => res.status(422).json(err));
     },
     findByTopic: function (req, res) {

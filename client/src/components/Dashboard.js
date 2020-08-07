@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DashboardButton from "./DashboardButton.js";
-import UserName from "../components/UserName";
 
 class Dashboard extends Component {
   
@@ -19,7 +18,7 @@ class Dashboard extends Component {
                     {
                         buttonText: "Assignments",
                         icon: "fa-users",
-                        URL: "/assignments"
+                        URL: "/classes"
                     },
                     {
                         buttonText: "Gradebook",
@@ -37,9 +36,9 @@ class Dashboard extends Component {
                         URL: "/messages"
                     },
                     {
-                        buttonText: "Announcments",
+                        buttonText: "Announcements",
                         icon: "fa-newspaper-o",
-                        URL: "/announcments"
+                        URL: "/announcements"
                     }
                     // ,
                     // {
@@ -68,7 +67,7 @@ class Dashboard extends Component {
                         URL: "/messages"
                     },
                     {
-                        buttonText: "Announcments",
+                        buttonText: "Announcements",
                         icon: "fa-newspaper-o",
                         URL: "/announcements"
                     }
@@ -78,11 +77,14 @@ class Dashboard extends Component {
     };
 
     render() {
+      if (!this.props.user) {
+        return 'No user found';
+      }
         return (
             <div className="container pt-5">
                 <div className="col-md-9 col-lg-7 px-0 dashboard-card card text-center shadow">
                     <div className="dashboard card-header pt-4">
-                        <h2><strong>Welcome, <UserName />!</strong></h2>
+                        <h2><strong>Welcome, {this.props.user.given_name}!</strong></h2>
                     </div>
                     <div className="card-body mb-4">
                         { this.state.buttons.map( button =>  
