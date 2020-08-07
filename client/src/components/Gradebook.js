@@ -35,37 +35,37 @@ class Gradebook extends Component {
         <nav className="main-header text-center">
           <h3>
             Gradebook for{" "}
-            <span id="gradebook-name">Mrs. Nielson's First Grade</span>
+            <span id="gradebook-name">Miss P's First Grade</span>
           </h3>
         </nav>
         <div className="gradebook-display m-2 row">
           <div className="col-sm-3">
             <table
-              className="table table-striped table-bordered table-sm table-1 text-left"
+              className="table"
               cellSpacing="0"
               width="100%"
             >
               <thead>
                 <tr>
-                  <th>Student</th>
+                  <th scope="col">Student</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   {this.state.student.map((item, index) => (
-                    <td className="vertical-data" key={index}>{item}</td>
+                    <td scope="row" key={index}>{item}</td>
                   ))}
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div className="col-sm-6 table-wrapper">
-            <table className="table table-striped table-bordered table-sm table-2">
+          <div className="col-sm-6 table-wrapper grades">
+            <table className="table">
               <thead>
                 <tr>
                   {this.state.assignment.map((item, index) => (
-                    <th key={index}>{item}</th>
+                    <th className="assignmentGB" key={index}>{item}</th>
                   ))}
                 </tr>
               </thead>
@@ -74,21 +74,7 @@ class Gradebook extends Component {
                   <td>
                     <span className="vertical-data">10/10</span>
                   </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
+                  
                 </tr>
                 <tr>
                   <td>
@@ -183,7 +169,7 @@ class Gradebook extends Component {
           </div>
 
           <div className="col-sm-3">
-            <table className="table table-striped table-bordered table-sm table-3">
+            <table className="table">
               <thead>
                 <tr>
                   <th>Missing</th>

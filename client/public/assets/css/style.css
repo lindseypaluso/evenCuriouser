@@ -229,23 +229,32 @@ a:hover {
 }
 
 /* Styling for the Chat board */
+.message-cont {
+   margin-top: 10vh;
+   margin-bottom: 10vh;
+}
+
+.email-cont {
+    box-shadow: 2px 2px whitesmoke;
+}
 .chat-card {
-    max-height: 300px;
-    min-height: 300px;
+    max-height: 336px;
+    min-height: 336px;
     overflow-x: scroll;
     position: unset !important;
     padding-bottom: 180px;
-    margin-bottom: 185px;
+    margin-bottom: 200px;
+    box-shadow: 2px 2px whitesmoke;
 }
 
 .chat-footer{
     position: absolute;
     bottom: 0px;
-    width: 91.5%;
+    width: 93.5%;
     background-color: #8d46b4;
     color: white;
-    
-}
+    box-shadow: 2px 2px whitesmoke;
+    }
 
 .form-email, .chat{
   background: #fcfcfc !important;
@@ -255,21 +264,45 @@ a:hover {
 }
 
 .btn-email, .btn-chat{
-  border-radius: 5px;
   border: 1px solid black;
   padding: 6px;
+  background-color: #fe42ab;
+  margin-top: 7px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
-/* Styling for the Gradebook */
+.btn-email:hover, .btn-chat:hover {
+    background-color: #ce2283;
+}
+
+/* ============================Styling for GradeBook============================ */
 .gradebook-display {
     overflow-y: scroll;
     overflow-x: scroll;
     max-height: 525px;
 }
 
-.table-wrapper {
+.assignmentGB {
+    width: auto;
+}
+
+.grades {
     overflow-y: scroll;
     overflow-x: scroll;
 }
 
 
+
+/* @media (min-width: 500px){
+
+    .chat-footer {
+        width: 93.5%;
+    }
+}
+
+@media (min-width: 400px) {
+    .chat-footer{
+        width: 91.9%;
+    }
+} */
