@@ -32,7 +32,7 @@ const NavBar = (props) => {
 
   const logoutWithRedirect = () =>
     logout({
-      returnTo: window.location.origin,
+      returnTo: window.location.origin + "/login",
     });
 
     return (
@@ -45,7 +45,7 @@ const NavBar = (props) => {
               <NavItem>
                 <NavLink
                   tag={RouterNavLink}
-                  to="/"
+                  to="/dashboard"
                   exact
                   activeClassName="router-link-exact-active"
                 >
