@@ -15,16 +15,16 @@ router.get("/:id", function (req, res) {
   })
 })
 
-router
-  .route("/all")
-  .get(userAssignController.findAll)
+// router
+//   .route("/all")
+//   .get(userAssignController.findAll)
 
-router
-  .route("/:UserID")
-  .get(userAssignController.getUserAssign)
+// router
+//   .route("/:UserID")
+//   .get(userAssignController.getUserAssign)
 
-router
-  .route("/:AssignmentID")
-  .get(userAssignController.getAssignments)
+// router
+//   .route("/:AssignmentID")
+//   .get(userAssignController.getAssignments)
 
 module.exports = router;

@@ -9,22 +9,23 @@ class Gradebook extends Component {
 
     this.state = {
       assignment: [],
+      student: [],
     };
   }
   componentDidMount() {
     AssignmentsAPI.getAssignments().then((res) => {
-      const assignment = res.data.map(data => data.name)
+      const assignment = res.data.map((data) => data.name);
       console.log(assignment);
       this.setState({
         assignment: assignment,
       });
     });
     UserAPI.getStudents().then((res) => {
-        const students = res.data.map(data => data.given_name)
-        console.log(students);
-        this.setState({
-            student: students
-        });
+      const students = res.data.map((data) => data.given_name);
+      console.log(students);
+      this.setState({
+        student: students,
+      });
     });
   }
 
@@ -51,22 +52,9 @@ class Gradebook extends Component {
               </thead>
               <tbody>
                 <tr>
-                  <td>Peter Vankman</td>
-                </tr>
-                <tr>
-                  <td>Egon Spangler</td>
-                </tr>
-                <tr>
-                  <td>Ray Stantz</td>
-                </tr>
-                <tr>
-                  <td>Jack Parr</td>
-                </tr>
-                <tr>
-                  <td>Dashel Parr</td>
-                </tr>
-                <tr>
-                  <td>Violet Parr</td>
+                  {this.state.student.map((item, index) => (
+                    <td className="vertical-data" key={index}>{item}</td>
+                  ))}
                 </tr>
               </tbody>
             </table>
