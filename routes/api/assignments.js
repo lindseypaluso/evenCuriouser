@@ -6,10 +6,6 @@ router
   .get(assignmentsController.findAll)
 
 router
-  .route("/:name")
-  .get(assignmentsController.findByName)
-
-router
   .route("/all-topics")
   .get(assignmentsController.findTopics)
 
@@ -29,4 +25,8 @@ router
   .route("/remove-assignment/:name")
   .delete(assignmentsController.remove)
 
-module.exports = router;
+router
+  .route("/:name")
+  .get(assignmentsController.findByName)
+  
+  module.exports = router;

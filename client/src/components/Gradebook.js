@@ -28,14 +28,14 @@ class Gradebook extends Component {
         return (
             <div className="container main mt-5 text-black text-center p-0">
                 <nav className="main-header text-center">
-                    <h3>Gradebook for <span id="gradebook-name">Miss P's First Grade</span></h3>
+                    <h3>Gradebook for <span id="gradebook-name">Mrs. Nielson's First Grade</span></h3>
                 </nav>
                 <div className="gradebook-display m-2 row">
                     <div className="col-sm-3"> 
                         <table className="table table-striped table-bordered table-sm table-1 text-left" cellSpacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Name </th>
+                                    <th>Student</th>
                                 </tr>
                             </thead>
                             <tbody>
