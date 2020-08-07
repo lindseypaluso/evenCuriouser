@@ -12,6 +12,4 @@ export const UserName = () => {
   );
 };
 
-export default withAuthenticationRequired(UserName, {
-  onRedirecting: () => <Loading />,
-});
+export default UserName;

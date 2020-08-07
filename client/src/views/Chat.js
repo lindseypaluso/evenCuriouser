@@ -1,14 +1,12 @@
-import React, { Fragment } from "react";
-
+import React from "react";
 import Hero from "../components/Hero";
+import Loading from "../components/Loading";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 
-
-const Home = () => (
-  <Fragment>
-    
-    <hr />
+const Chat = () => (
     <Hero />
-  </Fragment>
 );
 
-export default Home;
+export default withAuthenticationRequired(Chat, {
+  onRedirecting: () => <Loading />,
+});
