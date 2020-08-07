@@ -17,9 +17,9 @@ class Dashboard extends Component {
             this.setState({
                 buttons: [
                     {
-                        buttonText: "Classes",
+                        buttonText: "Assignments",
                         icon: "fa-users",
-                        URL: "#"
+                        URL: "/assignments"
                     },
                     {
                         buttonText: "Gradebook",
@@ -40,21 +40,22 @@ class Dashboard extends Component {
                         buttonText: "Announcments",
                         icon: "fa-newspaper-o",
                         URL: "/announcments"
-                    },
-                    {
-                        buttonText: "Student Lookup",
-                        icon: "fa-user",
-                        URL: "#"
                     }
+                    // ,
+                    // {
+                    //     buttonText: "Student Lookup",
+                    //     icon: "fa-user",
+                    //     URL: "#"
+                    // }
                 ]
             })
         } else {
             this.setState({
                 buttons: [
                     {
-                        buttonText: "Classes",
+                        buttonText: "Assignments",
                         icon: "fa-users",
-                        URL: "#"
+                        URL: "/assignments"
                     },
                     {
                         buttonText: "Calendar",
@@ -81,7 +82,7 @@ class Dashboard extends Component {
             <div className="container pt-5">
                 <div className="col-md-9 col-lg-7 px-0 dashboard-card card text-center shadow">
                     <div className="dashboard card-header pt-4">
-                        <h2><strong>Welcome, <UserName/>!</strong></h2>
+                        <h2><strong>Welcome, <UserName />!</strong></h2>
                     </div>
                     <div className="card-body mb-4">
                         { this.state.buttons.map( button =>  

@@ -63,11 +63,11 @@ const NavBar = () => {
                   <NavItem>
                     <NavLink
                       tag={RouterNavLink}
-                      to="/classes"
+                      to="/assignments"
                       exact
                       activeClassName="router-link-exact-active"
                     >
-                      Classes
+                      Assignments
                   </NavLink>
                   </NavItem>
                   <NavItem>

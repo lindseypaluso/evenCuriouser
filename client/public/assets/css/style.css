@@ -234,6 +234,19 @@ a:hover {
     
 }
 
+.form-email, .chat{
+  background: #fcfcfc !important;
+  border-radius: 5 !important;
+  padding: 10px !important;
+  font-size: 1.2em;
+}
+
+.btn-email, .btn-chat{
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 6px;
+}
+
 /* Styling for the Gradebook */
 .gradebook-display {
     overflow-y: scroll;
@@ -245,4 +258,5 @@ a:hover {
     overflow-y: scroll;
     overflow-x: scroll;
 }
+
 

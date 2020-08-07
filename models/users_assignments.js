@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     const Users_Assignments = sequelize.define("Users_Assignments", {
       submitted: {
-        type: BOOLEAN
+        type: DataTypes.BOOLEAN
       },
       points_earned: {
         type: DataTypes.INTEGER,

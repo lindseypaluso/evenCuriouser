@@ -24,6 +24,7 @@ class MyCalendar extends Component {
         end: date.due_date,
         allDay: true,
       }));
+      console.log(events)
       this.setState({
         due: events
       });
