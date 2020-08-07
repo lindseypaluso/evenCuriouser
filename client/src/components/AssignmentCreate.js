@@ -1,6 +1,17 @@
 import React, { Component } from "react";
+import AssignmentsAPI from '../utils/API-assignments';
+import Assignments from "./Assignments";
 
 class AssignmentCreate extends Component {
+    handleFormSubmit() {
+        
+        AssignmentsAPI.createAssignment();
+    }
+
+    componentDidMount() {
+        
+    }
+    
     render() {
         return (
             <div id="createAssignment" className="modal fade" role="dialog">
