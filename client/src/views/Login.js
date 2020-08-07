@@ -16,6 +16,11 @@ const Login = () => {
     logout({
       returnTo: window.location.origin,
     });
+  
+  const showAboutUs = () => {
+    var element = document.getElementById("about-us");
+    element.classList.remove("d-none");
+  }
 
   return (
     <div className="row no-gutters text-center login-container">
@@ -35,12 +40,30 @@ const Login = () => {
               Log in with Google
             </Button>
             <br />
-            <a href="#"><button className="btn sign-in-btn w-75">Learn More</button></a>
+            <button 
+            className="btn sign-in-btn w-75"
+            onClick={() => showAboutUs()}
+            >About Us</button>
           </div>
           <div className="login card-footer"></div>
         </div>
       </div>
-      <div className="col-md-6 col-lg-7 col-xl-8 login-bunny"></div>
+      <div className="col-md-6 col-lg-7 col-xl-8 login-bunny">
+        <div id="about-us" className="about-us-container d-none">
+          <div className="about-text">
+            <h1 className="about-heading">Get Curious</h1>
+            <hr className="pink-line" />
+            <p>EvenCuriouser is a one-stop educational platform for elementary school students, teachers, and parents.
+            </p>
+            <p>
+              We specialize in making distance learning as painless as possible for everyone
+              involved by organizing your resources, assignments,
+              communication, and schedules for you.
+            </p>
+            <p>For a seamless distance learning experience, get curious.</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

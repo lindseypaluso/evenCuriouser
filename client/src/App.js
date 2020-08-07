@@ -82,7 +82,7 @@ const App = () => {
             <Route path="/student-search" component={StudentSearch} />
             <Route path="/messages" component={Chat} />
             <Route path="/calendar" component={Calendar} />
-            <Route path="/announcments" component={Announcements} />
+            <Route path="/announcements" component={Announcements} />
           </Switch>
         </div>
 

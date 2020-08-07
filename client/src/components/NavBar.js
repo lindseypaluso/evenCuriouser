@@ -105,7 +105,7 @@ const NavBar = (props) => {
                   <NavItem>
                     <NavLink
                       tag={RouterNavLink}
-                      to="/announcments"
+                      to="/announcements"
                       exact
                       activeClassName="router-link-exact-active"
                     >

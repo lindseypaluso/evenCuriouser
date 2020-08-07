@@ -81,7 +81,7 @@ class Dashboard extends Component {
         return 'No user found';
       }
         return (
-            <div className="container pt-5">
+            <div className="container dashboard-container">
                 <div className="col-md-9 col-lg-7 px-0 dashboard-card card text-center shadow">
                     <div className="dashboard card-header pt-4">
                         <h2><strong>Welcome, {this.props.user.given_name}!</strong></h2>
