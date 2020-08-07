@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import AssignmentsAPI from "../utils/API-assignments";
@@ -25,6 +24,7 @@ class MyCalendar extends Component {
         end: date.due_date,
         allDay: true,
       }));
+      console.log(events)
       this.setState({
         due: events
       });

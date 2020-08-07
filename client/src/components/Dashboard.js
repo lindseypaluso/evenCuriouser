@@ -16,7 +16,7 @@ class Dashboard extends Component {
             this.setState({
                 buttons: [
                     {
-                        buttonText: "Classes",
+                        buttonText: "Assignments",
                         icon: "fa-users",
                         URL: "/classes"
                     },
@@ -40,6 +40,12 @@ class Dashboard extends Component {
                         icon: "fa-newspaper-o",
                         URL: "/announcements"
                     }
+                    // ,
+                    // {
+                    //     buttonText: "Student Lookup",
+                    //     icon: "fa-user",
+                    //     URL: "#"
+                    // }
                 ]
             })
         } else {
