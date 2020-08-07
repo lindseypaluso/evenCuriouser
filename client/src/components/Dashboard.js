@@ -19,32 +19,27 @@ class Dashboard extends Component {
                     {
                         buttonText: "Classes",
                         icon: "fa-users",
-                        URL: "#"
+                        URL: "/classes"
                     },
                     {
                         buttonText: "Gradebook",
                         icon: "fa-book",
-                        URL: "#"
+                        URL: "/gradebook"
                     },
                     {
                         buttonText: "Calendar",
                         icon: "fa-calendar",
-                        URL: "#"
+                        URL: "/calendar"
                     },
                     {
                         buttonText: "Messages",
                         icon: "fa-envelope",
-                        URL: "#"
+                        URL: "/messages"
                     },
                     {
-                        buttonText: "News",
+                        buttonText: "Announcements",
                         icon: "fa-newspaper-o",
-                        URL: "#"
-                    },
-                    {
-                        buttonText: "Student Lookup",
-                        icon: "fa-user",
-                        URL: "#"
+                        URL: "/announcements"
                     }
                 ]
             })
@@ -52,24 +47,24 @@ class Dashboard extends Component {
             this.setState({
                 buttons: [
                     {
-                        buttonText: "Classes",
+                        buttonText: "Assignments",
                         icon: "fa-users",
-                        URL: "#"
+                        URL: "/assignments"
                     },
                     {
                         buttonText: "Calendar",
                         icon: "fa-calendar",
-                        URL: "#"
+                        URL: "/calendar"
                     },
                     {
                         buttonText: "Messages",
                         icon: "fa-envelope",
-                        URL: "#"
+                        URL: "/messages"
                     },
                     {
-                        buttonText: "News",
+                        buttonText: "Announcements",
                         icon: "fa-newspaper-o",
-                        URL: "#"
+                        URL: "/announcements"
                     }
                 ]
             })
@@ -77,6 +72,9 @@ class Dashboard extends Component {
     };
 
     render() {
+      if (!this.props.user) {
+        return 'No user found';
+      }
         return (
             <div className="container pt-5">
                 <div className="col-md-9 col-lg-7 px-0 dashboard-card card text-center shadow">

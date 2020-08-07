@@ -66,8 +66,7 @@ const App = () => {
   return (
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
-        <NavBar />
-
+        <NavBar user={userData}/>
         <div className="flex-grow-1">
           <Switch>
             <Route path="/" exact render={() => <Home user={userData}/> }/>
