@@ -37,7 +37,7 @@ class MyCalendar extends Component {
     return (
       <div className="hero-image">
         <div className="container pt-3 pb-3">
-          <div className="col-lg-12 col-md-12 col-sm-12 bg-white pt-3 pb-3">
+          <div className="calendar col-lg-12 col-md-12 col-sm-12 bg-white pt-3 pb-3">
             <Calendar
               defaultDate={moment().toDate()}
               defaultView="month"

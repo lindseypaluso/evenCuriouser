@@ -20,7 +20,7 @@ import {
 
 import { useAuth0 } from "@auth0/auth0-react";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const {
     user,
@@ -35,9 +35,9 @@ const NavBar = () => {
       returnTo: window.location.origin,
     });
 
-  return (
-    <>
-      <Navbar className="navbar navbar-expand-sm navbar-dark" expand="md">
+    return (
+      <>
+        <Navbar className="navbar navbar-expand-sm navbar-dark" expand="md">
 
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
@@ -45,7 +45,7 @@ const NavBar = () => {
               <NavItem>
                 <NavLink
                   tag={RouterNavLink}
-                  to="/"
+                  to="/dashboard"
                   exact
                   activeClassName="router-link-exact-active"
                 >
@@ -58,28 +58,30 @@ const NavBar = () => {
             </Nav>
 
             <Nav className="mr-auto main-nav">
-              {isAuthenticated && (
+              {isAuthenticated && props.user && (
                 <>
                   <NavItem>
                     <NavLink
                       tag={RouterNavLink}
-                      to="/classes"
+                      to="/assignments"
                       exact
                       activeClassName="router-link-exact-active"
                     >
-                      Classes
+                      Assignments
                   </NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink
-                      tag={RouterNavLink}
-                      to="/gradebook"
-                      exact
-                      activeClassName="router-link-exact-active"
-                    >
-                      Gradebook
+                  {props.user.role === "teacher" && (
+                    <NavItem>
+                      <NavLink
+                        tag={RouterNavLink}
+                        to="/gradebook"
+                        exact
+                        activeClassName="router-link-exact-active"
+                      >
+                        Gradebook
                   </NavLink>
-                  </NavItem>
+                    </NavItem>
+                  )}
                   <NavItem>
                     <NavLink
                       tag={RouterNavLink}
@@ -107,10 +109,10 @@ const NavBar = () => {
                       exact
                       activeClassName="router-link-exact-active"
                     >
-                      News
+                      Announcements
                   </NavLink>
                   </NavItem>
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink
                       tag={RouterNavLink}
                       to="/news"
@@ -121,28 +123,15 @@ const NavBar = () => {
                         <input className="form-control form-control-sm" type="text" placeholder="Search" aria-label="Search" />
                       </form>
                     </NavLink>
-                  </NavItem>
+                  </NavItem> */}
                 </>
               )}
             </Nav>
 
             <Nav className="d-none d-md-block" navbar>
-              {!isAuthenticated && (
-                <NavItem>
-                  <Button
-                    id="qsLoginBtn"
-                    color="primary"
-                    className="btn-margin btn-login"
-                    // onClick={() => loginWithRedirect()}
-                    href="/login"
-                  >
-                    Log in<i className="fa fa-arrow-circle-right pl-3"></i>
-                  </Button>
-                </NavItem>
-              )}
-              {isAuthenticated && (
+              {isAuthenticated && props.user && (
                 <UncontrolledDropdown nav inNavbar
-                className="mr-5">
+                  className="mr-5">
                   <DropdownToggle nav caret id="profileDropDown">
                     <img
                       src={user.picture}
@@ -172,21 +161,7 @@ const NavBar = () => {
                 </UncontrolledDropdown>
               )}
             </Nav>
-            {!isAuthenticated && (
-              <Nav className="d-md-none" navbar>
-                <NavItem>
-                  <Button
-                    id="qsLoginBtn"
-                    color="primary"
-                    block
-                    onClick={() => loginWithRedirect({})}
-                  >
-                    Log in
-                  </Button>
-                </NavItem>
-              </Nav>
-            )}
-            {isAuthenticated && (
+            {isAuthenticated && props.user && (
               <Nav
                 className="d-md-none justify-content-between"
                 navbar
@@ -226,9 +201,10 @@ const NavBar = () => {
             )}
           </Collapse>
 
-      </Navbar>
-    </>
-  );
+        </Navbar>
+      </>
+    );
+
 };
 
 export default NavBar;
