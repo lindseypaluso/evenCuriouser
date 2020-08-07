@@ -97,15 +97,7 @@ body {
 }
 
 /* ============================Styling for Dashboard============================ */
-/* .dashboard-card {
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 90%;
-} */
+
 .dashboard-card {
   margin: auto;
   /* width: 70%; */
@@ -211,9 +203,9 @@ a:hover {
 .create-assignment-specifics {
     border: solid 1px grey;
 }
-/* .form-padding-right {
-    margin-right: 10px;
-} */
+.assignmentsTable {
+    width: 100%;
+}
 
 /* Styling for the Chat board */
 .chat-card {
