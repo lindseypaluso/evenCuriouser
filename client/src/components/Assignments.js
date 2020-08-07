@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AssignmentCategory from "./AssignmentCategory.js";
 import AssignmentsFilter from "./AssignmentsFilter.js";
+import AssignmentCreate from "./AssignmentView.js";
 import AssignmentsAPI from '../utils/API-assignments';
 
 class Assignments extends Component {
@@ -49,6 +50,7 @@ class Assignments extends Component {
                         topic = {topic}
                     />
                 )}
+                <AssignmentCreate />
             </div>
         )
     }

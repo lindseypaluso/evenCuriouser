@@ -5,7 +5,6 @@ import Assignment from "./Assignment.js";
 import AssignmentsAPI from '../utils/API-assignments';
 //components for CRUD modals for each assignment
 import AssignmentView from "./AssignmentView.js";
-import AssignmentCreate from "./AssignmentView.js";
 import AssignmentEdit from "./AssignmentView.js";
 import AssignmentDelete from "./AssignmentView.js";
 
@@ -14,12 +13,13 @@ class AssignmentCategory extends Component {
     state = {
         class : []
     };
-    
 
     componentDidMount() {
-        //call the util that accesses the controller for getting all assignments
+        //call the util that accesses the controller for getting all assignments according to the topic being passed in
+        const t = (this.props.topic);
+
         //still need to figure out how to pass in the topic pulled at the Assignments component level
-        AssignmentsAPI.getAssignmentsByTopic({}).then(res => {
+        AssignmentsAPI.getAssignmentsByTopic(t).then(res => {
             //create an array mapped from the array of assignment objects
             const assignments = res.data.map(assignment => ({
                 //pair assignment attributes
@@ -47,12 +47,34 @@ class AssignmentCategory extends Component {
                         <th>Submitted</th>
                         <th>Due Date</th>
                     </tr>
-                    <Assignment />
+                    {this.state.class.map(assignment =>
+                        <Assignment 
+                            name = {assignment.name}
+                            due = {assignment.dueDate}
+                        />
+                    )}
+                    
                 </table>
-                <AssignmentView />
-                <AssignmentCreate />
-                <AssignmentEdit />
-                <AssignmentDelete />
+                {this.state.class.map(assignment =>
+                    <AssignmentView 
+                        name = {assignment.name}
+                        description = {assignment.description}
+                    />
+                )}
+                {this.state.class.map(assignment =>
+                    <AssignmentEdit 
+                        name = {assignment.name}
+                        description = {assignment.description}
+                        due = {assignment.assignment.dueDate}
+                        topic = {assignment.topic}
+                        points = {assignment.points}
+                    />
+                )}
+                {this.state.class.map(assignment =>
+                    <AssignmentDelete 
+                        name = {assignment.name}
+                    />
+                )}
             </div>
         )
     }
