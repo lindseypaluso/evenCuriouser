@@ -42,20 +42,23 @@ class AssignmentCategory extends Component {
         return (
             <div >
                 <table className="mt-5 assignmentsTable">
-                    <tr>
-                        <th>{this.props.topic}</th>
-                        <th>Instructions</th>
-                        <th>Location</th>
-                        <th>Submitted</th>
-                        <th>Due Date</th>
-                    </tr>
-                    {this.state.class.map(assignment =>
-                        <Assignment 
-                            name = {assignment.name}
-                            due = {assignment.dueDate}
-                        />
-                    )}
-                    
+                    <thead>
+                        <tr>
+                            <th>{this.props.topic}</th>
+                            <th>Instructions</th>
+                            <th>Location</th>
+                            <th>Submitted</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.class.map(assignment =>
+                            <Assignment 
+                                name = {assignment.name}
+                                due = {assignment.dueDate}
+                            />
+                        )}    
+                    </tbody>
                 </table>
                 {this.state.class.map(assignment =>
                     <AssignmentView 
