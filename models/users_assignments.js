@@ -1,3 +1,5 @@
+
+
 module.exports = function(sequelize, DataTypes) {
     const Users_Assignments = sequelize.define("Users_Assignments", {
       submitted: {
@@ -9,5 +11,9 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: 0
       }
     });
+    Users_Assignments.associate = function(models) {
+      Users_Assignments.belongsTo(models.User)
+    }
+
     return Users_Assignments;
   };
