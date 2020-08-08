@@ -13,63 +13,63 @@ class Resources extends Component {
         {
           text: "Whooo's Reading?",
           logo: "./assets/images/whooos-reading.jpg",
-          URL: ""
+          URL: "https://www.whooosreading.org/"
         },
         {
           text: "Quizizz",
           logo: "./assets/images/quizizz.png",
-          URL: ""
+          URL: "https://quizizz.com/"
         },
         {
           text: "Prodigy",
           logo: "./assets/images/prodigy.jpg",
-          URL: ""
+          URL: "https://www.prodigygame.com/"
         },
         {
           text: "Lexia Core5",
           logo: "./assets/images/lexia-core5.jpg",
-          URL: ""
+          URL: "http://lexiacore5.com/?"
         },
         {
-          text: "Newsela",
-          logo: "./assets/images/newsela.png",
-          URL: ""
+          text: "Go Noodle",
+          logo: "./assets/images/gonoodle.jpg",
+          URL: "https://www.gonoodle.com/"
         },
         {
           text: "Upstart",
           logo: "./assets/images/upstart.png",
-          URL: ""
+          URL: "https://www.waterfordupstart.org/"
         },
         {
           text: "Google Classroom",
           logo: "./assets/images/google-classroom.png",
-          URL: ""
+          URL: "https://classroom.google.com"
         },
         
         {
           text: "Typing Club",
           logo: "./assets/images/typing-club.jpg",
-          URL: ""
+          URL: "https://www.typingclub.com/"
         },
         {
           text: "Splash Learn",
           logo: "./assets/images/splash-learn.jpg",
-          URL: ""
+          URL: "https://www.splashlearn.com/"
         },
         {
           text: "Moby Max",
           logo: "./assets/images/moby-max.jpg",
-          URL: ""
+          URL: "https://www.mobymax.com/"
         },
         {
           text: "Freckle Learning",
           logo: "./assets/images/freckle.jpg",
-          URL: ""
+          URL: "https://www.freckle.com/"
         },
         {
           text: "Zoom",
           logo: "./assets/images/zoom.png",
-          URL: ""
+          URL: "https://zoom.us/"
         }
       ]
     })

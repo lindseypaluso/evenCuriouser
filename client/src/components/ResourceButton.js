@@ -5,9 +5,8 @@ class ResourceButton extends Component {
   render() {
     return (
       <div className="text-center">
-        <Link
+        <a href={this.props.URL}
           target="_blank"
-          to={this.props.URL}
           className="btn resource-btn rounded"
         >
             <div className="logo-square">
@@ -16,7 +15,7 @@ class ResourceButton extends Component {
             <div className="">
               <p>{this.props.text}</p>
             </div>
-        </Link>
+        </a>
       </div>
     )
   }
