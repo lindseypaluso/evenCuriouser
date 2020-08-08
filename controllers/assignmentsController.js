@@ -38,7 +38,7 @@ module.exports = {
                 description: req.body.description,
                 topic: req.body.topic,
                 due_date: req.body.date,
-                points: req.body.points
+                points_available: req.body.points
             })
             .then(dbAssignment => res.json(dbAssignment))
             .catch(err => res.status(422).json(err));

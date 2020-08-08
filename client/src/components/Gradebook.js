@@ -53,7 +53,7 @@ class Gradebook extends Component {
               <tbody>
                 <tr>
                   {this.state.student.map((item, index) => (
-                    <td scope="row" key={index}>{item}</td>
+                   <td scope="row" key={index}><span>{item}</span></td>
                   ))}
                 </tr>
               </tbody>

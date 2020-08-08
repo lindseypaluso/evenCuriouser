@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     role: DataTypes.STRING
   });
- User.associate = function(models) {
+  User.associate = function(models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
   User.belongsToMany(models.Assignment, {
-      // onDelete: "cascade",
+      onDelete: "cascade",
       through: "Users_Assignments"
     });
   };
