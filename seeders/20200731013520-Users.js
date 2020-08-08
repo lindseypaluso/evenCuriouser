@@ -33,6 +33,14 @@ module.exports = {
       role: "student",
       createdAt : new Date(),
       updatedAt : new Date()
+    },
+    {
+      given_name : "Jordan",
+      family_name : "Call",
+      email : "cal.jo.kenobi@gmail.com",
+      role: "teacher",
+      createdAt : new Date(),
+      updatedAt : new Date()
     }], {});
   },
 

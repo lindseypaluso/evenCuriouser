@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Gradebook from "../components/Gradebook";
 // Still need to create the components for rendering the Grade Book
 
 const ClassGradeBook = () => (
-  <Fragment>
-    <Gradebook />
-  </Fragment>
+
+  <Gradebook />
+
 );
 
 export default ClassGradeBook;

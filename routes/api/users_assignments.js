@@ -2,6 +2,14 @@ const db = require("../../models");
 const router = require("express").Router();
 const userAssignController = require("../../controllers/user_assignmentsController")
 
+router
+  .route("/all")
+  .get(userAssignController.findAll)
+
+router 
+  .route("/all/:UserId")
+  .get(userAssignController.findUser)
+
 router.get("/:id", function (req, res) {
   db.Assignment.findOne({
     where: {
@@ -15,16 +23,6 @@ router.get("/:id", function (req, res) {
   })
 })
 
-// router
-//   .route("/all")
-//   .get(userAssignController.findAll)
 
-// router
-//   .route("/:UserID")
-//   .get(userAssignController.getUserAssign)
-
-// router
-//   .route("/:AssignmentID")
-//   .get(userAssignController.getAssignments)
 
 module.exports = router;

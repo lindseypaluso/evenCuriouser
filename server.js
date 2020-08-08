@@ -12,9 +12,10 @@ const users_assignmentsSeeds = require("./seeders/20200805032409-users_assignmen
 
 // Initialize Express
 const app = express();
+const server = require("http").createServer(app);
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
-const server = require("http").createServer(app);
+
 
 //Middleware
 app.use(express.urlencoded({ extended: true }));

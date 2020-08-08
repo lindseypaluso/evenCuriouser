@@ -6,6 +6,74 @@ class Dashboard extends Component {
   state = {
     buttons: []
   };
+    componentDidMount() {
+        if (!this.props.user) {
+          return;
+        }
+        var role = this.props.user.role;
+        if (role === "teacher") {
+            this.setState({
+                buttons: [
+                    {
+                        buttonText: "Assignments",
+                        icon: "fa-users",
+                        URL: "/assignments"
+                    },
+                    {
+                        buttonText: "Gradebook",
+                        icon: "fa-book",
+                        URL: "/gradebook"
+                    },
+                    {
+                        buttonText: "Calendar",
+                        icon: "fa-calendar",
+                        URL: "/calendar"
+                    },
+                    {
+                        buttonText: "Messages",
+                        icon: "fa-envelope",
+                        URL: "/messages"
+                    },
+                    {
+                        buttonText: "Announcements",
+                        icon: "fa-newspaper-o",
+                        URL: "/announcements"
+                    }
+                    // ,
+                    // {
+                    //     buttonText: "Student Lookup",
+                    //     icon: "fa-user",
+                    //     URL: "#"
+                    // }
+                ]
+            })
+        } else {
+            this.setState({
+                buttons: [
+                    {
+                        buttonText: "Assignments",
+                        icon: "fa-users",
+                        URL: "/assignments"
+                    },
+                    {
+                        buttonText: "Calendar",
+                        icon: "fa-calendar",
+                        URL: "/calendar"
+                    },
+                    {
+                        buttonText: "Messages",
+                        icon: "fa-envelope",
+                        URL: "/messages"
+                    },
+                    {
+                        buttonText: "Announcements",
+                        icon: "fa-newspaper-o",
+                        URL: "/announcements"
+                    }
+                ]
+            })
+        } 
+    };
 
   componentDidMount() {
     if (!this.props.user) {
