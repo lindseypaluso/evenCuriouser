@@ -38,7 +38,7 @@ module.exports = {
       name: "Jumping Math",
       description: "Complete this single digit addition worksheet.", 
       topic: "Math",
-      due_date: "2020-08-10",
+      due_date: "2020-08-11",
       points_available: 100,
       link: "https://classroom.google.com/u/0/c/MTE3NzgxNTI1MTg5/a/MTE3Nzg1Mjc1MDYz/details"
     },
