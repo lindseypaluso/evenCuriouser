@@ -2,24 +2,32 @@ import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "reactstrap";
 
+const STATES = {
+  initial: 0,
+  visible: 1,
+  removed: 2,
+}
+
 const Login = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [aboutUsVisibility, setAboutUsVisibility] = useState(STATES.initial);
   const {
     user,
     isAuthenticated,
-    loginWithRedirect,
-    logout,
+    loginWithRedirect
   } = useAuth0();
-  const toggle = () => setIsOpen(!isOpen);
 
-  const logoutWithRedirect = () =>
-    logout({
-      returnTo: window.location.origin,
-    });
+  // const toggle = () => setIsOpen(!isOpen);
+  let aboutClassName = "";
+  if (aboutUsVisibility === STATES.initial) {
+    aboutClassName = "d-none";
+  } else if (aboutUsVisibility === STATES.visible) {
+      aboutClassName = "fade-in";
+    } else {
+      aboutClassName = "fade-out";
+  }
   
   const showAboutUs = () => {
-    var element = document.getElementById("about-us");
-    element.classList.remove("d-none");
+     setAboutUsVisibility(aboutUsVisibility === STATES.visible ? STATES.removed : STATES.visible); 
   }
 
   return (
@@ -39,17 +47,18 @@ const Login = () => {
             >
               Log in with Google
             </Button>
-            <br />
             <button 
             className="btn sign-in-btn w-75"
             onClick={() => showAboutUs()}
-            >About Us</button>
+            >
+              {aboutUsVisibility === STATES.visible ? "Enough About Us" : "About Us"}
+              </button>
           </div>
           <div className="login card-footer"></div>
         </div>
       </div>
       <div className="col-md-6 col-lg-7 col-xl-8 login-bunny">
-        <div id="about-us" className="about-us-container d-none">
+        <div className={"about-us-container " + aboutClassName}>
           <div className="about-text">
             <h1 className="about-heading">Get Curious</h1>
             <hr className="pink-line" />

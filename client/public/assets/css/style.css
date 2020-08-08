@@ -99,9 +99,10 @@ body {
     border-radius: 10px;
     font-size: 20px;
     color: #542a6b;
+    font-size: 21px;
 }
 .sign-in-btn:hover {
-  background-color: #ffe45c;
+  background-color: #ffde38;
   color: white;
 }
 .about-us-container {
