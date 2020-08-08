@@ -3,8 +3,6 @@ import ClassList from "../components/ClassList";
 
 const ClassView = () => (
   <Fragment>
-    
-    <hr />
     <ClassList />
   </Fragment>
 );

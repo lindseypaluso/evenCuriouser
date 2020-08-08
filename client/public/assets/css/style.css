@@ -58,16 +58,12 @@ body {
     background-color: #fde774;
 }
 .footer {
-    /* position: fixed;
-    left: 0;
-    bottom: 0; */
     width: 100%;
     background-color: #8d46b4;
     color: white;
     text-align: center;
 }
 .bunny1 {
-    /* /* position: fixed; */
     width: 100%;
     object-fit: cover;
     height: 600px;
@@ -81,11 +77,6 @@ body {
 }
 .login-card {
     width: 75%;
-    /* position: absolute;
-    top: 40%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
     border: none;
 }
 .login-bunny {
@@ -98,8 +89,6 @@ body {
 .login {
     background-color: #fe42ab;
     min-height: 50px;
-    /* border-radius: 25px;
-    border: 2px solid #fe42ab; */
 }
 .card-body {
     min-height: 200px;
@@ -111,7 +100,6 @@ body {
     font-size: 20px;
     color: #542a6b;
 }
-
 .sign-in-btn:hover {
   background-color: #ffe45c;
   color: white;
@@ -140,6 +128,33 @@ body {
   transform: translateY(-50%);
   padding: 15px;
 }
+.fade-in {
+animation: fadeInAnimation ease 1.5s; 
+animation-iteration-count: 1; 
+animation-fill-mode: forwards; 
+}
+@keyframes fadeInAnimation { 
+  0% { 
+      opacity: 0; 
+  } 
+  100% { 
+      opacity: 1; 
+  } 
+}
+.fade-out {
+  animation: fadeOutAnimation ease 1.5s; 
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+  }
+  @keyframes fadeOutAnimation { 
+    0% { 
+        opacity: 1; 
+    } 
+    100% { 
+        opacity: 0; 
+    } 
+  }
+
 /* ============================Styling for Dashboard============================ */
 
 .dashboard-card {
@@ -173,9 +188,15 @@ body {
   padding-top: 40px;
 }
 
-/* ============================Styling for calendar page============================ */
+/* ============================Styling for Announcements page============================ */
 .announcements {
   list-style: none;
+}
+/* ============================Styling for Resources page============================ */
+.resource-logo  {
+  border-radius: 8px;
+  width: 180px;
+  height: 180px;
 }
 
 /* ============================Styling for Classes Page============================ */

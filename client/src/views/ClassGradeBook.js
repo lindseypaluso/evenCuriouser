@@ -4,8 +4,6 @@ import Gradebook from "../components/Gradebook";
 
 const ClassGradeBook = () => (
   <Fragment>
-    
-    <hr />
     <Gradebook />
   </Fragment>
 );
