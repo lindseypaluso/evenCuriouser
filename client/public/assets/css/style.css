@@ -286,14 +286,7 @@ a:hover {
 
 
 /* Styling for the Chat board */
-.message-cont {
-   margin-top: 10vh;
-   margin-bottom: 5vh;
-}
 
-.email-cont {
-
-}
 .chat-card {
     max-height: 400px;
     min-height: 400px;
@@ -301,6 +294,8 @@ a:hover {
     position: unset !important;
     padding-bottom: 180px;
     margin-bottom: 200px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .chat-footer{
