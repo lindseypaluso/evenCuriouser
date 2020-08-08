@@ -5,7 +5,7 @@ class Announcements extends Component {
   render() {
     return (
       <div className="hero-image">
-        <div className="container p-3 rounded my-5">
+        <div className="container p-3 rounded">
           <div className="announcements col-lg-12 col-md-12 col-sm-12 text-black text-center bg-white pt-3 pb-3">
           <h1>Class Announcements</h1>
           <hr />

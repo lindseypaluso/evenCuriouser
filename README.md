@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# EvenCuriouser
 
-## Available Scripts
+## Description of the Site
 
-In the project directory, you can run:
+"EvenCuriouser" is a full stack application to help teachers and students have a better teaching and learning experience.
 
-### `npm start`
+School in 2020, has been hard for everyone involved and jumping from one application to another was a common complaint from teachers, students and parents. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This application was designed to try and bring all of the links, assignments, grades, and messaging systems into one centralized location.  Making school, weather in a face to face, virtual, or hybrid seamless and easy for everyone. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Pictures of the Site
 
-### `npm test`
+[EvenCuriouser](https://even-curiouser.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Alt](./readme.assets/login.png)
+![Alt](./readme.assets/dashboard.png)
 
-### `npm run build`
+## Built With
+- [React](https://reactjs.org/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Node.js](https://nodejs.org/en/about/)
 
-### `npm run eject`
+- [NPM](https://docs.npmjs.com/about-npm/)
+  
+- [JSX](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [MySQL](https://www.mysql.com/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Some of the NPM's Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [Express](https://www.npmjs.com/package/express)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Auth0](https://www.npmjs.com/package/auth0)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [Socket.io](https://www.npmjs.com/package/socket.io)
+- [mySQL2](https://www.npmjs.com/package/mysql2)
+- [Sequelize](https://www.npmjs.com/package/sequelize)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Version
 
-## Learn More
+- [Github](https://github.com/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Heroku](https://devcenter.heroku.com/)
 
-### Code Splitting
+## Databases
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- [MySQL](https://www.mysql.com/)
 
-### Analyzing the Bundle Size
+# Authors
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Abby Nielson](https://github.com/aanielson)
+- [Jordan Call](https://github.com/JCCALL)
+- [Lindsey Paluso](https://github.com/lindseypaluso) 
+- [Lisa Campbell](https://github.com/lisaswindler)
