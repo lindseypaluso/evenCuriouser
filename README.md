@@ -52,6 +52,10 @@ This application was designed to try and bring all of the links, assignments, gr
 
 - [MySQL](https://www.mysql.com/)
 
+## Front-End Design Repo
+
+- [Design Repo](https://github.com/aanielson/evenCurioserTest.git)
+
 # Authors
 
 - [Abby Nielson](https://github.com/aanielson)
