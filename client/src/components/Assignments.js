@@ -1,29 +1,12 @@
 import React, { Component } from "react";
-//react bootstrap modal & button necessities
-import Modal from 'react-bootstrap/Modal';
-import ModalHeader from 'react-bootstrap/ModalHeader';
-import ModalTitle from 'react-bootstrap/ModalTitle';
-import ModalBody from 'react-bootstrap/ModalBody';
-import ModalFooter from 'react-bootstrap/ModalFooter';
 //pass topics into category components to render assignments by category
 import AssignmentCategory from "./AssignmentCategory.js";
 //dropdpwn topics filter at top of table
 import AssignmentsFilter from "./AssignmentsFilter.js";
 //dropdown topics selector within create modal
 import TopicOptions from "./TopicOptions";
-import AssignmentCreate from "./AssignmentView.js";
 import AssignmentsAPI from '../utils/API-assignments';
 
-
-// <AssignmentCreate
-//                     show={this.state.show}
-//                     topic={this.state.topics}
-//                     visible={this.state.visible}
-//                     toggleVisibility={this.toggleModal}
-//                     ref={this.saveCreateForm}
-//                     onCancel={this.handleCancel}
-//                     onCreate={this.handleCreate}
-//                 />
 
 class Assignments extends Component {
     //initialize state with array for each class's assignment topics
@@ -34,17 +17,9 @@ class Assignments extends Component {
         selectTopic: "",
         inputPoints: 0,
         selectDueDate: "",
-        inputLocation: "",
-        visible: false,
-        setShow: false
+        inputLocation: ""
     };
     
-    handleClose = () => {
-        this.setState({ setShow: false });
-    }
-    handleShow = () => {
-        this.setState({ setShow: true });
-    }
 
     handleInputChange(event) {
         const target  = event.target;
@@ -73,24 +48,6 @@ class Assignments extends Component {
         });
         
     }
-
-    // showCreateModal = () => {
-    //     this.setState({ visible: true });
-    // }
-    // handleCancel = () => {
-    //     this.setState({ visible: false });
-    // }
-    // handleCreate = (form) => {
-    //     // ...
-    //     this.setState({ visible: false });
-    //     this.form = form;
-    // }
-    // saveCreateForm = (form) => {
-    //     this.form = form;
-    // }
-    // toggleModal = () => {
-    //     this.setState(prevState => ({ visible: !prevState.visible }));
-    // }
 
     componentDidMount() {
         //call the util that accesses the controller for getting all topics
@@ -133,12 +90,12 @@ class Assignments extends Component {
                     />
                 )}
 
-                <Modal show={this.setShow} onHide={this.handleClose}>
-                    <Modal.Header className="modal-header" closeButton>
-                        <Modal.Title>Create Assignment</Modal.Title>
-                    </Modal.Header>
+                <div className="card">
+                    <div className="card-header" >
+                        <h5 className="card-title">Create Assignment</h5>
+                    </div>
                     <form onSubmit={this.handleSubmit}>
-                        <Modal.Body className="modal-body">
+                        <div className="card-body">
                             <div className="row mr-1">
                                 <div className="col-md-6 form-line">
                                     <div className="form-group">
@@ -154,15 +111,16 @@ class Assignments extends Component {
                                             onChange={this.handleInputChange}/></label>
                                     </div>
                                     <div className="form-group">
-                                        <teaxtarea 
-                                            type="text" 
-                                            id="create-assignment-instructions" 
-                                            className="form-control"
-                                            style="width: 100%; height: 140px;" 
-                                            name="create-assignment-instructions"
-                                            placeholder="Enter Intrustions"
-                                            value={this.state.inputDescription}
-                                            onChange={this.handleInputChange}/>
+                                        <label htmlFor="create-assignment-instructions">Directions
+                                            <br />
+                                            <input 
+                                                type="text" 
+                                                id="create-assignment-instructions" 
+                                                className="form-control"
+                                                name="create-assignment-instructions"
+                                                placeholder="instructions" 
+                                                value={this.state.inputDescription}
+                                                onChange={this.handleInputChange}/></label>
                                     </div>
                                 </div>
                                 <div className="col-md-6 create-assignment-specifics form-line mb-3">
@@ -221,13 +179,12 @@ class Assignments extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </Modal.Body>
-                        <Modal.Footer className="modal-footer">
+                        </div>
+                        <div className="card-footer">
                             <input onClick={this.handleClose} type="submit" value="Submit"/>
-                        </Modal.Footer>
+                        </div>
                     </form>
-                </Modal>
-            
+                </div>
             </div>
         )
     }
