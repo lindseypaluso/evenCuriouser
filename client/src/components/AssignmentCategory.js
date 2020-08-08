@@ -28,7 +28,8 @@ class AssignmentCategory extends Component {
                 description: assignment.description,
                 topic: assignment.topic,
                 dueDate: assignment.due_date,
-                points: assignment.points
+                points: assignment.points,
+                link: assignment.link
             }));
             console.log(assignments);
             this.setState({
@@ -55,7 +56,9 @@ class AssignmentCategory extends Component {
                         {this.state.class.map(assignment =>
                             <Assignment 
                                 name = {assignment.name}
+                                description = {assignment.description}
                                 due = {assignment.dueDate}
+                                link = {assignment.link}
                             />
                         )}    
                     </tbody>
