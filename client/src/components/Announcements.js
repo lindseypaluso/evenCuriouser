@@ -5,14 +5,14 @@ class Announcements extends Component {
   render() {
     return (
       <div className="hero-image">
-        <div className="container p-3 rounded">
-          <div className="col-lg-12 col-md-12 col-sm-12 text-black text-center bg-white pt-3 pb-3 my-4">
-          <h1>Class Announcements</h1>
+        <div className="container p-3">
+          <div className="col-lg-12 col-md-12 col-sm-12 text-black text-center bg-white pt-3 pb-3 my-4 rounded">
+          <h2>Class Announcements</h2>
           <hr />
           <ul className="announcements">
-            <li className="font-italic font-weight-bold">
+            <li className="font-weight-bold">
               As we prepare to return to school, we are striving for a safe
-              return. For more information click below
+              return. For more information click below.
             </li>
             <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/schools-childcare/prepare-safe-return.html" target="_blank"><h4>The CDC's Recommendations for a  Safe Return to School</h4></a>
             <br />

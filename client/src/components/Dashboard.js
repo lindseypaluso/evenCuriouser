@@ -169,7 +169,7 @@ class Dashboard extends Component {
             )}
           </div>
           <div className="dashboard card-footer">
-            <img src="./assets/images/curious-bunny.png" alt="EvenCuriouser logo" width="50px" />
+            <img src="./assets/images/curious-logo-white.png" alt="EvenCuriouser logo" width="50px" />
           </div>
         </div>
       </div>
