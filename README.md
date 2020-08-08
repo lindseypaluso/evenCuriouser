@@ -54,7 +54,7 @@ This application was designed to try and bring all of the links, assignments, gr
 
 # Authors
 
-- [Jordan Call](https://github.com/JCCALL)
-- [Lisa Campbell](https://github.com/lisaswindler)
 - [Abby Nielson](https://github.com/aanielson)
-- [Lindsey Paluso](https://github.com/lindseypaluso)
+- [Jordan Call](https://github.com/JCCALL)
+- [Lindsey Paluso](https://github.com/lindseypaluso) 
+- [Lisa Campbell](https://github.com/lisaswindler)
