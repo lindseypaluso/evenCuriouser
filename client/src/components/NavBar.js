@@ -42,19 +42,25 @@ const NavBar = (props) => {
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto navbar-nav ml-5" navbar>
+            {!isAuthenticated && (
+            <div className="p-4"></div>
+            )}
+            {isAuthenticated && (
               <NavItem>
                 <NavLink
                   tag={RouterNavLink}
                   to="/dashboard"
                   exact
                   activeClassName="router-link-exact-active"
+                  className="p-0"
                 >
-                  <div className="navbar-brand ml-4">
-                    <img src="./assets/images/curious-bunny.png" alt="EvenCuriouser logo" width="50px" id="bunny-logo" />
-                    <p className="centered">EvenCuriouser</p>
+                  <div className="navbar-brand p-0">
+                    <img src="./assets/images/curious-logo5.png" alt="EvenCuriouser logo" width="200px" id="bunny-logo" />
+                    <p className="centered"></p>
                   </div>
                 </NavLink>
               </NavItem>
+              )}
             </Nav>
 
             <Nav className="mr-auto main-nav">
