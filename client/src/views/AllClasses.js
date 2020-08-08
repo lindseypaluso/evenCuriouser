@@ -4,8 +4,7 @@ import Classes from "../components/Classes";
 
 const AllClasses = () => (
   <Fragment>
-    
-    <hr />
+
         <Classes />
     
   </Fragment>
