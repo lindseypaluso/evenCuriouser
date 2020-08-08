@@ -4,7 +4,8 @@ class Announcements extends Component {
   render() {
     return (
       <div className="hero-image">
-        <div className="container main mt-5 text-black text-center p-2">
+        <div className="container p-2 pt-5">
+          <div className="announcements col-lg-12 col-md-12 col-sm-12 text-black text-center bg-white pt-3 pb-3">
           <h1>Class Announcements</h1>
           <hr />
           <ul>
@@ -38,6 +39,7 @@ class Announcements extends Component {
             </li>
           </ul>
         </div>
+      </div>
       </div>
     );
   }

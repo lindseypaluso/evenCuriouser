@@ -10,6 +10,9 @@ class Gradebook extends Component {
     this.state = {
       assignment: [],
       student: [],
+      grades1: [],
+      grades2: [],
+      grades3: [],
     };
   }
   componentDidMount() {
@@ -27,35 +30,57 @@ class Gradebook extends Component {
         student: students,
       });
     });
+    UserAssignmentAPI.getUserAssignments(1).then((res) => {
+      const grades = res.data.map((data) => data.points_earned);
+      console.log(grades);
+      this.setState({
+        grades1: grades
+      });
+    });
+    UserAssignmentAPI.getUserAssignments(2).then((res) => {
+      const grades = res.data.map((data) => data.points_earned);
+      console.log(grades);
+      this.setState({
+        grades2: grades
+      });
+    });
+    UserAssignmentAPI.getUserAssignments(3).then((res) => {
+      const grades = res.data.map((data) => data.points_earned);
+      console.log(grades);
+      this.setState({
+        grades3: grades
+      });
+    });
   }
 
   render() {
     return (
-      <div className="container main mt-5 text-black text-center p-0">
-        <nav className="main-header text-center">
+      <div className="hero-image">
+      <div className="container p-2 pt-5">
+        <div className="gradebook bg-white pt-3">
+        <div className="main-header text-center">
           <h3>
             Gradebook for{" "}
             <span id="gradebook-name">Miss P's First Grade</span>
           </h3>
-        </nav>
+        </div>
         <div className="gradebook-display m-2 row">
           <div className="col-sm-3">
             <table
-              className="table"
+              className="table text-left"
               cellSpacing="0"
               width="100%"
             >
               <thead>
                 <tr>
-                  <th scope="col">Student</th>
+                  <th className="table-head" >Student</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  {this.state.student.map((item, index) => (
-                   <td scope="row" key={index}><span>{item}</span></td>
-                  ))}
-                </tr>
+                {this.state.student.map((item, index) => (
+                   <tr><td key={index}><span>{item}</span></td></tr>
+                ))}
+                  
               </tbody>
             </table>
           </div>
@@ -65,105 +90,27 @@ class Gradebook extends Component {
               <thead>
                 <tr>
                   {this.state.assignment.map((item, index) => (
-                    <th className="assignmentGB" key={index}>{item}</th>
+                    <th className="table-head assignmentGB" key={index}>{item}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  
+                  {this.state.grades1.map((item, index) => (
+                    <td key={index}>{item}</td>
+                  ))}
                 </tr>
                 <tr>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
+                {this.state.grades2.map((item, index) => (
+                    <td key={index}>{item}</td>
+                  ))}
                 </tr>
                 <tr>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
+                {this.state.grades3.map((item, index) => (
+                    <td key={index}>{item}</td>
+                  ))}
                 </tr>
-                <tr>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                  <td>
-                    <span className="vertical-data">10/10</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>10/10</td>
-                  <td>10/10</td>
-                  <td>10/10</td>
-                  <td>10/10</td>
-                  <td>10/10</td>
-                  <td>10/10</td>
-                </tr>
+                
               </tbody>
             </table>
           </div>
@@ -172,46 +119,33 @@ class Gradebook extends Component {
             <table className="table">
               <thead>
                 <tr>
-                  <th>Missing</th>
-                  <th>%</th>
-                  <th>Grade</th>
+                  <th className="table-head">Missing</th>
+                  <th className="table-head">%</th>
+                  <th className="table-head">Grade</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>0</td>
-                  <td>100</td>
-                  <td>A</td>
+                  <td>1</td>
+                  <td>71.8</td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>67.8</td>
+                  <td>C-</td>
                 </tr>
                 <tr>
                   <td>0</td>
-                  <td>100</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>0</td>
-                  <td>100</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>0</td>
-                  <td>100</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>0</td>
-                  <td>100</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>0</td>
-                  <td>100</td>
-                  <td>A</td>
+                  <td>82.1</td>
+                  <td>B</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

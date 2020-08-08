@@ -11,7 +11,7 @@ class Hero extends React.Component {
       messages: [],
     };
 
-    this.socket = io("localhost:8080");
+    this.socket = io();
 
     this.socket.on("RECEIVE_MESSAGE", function (data) {
       addMessage(data);
@@ -34,9 +34,10 @@ class Hero extends React.Component {
 
   render() {
     return (
+     
       <div className="container message-cont">
         <div className="row">
-          <div className="col-m-12 col-lg-5">
+          <div className="col-md-12 col-lg-5">
             <div className="card chat-card">
               <div className="card-body">
                 <div className="card-title">
@@ -89,7 +90,7 @@ class Hero extends React.Component {
                       <label htmlFor="name">Name:</label>
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-email form-control"
                         placeholder="Enter name"
                       />
                     </div>
@@ -99,7 +100,7 @@ class Hero extends React.Component {
                       <label htmlFor="email">Email:</label>
                       <input
                         type="email"
-                        className="form-control"
+                        className="form-email form-control"
                         placeholder="Enter email"
                         id="email"
                       />
@@ -110,7 +111,7 @@ class Hero extends React.Component {
                   <div className="form-email form-group ">
                     <label htmlFor="subject">Subject:</label>
                     <br />
-                    <input list="subjects" className="form-control" />
+                    <input list="subjects" className="form-email form-control" />
                   </div>
                 </div>
                 <div className="col-lg-12 mb-2">
@@ -119,7 +120,7 @@ class Hero extends React.Component {
                     <textarea
                       name="message"
                       id="Message"
-                      className="form-control"
+                      className="form-email form-control"
                       rows="4"
                       placeholder="Enter messages"
                     ></textarea>
@@ -136,6 +137,7 @@ class Hero extends React.Component {
           </div>
         </div>
       </div>
+      
     );
   }
 }

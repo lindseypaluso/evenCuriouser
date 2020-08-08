@@ -3,10 +3,14 @@ const { Sequelize } = require("../models");
 
 module.exports = {
     findAll: function (req, res) {
-        db.Assignment
-            .findAll({ include: {model: db.User},})
-            .then((dbGrades) => {res.json(dbGrades);
-            })
+        db.Users_Assignments
+            .findAll({})
+            .then(dbUserAssignment => res.json(dbUserAssignment))
+            .catch(err => res.status(422).json(err));
+        // db.Assignment
+        //     .findAll({ include: {model: db.User},})
+        //     .then((dbGrades) => {res.json(dbGrades);
+        //     })
     },
     findUser: function (req, res){
         db.Users_Assignments

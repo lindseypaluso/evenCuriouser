@@ -231,15 +231,15 @@ a:hover {
 /* Styling for the Chat board */
 .message-cont {
    margin-top: 10vh;
-   margin-bottom: 10vh;
+   margin-bottom: 5vh;
 }
 
 .email-cont {
     box-shadow: 2px 2px whitesmoke;
 }
 .chat-card {
-    max-height: 336px;
-    min-height: 336px;
+    max-height: 400px;
+    min-height: 400px;
     overflow-x: scroll;
     position: unset !important;
     padding-bottom: 180px;
@@ -258,7 +258,7 @@ a:hover {
 
 .form-email, .chat{
   background: #fcfcfc !important;
-  border-radius: 5 !important;
+  border-radius: 5px !important;
   padding: 10px !important;
   font-size: 1.2em;
 }
@@ -281,10 +281,15 @@ a:hover {
     overflow-y: scroll;
     overflow-x: scroll;
     max-height: 525px;
+    min-height: 525px;
 }
 
 .assignmentGB {
-    width: auto;
+    min-width: 150px;
+}
+
+.table-head {
+    height: 80px;
 }
 
 .grades {
@@ -292,6 +297,16 @@ a:hover {
     overflow-x: scroll;
 }
 
+.gradebook {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+/*===========================Announcements style============================*/
+
+.announcements {
+    margin-top: 20px;
+}
 
 
 /* @media (min-width: 500px){
