@@ -109,7 +109,7 @@ class Assignments extends Component {
                 <div className="row">
                     <div className="col-2">
                         <button className="btn text-white" id="create-assignment" onClick={this.handleShow}>
-                            <i className="fa fa-plus fa-1x" aria-hidden="true"></i>Create
+                            <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
                         </button>
                     </div>
                     <div className="col-8 text-center">

@@ -6,10 +6,10 @@ class Announcements extends Component {
     return (
       <div className="hero-image">
         <div className="container p-3 rounded">
-          <div className="announcements col-lg-12 col-md-12 col-sm-12 text-black text-center bg-white pt-3 pb-3">
+          <div className="col-lg-12 col-md-12 col-sm-12 text-black text-center bg-white pt-3 pb-3 my-4">
           <h1>Class Announcements</h1>
           <hr />
-          <ul>
+          <ul className="announcements">
             <li className="font-italic font-weight-bold">
               As we prepare to return to school, we are striving for a safe
               return. For more information click below

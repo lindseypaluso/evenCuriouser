@@ -287,7 +287,7 @@ a:hover {
 }
 
 .email-cont {
-    box-shadow: 2px 2px whitesmoke;
+
 }
 .chat-card {
     max-height: 400px;
@@ -296,7 +296,6 @@ a:hover {
     position: unset !important;
     padding-bottom: 180px;
     margin-bottom: 200px;
-    box-shadow: 2px 2px whitesmoke;
 }
 
 .chat-footer{
@@ -305,7 +304,6 @@ a:hover {
     width: 93.5%;
     background-color: #8d46b4;
     color: white;
-    box-shadow: 2px 2px whitesmoke;
     }
 
 .form-email, .chat{
