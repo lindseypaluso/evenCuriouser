@@ -21,13 +21,14 @@ import ClassView from "./views/ClassView";
 import StudentProfile from "./views/StudentProfile";
 import StudentSearch from "./views/StudentSearch";
 import Calendar from "./components/Calendar";
+import Resources from "./components/Resources";
+import Announcements from "./components/Announcements";
 
 // styles
 import "./App.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
-import Announcements from "./components/Announcements";
 
 initFontAwesome();
 
@@ -82,7 +83,8 @@ const App = () => {
             <Route path="/student-search" component={StudentSearch} />
             <Route path="/messages" component={Chat} />
             <Route path="/calendar" component={Calendar} />
-            <Route path="/announcments" component={Announcements} />
+            <Route path="/announcements" component={Announcements} />
+            <Route path="/resources" component={Resources} />
           </Switch>
         </div>
 

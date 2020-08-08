@@ -1,22 +1,34 @@
 const db = require("../models");
+const { Sequelize } = require("../models");
 
 module.exports = {
     findAll: function (req, res) {
-        db.User_Assignments
+        db.Users_Assignments
             .findAll({})
             .then(dbUserAssignment => res.json(dbUserAssignment))
-            .catch(err => res.status (422).json(err));
+            .catch(err => res.status(422).json(err));
+        // db.Assignment
+        //     .findAll({ include: {model: db.User},})
+        //     .then((dbGrades) => {res.json(dbGrades);
+        //     })
     },
-    findByUserID: function(req, res) {
-        db.User_Assignments
-            .findAll({where: { UserID: req.params.UserID } })
+    findUser: function (req, res){
+        db.Users_Assignments
+            .findAll({where: {UserId: req.params.UserId} })
             .then(dbUserAssignment => res.json(dbUserAssignment))
             .catch(err => res.status(422).json(err));
     },
-    findByAssignID: function(req, res) {
-        db.User_Assignments
-            .findAll({where: { AssignmentID: req.params.AssignmentID } })
-            .then(dbUserAssignment => res.json(dbUserAssignment))
-            .catch(err => res.status (422).json(err));
-    }
+
+    // findOneAssingment: function(req, res) {
+    //     db.Assignment.findOne({
+    //         where: {
+    //         id: req.params.id,
+    //         },
+    //         include: {
+    //         model: db.User
+    //         },
+    //     }).then((dbGrades) => {
+    //         res.json(dbGrades);
+    //     })
+    // }    
 }
