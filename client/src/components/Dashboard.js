@@ -86,7 +86,7 @@ class Dashboard extends Component {
           {
             buttonText: "Assignments",
             icon: "fa-users",
-            URL: "/classes"
+            URL: "/assignments"
           },
           {
             buttonText: "Gradebook",
