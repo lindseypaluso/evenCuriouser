@@ -13,7 +13,7 @@ class Assignment extends Component {
                     <td>{this.props.name}</td>
                     <td><a href="#" data-toggle="modal" data-target={"#viewAssignment" + this.props.name}><i
                         className="fa fa-ellipsis-h assignment-toggle" aria-hidden="true"></i></a></td>
-                    <td><a href="#"><i className="fa fa-link assignment-toggle" aria-hidden="true"></i></a></td>
+                    <td><a href={this.props.link}><i className="fa fa-link assignment-toggle" aria-hidden="true"></i></a></td>
                     <td><span id="submitted-amount">3</span>/<span id="class-size">6</span></td>
                     <td>{this.props.due}
                         <a className="dropdown-toggle assignment-toggle" data-toggle="dropdown" href="#"></a>

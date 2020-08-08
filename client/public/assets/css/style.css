@@ -278,7 +278,12 @@ a:hover {
 }
 .assignmentsTable {
     width: 100%;
+    margin-bottom: 75px;
 }
+#inputDescription #inputName {
+    width: 100%;
+}
+
 
 /* Styling for the Chat board */
 .message-cont {
