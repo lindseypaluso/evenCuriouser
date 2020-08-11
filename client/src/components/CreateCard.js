@@ -15,6 +15,7 @@ class CreateCard extends Component {
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInputChange(event) {
@@ -27,6 +28,9 @@ class CreateCard extends Component {
     }
 
     handleSubmit(event) {
+        event.preventDefault();
+        debugger;
+        let vm = this;
         const data = {
             name: this.state.inputName,
             description: this.state.inputDescription,
@@ -35,8 +39,10 @@ class CreateCard extends Component {
             points_available: this.state.inputPoints,
             link: this.state.inputLocation
         }
-        alert(this.state.inputName + " has been created");
+        console.log(data)
         AssignmentsAPI.createAssignment(data).then(function(res) {
+            console.log("response")
+            //vm.state
             console.log(res);
         });
         
