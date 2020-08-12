@@ -30,11 +30,11 @@ class Assignments extends Component {
         return (
             <div className="container main my-5 text-black text-center rounded">
                 <div className="row">
-                    <div className="col-2">
-                        <button className="btn text-white" id="create-assignment" onClick={this.handleShow}>
-                            <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
-                        </button>
-                    </div>
+                
+                    <AssignmentCreate 
+                        topics = {this.state.topics}
+                    />
+                
                     <div className="col-8 text-center">
                         <h5 className="mt-2">Assignments for <span id="class-name">Miss P's 1st Grade</span></h5>
                     </div>
@@ -56,9 +56,7 @@ class Assignments extends Component {
                     />
                 )}
 
-                <CreateCard 
-                    topics = {this.state.topics}
-                />
+                
             </div>
         )
     }

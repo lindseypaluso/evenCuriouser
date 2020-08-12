@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AssignmentsAPI from '../utils/API-assignments';
 import TopicOptions from "./TopicOptions";
-import Modal from 'react-bootstrap-modal';
 // import defaultTransition from 'bootstrap-modal/utils/default-transition';
 
 class AssignmentCreate extends Component {
@@ -12,15 +11,35 @@ class AssignmentCreate extends Component {
             selectTopic: "",
             inputPoints: 0,
             selectDueDate: moment().toDate(),
-            inputLocation: "",
-            open: false
+            inputLocation: ""
         }
         this.handleChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    closeModal = () => this.setState({ open: false })
-
+    handleClose = () => {
+        this.setState({ setShow: false });
+    }
+    handleShow = () => {
+        this.setState({ setShow: true });
+    }
+    // showCreateModal = () => {
+    //     this.setState({ visible: true });
+    // }
+    // handleCancel = () => {
+    //     this.setState({ visible: false });
+    // }
+    // handleCreate = (form) => {
+    //     // ...
+    //     this.setState({ visible: false });
+    //     this.form = form;
+    // }
+    // saveCreateForm = (form) => {
+    //     this.form = form;
+    // }
+    // toggleModal = () => {
+    //     this.setState(prevState => ({ visible: !prevState.visible }));
+    // }
     handleInputChange(event) {
         const target  = event.target;
         const value = target.name === 'create-assignment-title' ? target.checked : target.value;
@@ -45,7 +64,6 @@ class AssignmentCreate extends Component {
         alert(this.state.inputName + " has been created");
         AssignmentsAPI.createAssignment(data).then(function(res) {
             console.log(res);
-            this.setState({ open: false })
         });
         
     }
@@ -53,9 +71,6 @@ class AssignmentCreate extends Component {
     render() {
         return (
             <div>
-                <button className="btn text-white" id="create-assignment" onClick={this.handleShow}>
-                    <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
-                </button>
                 <Modal show={this.setShow} onHide={this.handleClose}>
                     <Modal.Header className="modal-header" closeButton>
                         <Modal.Title>Create Assignment</Modal.Title>
@@ -99,7 +114,7 @@ class AssignmentCreate extends Component {
                                                 name="select-category"
                                                 value={this.state.selectTopic}
                                                 onChange={this.handleInputChange}>
-                                                { this.state.topics.map( element =>
+                                                { this.props.topics.map( element =>
                                                     <TopicOptions 
                                                         topic = {element.topic}
                                                     />
