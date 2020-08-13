@@ -4,14 +4,13 @@ import TopicOptions from "./TopicOptions";
 
 class CreateCard extends Component {
     constructor(props) {
-        super(props);
         this.state = {
             inputName: "",
             inputDescription: "",
             selectTopic: "",
             inputPoints: 0,
             selectDueDate: "",
-            inputLocation: ""
+            inputLocation: "",
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);

@@ -11,7 +11,7 @@ class AssignmentCreate extends Component {
             inputDescription: "",
             selectTopic: "",
             inputPoints: 0,
-            selectDueDate: moment().toDate(),
+            selectDueDate: "",
             inputLocation: "",
             open: false
         }
@@ -22,17 +22,16 @@ class AssignmentCreate extends Component {
     closeModal = () => this.setState({ open: false })
 
     handleInputChange(event) {
-        const target  = event.target;
-        const value = target.name === 'create-assignment-title' ? target.checked : target.value;
-        const name = target.name;
+        const value = event.target.value;
 
         this.setState({
-            [name]: value
+            [event.target.name]: value
         });
         
     }
 
     handleSubmit(event) {
+        event.preventDefault();
         const data = {
             name: this.state.inputName,
             description: this.state.inputDescription,
@@ -41,8 +40,7 @@ class AssignmentCreate extends Component {
             points_available: this.state.inputPoints,
             link: this.state.inputLocation
         }
-        event.preventDefault();
-        alert(this.state.inputName + " has been created");
+
         AssignmentsAPI.createAssignment(data).then(function(res) {
             console.log(res);
             this.setState({ open: false })
@@ -53,12 +51,16 @@ class AssignmentCreate extends Component {
     render() {
         return (
             <div>
-                <button className="btn text-white" id="create-assignment" onClick={this.handleShow}>
+                <button type="button" id="create-assignment">
                     <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
                 </button>
-                <Modal show={this.setShow} onHide={this.handleClose}>
+                <Modal 
+                    show={this.state.open} 
+                    onHide={this.closeModal}
+                    aria-labelledby="ModalHeader"
+                >
                     <Modal.Header className="modal-header" closeButton>
-                        <Modal.Title>Create Assignment</Modal.Title>
+                        <Modal.Title id='ModalHeader'>Create Assignment</Modal.Title>
                     </Modal.Header>
                     <form onSubmit={this.handleSubmit}>
                         <Modal.Body className="modal-body">
@@ -146,7 +148,7 @@ class AssignmentCreate extends Component {
                             </div>
                         </Modal.Body>
                         <Modal.Footer className="modal-footer">
-                            <input onClick={this.handleClose} type="submit" value="Submit"/>
+                            <input onClick={this.handleSubmit} type="submit" value="Submit"/>
                         </Modal.Footer>
                     </form>
                 </Modal>
