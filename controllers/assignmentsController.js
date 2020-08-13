@@ -37,8 +37,8 @@ module.exports = {
                 name: req.body.name,
                 description: req.body.description,
                 topic: req.body.topic,
-                due_date: req.body.date,
-                points_available: req.body.points,
+                due_date: req.body.due_date,
+                points_available: req.body.points_available,
                 link: req.body.link
             })
             .then(dbAssignment => res.json(dbAssignment))
