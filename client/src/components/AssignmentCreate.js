@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import AssignmentsAPI from '../utils/API-assignments';
 import TopicOptions from "./TopicOptions";
-import Modal from 'react-bootstrap-modal';
+import Modal from 'react-bootstrap/Modal';
+// import Modal from 'react-bootstrap-modal';
 // import defaultTransition from 'bootstrap-modal/utils/default-transition';
 
 class AssignmentCreate extends Component {
     constructor(props) {
+        super(props);
         this.state = {
             inputName: "",
             inputDescription: "",
@@ -13,13 +15,14 @@ class AssignmentCreate extends Component {
             inputPoints: 0,
             selectDueDate: "",
             inputLocation: "",
-            open: false
+            show: false
         }
-        this.handleChange = this.handleInputChange.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    closeModal = () => this.setState({ open: false })
+    closeModal = () => this.setState({ show: false })
+    handleShow = () => this.setState({ show: true })
 
     handleInputChange(event) {
         const value = event.target.value;
@@ -29,6 +32,22 @@ class AssignmentCreate extends Component {
         });
         
     }
+        // var name = event.target.value;
+        // var description = event.target.value;
+        // var topic = event.target.value;
+        // var due_date = event.target.value;
+        // var points_available = event.target.value;
+        // var link = event.target.value;
+
+        // this.setState({
+        //     inputName: name,
+        //     inputDescription: description,
+        //     selectTopic: topic,
+        //     inputPoints: points_available,
+        //     selectDueDate: due_date,
+        //     inputLocation: link
+        // });
+
 
     handleSubmit(event) {
         event.preventDefault();
@@ -40,10 +59,10 @@ class AssignmentCreate extends Component {
             points_available: this.state.inputPoints,
             link: this.state.inputLocation
         }
-
-        AssignmentsAPI.createAssignment(data).then(function(res) {
+        var show = this.state.show
+        AssignmentsAPI.createAssignment(data, show).then(function(res) {
             console.log(res);
-            this.setState({ open: false })
+            this.setState({ show: false })
         });
         
     }
@@ -51,11 +70,11 @@ class AssignmentCreate extends Component {
     render() {
         return (
             <div>
-                <button type="button" id="create-assignment">
+                <button type="button" id="create-assignment" onClick={this.handleShow}>
                     <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
                 </button>
                 <Modal 
-                    show={this.state.open} 
+                    show={this.state.show} 
                     onHide={this.closeModal}
                     aria-labelledby="ModalHeader"
                 >
@@ -67,55 +86,56 @@ class AssignmentCreate extends Component {
                             <div className="row mr-1">
                                 <div className="col-md-6 form-line">
                                     <div className="form-group">
-                                        <label htmlFor="create-assignment-title">Assignment Title
+                                        <label htmlFor="inputName">Assignment Title
                                         <br />
                                         <input 
                                             type="text" 
-                                            id="create-assignment-title" 
+                                            id="inputName" 
                                             className="form-control"
-                                            name="create-assignment-title"
+                                            name="inputName"
                                             placeholder="Enter Title" 
                                             value={this.state.inputName}
                                             onChange={this.handleInputChange}/></label>
                                     </div>
                                     <div className="form-group">
-                                        <teaxtarea 
+                                    <label htmlFor="inputDescription">Assignment Description
+                                        <input 
                                             type="text" 
-                                            id="create-assignment-instructions" 
+                                            id="inputDescription" 
                                             className="form-control"
-                                            style="width: 100%; height: 140px;" 
-                                            name="create-assignment-instructions"
+                                            name="inputDescription"
                                             placeholder="Enter Intrustions"
                                             value={this.state.inputDescription}
-                                            onChange={this.handleInputChange}/>
+                                            onChange={this.handleInputChange}/></label>
                                     </div>
                                 </div>
                                 <div className="col-md-6 create-assignment-specifics form-line mb-3">
                                     <div className="row form-group">
                                         <div className="col-sm-6 form-padding-right">
-                                            <label htmlFor="select-category">Category</label>
+                                            <label htmlFor="selectTopic">Category</label>
                                             <br />
                                             <select 
-                                                id="select-category" 
+                                                id="selectTopic" 
                                                 className="form-control" 
-                                                name="select-category"
+                                                name="selectTopic"
                                                 value={this.state.selectTopic}
                                                 onChange={this.handleInputChange}>
-                                                { this.state.topics.map( element =>
+                                                { this.props.topics.map( element =>
                                                     <TopicOptions 
                                                         topic = {element.topic}
+                                                        key = {element.topic}
                                                     />
                                                 )} 
                                             </select>
                                         </div>
                                         <div className="row form-group">
-                                        <label htmlFor="create-assignment-location">Location</label>
+                                        <label htmlFor="inputLocation">Location</label>
                                         <br />
                                             <input 
                                                 type="text" 
-                                                id="create-assignment-location" 
+                                                id="inputLocation" 
                                                 className="form-control"
-                                                name="create-assignment-location" 
+                                                name="inputLocation" 
                                                 placeholder="URL" 
                                                 value={this.state.inputLocation}
                                                 onChange={this.handleInputChange}/>
@@ -124,22 +144,22 @@ class AssignmentCreate extends Component {
                                     </div>
                                     <div className="row form-group">
                                         <div className="col-sm-6">
-                                            <label htmlFor="create-assignment-points">Points</label>
+                                            <label htmlFor="inputPoints">Points</label>
                                             <input 
                                                 type="number" 
-                                                id="create-assignment-points" 
+                                                id="inputPoints" 
                                                 className="form-control"
-                                                name="create-assignment-points" 
+                                                name="inputPoints" 
                                                 value={this.state.inputPoints}
                                                 onChange={this.handleInputChange}/>
                                         </div>
                                         <div className="col-sm-6">
-                                            <label htmlFor="create-assignment-date">Due Date</label>
+                                            <label htmlFor="selectDueDate">Due Date</label>
                                             <input 
                                                 type="date" 
-                                                id="create-assignment-date" 
+                                                id="selectDueDate" 
                                                 className="form-control"
-                                                name="create-assignment-date" 
+                                                name="selectDueDate" 
                                                 value={this.state.selectDueDate}
                                                 onChange={this.handleInputChange}/>
                                         </div>

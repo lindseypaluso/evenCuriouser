@@ -46,6 +46,7 @@ class Assignments extends Component {
                             { this.state.topics.map( element => (
                               <AssignmentsFilter 
                                 topic = {element.topic}
+                                key = {element.topic}
                               />  
                             ))}
                         </ul>
@@ -54,6 +55,7 @@ class Assignments extends Component {
                 { this.state.topics.map( element =>
                     <AssignmentCategory 
                         topic = {element.topic}
+                        key = {element.topic}
                     />
                 )}
 

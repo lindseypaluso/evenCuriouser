@@ -29,7 +29,8 @@ class AssignmentCategory extends Component {
                 topic: assignment.topic,
                 dueDate: assignment.due_date,
                 points: assignment.points,
-                link: assignment.link
+                link: assignment.link,
+                key: assignment.id
             }));
             console.log(assignments);
             this.setState({
@@ -59,6 +60,7 @@ class AssignmentCategory extends Component {
                                 description = {assignment.description}
                                 due = {assignment.dueDate}
                                 link = {assignment.link}
+                                key = {assignment.id}
                             />
                         )}    
                     </tbody>
@@ -67,6 +69,7 @@ class AssignmentCategory extends Component {
                     <AssignmentView 
                         name = {assignment.name}
                         description = {assignment.description}
+                        key = {assignment.id}
                     />
                 )}
                 {this.state.class.map(assignment =>
@@ -76,11 +79,13 @@ class AssignmentCategory extends Component {
                         due = {assignment.dueDate}
                         topic = {assignment.topic}
                         points = {assignment.points}
+                        key = {assignment.id}
                     />
                 )}
                 {this.state.class.map(assignment =>
                     <AssignmentDelete 
                         name = {assignment.name}
+                        key = {assignment.id}
                     />
                 )}
             </div>
