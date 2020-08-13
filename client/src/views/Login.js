@@ -35,8 +35,8 @@ const Login = () => {
       <div className="col-md-6 col-lg-5 col-xl-4 login-display ">
         <div className="login-card card m-auto align-middle shadow">
           <div className="login card-header">
-            <img className="img-fluid" src="./assets/images/curious-bunny.png" alt="EvenCuriouser logo" width="30%" />
-            <h3 className="text-white">EvenCuriouser</h3>
+            <img className="img-fluid" src="./assets/images/curious-logo5.png" alt="EvenCuriouser logo" width="90%" />
+            {/* <h3 className="text-white">EvenCuriouser</h3> */}
           </div>
           <div className="card-body">
             <Button

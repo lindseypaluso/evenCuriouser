@@ -35,12 +35,12 @@ class Hero extends React.Component {
   render() {
     return (
      
-      <div className="container message-cont">
+      <div className="container message-cont my-5">
         <div className="row">
           <div className="col-md-12 col-lg-5">
-            <div className="card chat-card">
+            <div className="card chat-card shadow border-0">
               <div className="card-body">
-                <div className="card-title">
+                <div className="card-title text-center">
                     <h3>Class Chat</h3>
                 </div>
                 <hr />
@@ -54,7 +54,7 @@ class Hero extends React.Component {
                   })}
                 </div>
               </div>
-              <div className="card-footer chat-footer">
+              <div className="card-footer chat-footer shadow">
                 <h4>
                   <UserName />
                 </h4>
@@ -69,7 +69,7 @@ class Hero extends React.Component {
                 <br />
                 <button
                   onClick={this.sendMessage}
-                  className="btn btn-primary btn-chat form-control"
+                  className="btn btn-primary btn-chat form-control border-0"
                 >
                   Send
                 </button>
@@ -77,7 +77,7 @@ class Hero extends React.Component {
             </div>
           </div>
           <div className="col-md-12 col-lg-7">
-            <div className="card email-cont col-12 pt-3">
+            <div className="card email-cont col-12 pt-3 shadow border-0">
               <form action="#">
                 
                 <div className="col-12 text-center">
@@ -127,7 +127,7 @@ class Hero extends React.Component {
                   </div>
                   <button
                     type="submit"
-                    className="btn btn-primary btn-block btn-email"
+                    className="btn btn-primary btn-block btn-email border-0"
                   >
                     Send Email
                   </button>

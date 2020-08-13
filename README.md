@@ -4,9 +4,9 @@
 
 "EvenCuriouser" is a full stack application to help teachers and students have a better teaching and learning experience.
 
-School in 2020, has been hard for everyone involved and jumping from one application to another was a common complaint from teachers, students and parents. 
+School in 2020 has been hard for everyone, and jumping from one application to another was a common complaint from teachers, students and parents. 
 
-This application was designed to try and bring all of the links, assignments, grades, and messaging systems into one centralized location.  Making school, weather in a face to face, virtual, or hybrid seamless and easy for everyone. 
+This application was designed to try and bring all of the links, assignments, grades, and messaging systems into one centralized location.  Making school - whether it's face to face, virtual, or hybrid - seamless and easy for everyone. 
 
 ## Pictures of the Site
 
@@ -51,6 +51,10 @@ This application was designed to try and bring all of the links, assignments, gr
 ## Databases
 
 - [MySQL](https://www.mysql.com/)
+
+## Front-End Design Repo
+
+- [Design Repo](https://github.com/aanielson/evenCurioserTest.git)
 
 # Authors
 

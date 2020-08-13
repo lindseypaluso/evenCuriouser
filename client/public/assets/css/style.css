@@ -278,17 +278,15 @@ a:hover {
 }
 .assignmentsTable {
     width: 100%;
+    margin-bottom: 75px;
 }
+#inputDescription #inputName {
+    width: 100%;
+}
+
 
 /* Styling for the Chat board */
-.message-cont {
-   margin-top: 10vh;
-   margin-bottom: 5vh;
-}
 
-.email-cont {
-    box-shadow: 2px 2px whitesmoke;
-}
 .chat-card {
     max-height: 400px;
     min-height: 400px;
@@ -296,7 +294,8 @@ a:hover {
     position: unset !important;
     padding-bottom: 180px;
     margin-bottom: 200px;
-    box-shadow: 2px 2px whitesmoke;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .chat-footer{
@@ -305,7 +304,6 @@ a:hover {
     width: 93.5%;
     background-color: #8d46b4;
     color: white;
-    box-shadow: 2px 2px whitesmoke;
     }
 
 .form-email, .chat{
