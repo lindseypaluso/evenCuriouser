@@ -1,56 +1,57 @@
 import React, { Component } from "react";
 import AssignmentsAPI from '../utils/API-assignments';
 import TopicOptions from "./TopicOptions";
-import Modal from 'react-bootstrap/Modal';
-// import Modal from 'react-bootstrap-modal';
 // import defaultTransition from 'bootstrap-modal/utils/default-transition';
 
 class AssignmentCreate extends Component {
     constructor(props) {
-        super(props);
         this.state = {
             inputName: "",
             inputDescription: "",
             selectTopic: "",
             inputPoints: 0,
-            selectDueDate: "",
-            inputLocation: "",
-            show: false
+            selectDueDate: moment().toDate(),
+            inputLocation: ""
         }
-        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    closeModal = () => this.setState({ show: false })
-    handleShow = () => this.setState({ show: true })
-
+    handleClose = () => {
+        this.setState({ setShow: false });
+    }
+    handleShow = () => {
+        this.setState({ setShow: true });
+    }
+    // showCreateModal = () => {
+    //     this.setState({ visible: true });
+    // }
+    // handleCancel = () => {
+    //     this.setState({ visible: false });
+    // }
+    // handleCreate = (form) => {
+    //     // ...
+    //     this.setState({ visible: false });
+    //     this.form = form;
+    // }
+    // saveCreateForm = (form) => {
+    //     this.form = form;
+    // }
+    // toggleModal = () => {
+    //     this.setState(prevState => ({ visible: !prevState.visible }));
+    // }
     handleInputChange(event) {
-        const value = event.target.value;
+        const target  = event.target;
+        const value = target.name === 'create-assignment-title' ? target.checked : target.value;
+        const name = target.name;
 
         this.setState({
-            [event.target.name]: value
+            [name]: value
         });
         
     }
-        // var name = event.target.value;
-        // var description = event.target.value;
-        // var topic = event.target.value;
-        // var due_date = event.target.value;
-        // var points_available = event.target.value;
-        // var link = event.target.value;
-
-        // this.setState({
-        //     inputName: name,
-        //     inputDescription: description,
-        //     selectTopic: topic,
-        //     inputPoints: points_available,
-        //     selectDueDate: due_date,
-        //     inputLocation: link
-        // });
-
 
     handleSubmit(event) {
-        event.preventDefault();
         const data = {
             name: this.state.inputName,
             description: this.state.inputDescription,
@@ -59,10 +60,10 @@ class AssignmentCreate extends Component {
             points_available: this.state.inputPoints,
             link: this.state.inputLocation
         }
-        var show = this.state.show
-        AssignmentsAPI.createAssignment(data, show).then(function(res) {
+        event.preventDefault();
+        alert(this.state.inputName + " has been created");
+        AssignmentsAPI.createAssignment(data).then(function(res) {
             console.log(res);
-            this.setState({ show: false })
         });
         
     }
@@ -70,72 +71,64 @@ class AssignmentCreate extends Component {
     render() {
         return (
             <div>
-                <button type="button" id="create-assignment" onClick={this.handleShow}>
-                    <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
-                </button>
-                <Modal 
-                    show={this.state.show} 
-                    onHide={this.closeModal}
-                    aria-labelledby="ModalHeader"
-                >
+                <Modal show={this.setShow} onHide={this.handleClose}>
                     <Modal.Header className="modal-header" closeButton>
-                        <Modal.Title id='ModalHeader'>Create Assignment</Modal.Title>
+                        <Modal.Title>Create Assignment</Modal.Title>
                     </Modal.Header>
                     <form onSubmit={this.handleSubmit}>
                         <Modal.Body className="modal-body">
                             <div className="row mr-1">
                                 <div className="col-md-6 form-line">
                                     <div className="form-group">
-                                        <label htmlFor="inputName">Assignment Title
+                                        <label htmlFor="create-assignment-title">Assignment Title
                                         <br />
                                         <input 
                                             type="text" 
-                                            id="inputName" 
+                                            id="create-assignment-title" 
                                             className="form-control"
-                                            name="inputName"
+                                            name="create-assignment-title"
                                             placeholder="Enter Title" 
                                             value={this.state.inputName}
                                             onChange={this.handleInputChange}/></label>
                                     </div>
                                     <div className="form-group">
-                                    <label htmlFor="inputDescription">Assignment Description
-                                        <input 
+                                        <teaxtarea 
                                             type="text" 
-                                            id="inputDescription" 
+                                            id="create-assignment-instructions" 
                                             className="form-control"
-                                            name="inputDescription"
+                                            style="width: 100%; height: 140px;" 
+                                            name="create-assignment-instructions"
                                             placeholder="Enter Intrustions"
                                             value={this.state.inputDescription}
-                                            onChange={this.handleInputChange}/></label>
+                                            onChange={this.handleInputChange}/>
                                     </div>
                                 </div>
                                 <div className="col-md-6 create-assignment-specifics form-line mb-3">
                                     <div className="row form-group">
                                         <div className="col-sm-6 form-padding-right">
-                                            <label htmlFor="selectTopic">Category</label>
+                                            <label htmlFor="select-category">Category</label>
                                             <br />
                                             <select 
-                                                id="selectTopic" 
+                                                id="select-category" 
                                                 className="form-control" 
-                                                name="selectTopic"
+                                                name="select-category"
                                                 value={this.state.selectTopic}
                                                 onChange={this.handleInputChange}>
                                                 { this.props.topics.map( element =>
                                                     <TopicOptions 
                                                         topic = {element.topic}
-                                                        key = {element.topic}
                                                     />
                                                 )} 
                                             </select>
                                         </div>
                                         <div className="row form-group">
-                                        <label htmlFor="inputLocation">Location</label>
+                                        <label htmlFor="create-assignment-location">Location</label>
                                         <br />
                                             <input 
                                                 type="text" 
-                                                id="inputLocation" 
+                                                id="create-assignment-location" 
                                                 className="form-control"
-                                                name="inputLocation" 
+                                                name="create-assignment-location" 
                                                 placeholder="URL" 
                                                 value={this.state.inputLocation}
                                                 onChange={this.handleInputChange}/>
@@ -144,22 +137,22 @@ class AssignmentCreate extends Component {
                                     </div>
                                     <div className="row form-group">
                                         <div className="col-sm-6">
-                                            <label htmlFor="inputPoints">Points</label>
+                                            <label htmlFor="create-assignment-points">Points</label>
                                             <input 
                                                 type="number" 
-                                                id="inputPoints" 
+                                                id="create-assignment-points" 
                                                 className="form-control"
-                                                name="inputPoints" 
+                                                name="create-assignment-points" 
                                                 value={this.state.inputPoints}
                                                 onChange={this.handleInputChange}/>
                                         </div>
                                         <div className="col-sm-6">
-                                            <label htmlFor="selectDueDate">Due Date</label>
+                                            <label htmlFor="create-assignment-date">Due Date</label>
                                             <input 
                                                 type="date" 
-                                                id="selectDueDate" 
+                                                id="create-assignment-date" 
                                                 className="form-control"
-                                                name="selectDueDate" 
+                                                name="create-assignment-date" 
                                                 value={this.state.selectDueDate}
                                                 onChange={this.handleInputChange}/>
                                         </div>
@@ -168,7 +161,7 @@ class AssignmentCreate extends Component {
                             </div>
                         </Modal.Body>
                         <Modal.Footer className="modal-footer">
-                            <input onClick={this.handleSubmit} type="submit" value="Submit"/>
+                            <input onClick={this.handleClose} type="submit" value="Submit"/>
                         </Modal.Footer>
                     </form>
                 </Modal>

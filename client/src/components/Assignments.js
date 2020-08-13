@@ -6,6 +6,7 @@ import AssignmentsFilter from "./AssignmentsFilter.js";
 //dropdown topics selector within create modal
 import TopicOptions from "./TopicOptions";
 import AssignmentsAPI from '../utils/API-assignments';
+import AssignmentCreate from './AssignmentCreate';
 import CreateCard from "./CreateCard.js";
 
 
@@ -30,11 +31,11 @@ class Assignments extends Component {
         return (
             <div className="container main my-5 text-black text-center rounded">
                 <div className="row">
-                    <div className="col-2">
-                        <button className="btn text-white" id="create-assignment" onClick={this.handleShow}>
-                            <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
-                        </button>
-                    </div>
+                
+                    <AssignmentCreate 
+                        topics = {this.state.topics}
+                    />
+                
                     <div className="col-8 text-center">
                         <h5 className="mt-2">Assignments for <span id="class-name">Miss P's 1st Grade</span></h5>
                     </div>
@@ -45,6 +46,7 @@ class Assignments extends Component {
                             { this.state.topics.map( element => (
                               <AssignmentsFilter 
                                 topic = {element.topic}
+                                key = {element.topic}
                               />  
                             ))}
                         </ul>
@@ -53,12 +55,11 @@ class Assignments extends Component {
                 { this.state.topics.map( element =>
                     <AssignmentCategory 
                         topic = {element.topic}
+                        key = {element.topic}
                     />
                 )}
 
-                <CreateCard 
-                    topics = {this.state.topics}
-                />
+                
             </div>
         )
     }
