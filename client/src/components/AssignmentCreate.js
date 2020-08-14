@@ -60,7 +60,7 @@ class AssignmentCreate extends Component {
             link: this.state.inputLocation
         }
         var show = this.state.show
-        AssignmentsAPI.createAssignment(data, show).then(function(res) {
+        AssignmentsAPI.createAssignment(data, show).then((res) => {
             console.log(res);
             this.setState({ show: false })
         });

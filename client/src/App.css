@@ -33,3 +33,9 @@
 .result-block-container .result-block {
   opacity: 1;
 }
+
+/* @media (max-width: 805px) {
+.navbar-lp .navbar-toggler {
+    display: none !important;
+}
+} */
