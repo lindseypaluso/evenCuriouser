@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class AssignmentView extends Component {
     render() {
-        return (
+        return ( 
             <div id={"viewAssignment" + this.props.name} className="modal fade" role="dialog">
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content">

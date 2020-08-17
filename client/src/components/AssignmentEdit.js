@@ -10,7 +10,7 @@ class AssignmentEdit extends Component {
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5>Update Assignment</h5>
+                            <h5>Update Assignment</h5> 
                             <button type="button" className="btn p-0 m-0" id="modal-button" data-dismiss="modal">X</button>
                         </div>
                         <form>

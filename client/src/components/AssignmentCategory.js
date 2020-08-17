@@ -59,35 +59,13 @@ class AssignmentCategory extends Component {
                                 name = {assignment.name}
                                 description = {assignment.description}
                                 due = {assignment.dueDate}
+                                points = {assignment.points}
                                 link = {assignment.link}
                                 key = {assignment.id}
                             />
                         )}    
                     </tbody>
                 </table>
-                {this.state.class.map(assignment =>
-                    <AssignmentView 
-                        name = {assignment.name}
-                        description = {assignment.description}
-                        key = {assignment.id}
-                    />
-                )}
-                {this.state.class.map(assignment =>
-                    <AssignmentEdit 
-                        name = {assignment.name}
-                        description = {assignment.description}
-                        due = {assignment.dueDate}
-                        topic = {assignment.topic}
-                        points = {assignment.points}
-                        key = {assignment.id}
-                    />
-                )}
-                {this.state.class.map(assignment =>
-                    <AssignmentDelete 
-                        name = {assignment.name}
-                        key = {assignment.id}
-                    />
-                )}
             </div>
         )
     }
