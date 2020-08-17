@@ -3,8 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import AssignmentsAPI from '../utils/API-assignments';
 import TopicOptions from "./TopicOptions";
 
-//still need to adjust where table is created so that a location link is passed in
-    //this will fit into the 3rd col
 //also, once users are attached, and a boolean is added to the table for submissions, 
     //that will be displayed in the 4th col
 
@@ -26,7 +24,7 @@ class Assignment extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleEditSubmit = this.handleEditSubmit.bind(this);
     }
-    
+
     closeViewModal = () => this.setState({ showView: false })
     handleViewShow = () => this.setState({ showView: true })
 
@@ -45,10 +43,30 @@ class Assignment extends Component {
     }
 
     handleEditSubmit(event) {
-        
+        event.preventDefault();
+        const id = this.props.key;
+        const data = {
+            name: this.state.inputName,
+            description: this.state.inputDescription,
+            topic: this.state.selectTopic,
+            due_date: this.state.selectDueDate,
+            points_available: this.state.inputPoints,
+            link: this.state.inputLocation
+        }
+        var showEdit = this.state.showEdit
+        AssignmentsAPI.updateAssignment(id, data, showEdit).then((res) => {
+            console.log(res);
+            this.setState({ showEdit: false })
+        });
     }
+
     handleDeleteSubmit(event) {
-        
+        event.preventDefault();
+        const id = this.props.key;
+        AssignmentsAPI.removeAssignment(id).then((res) => {
+            console.log(res);
+            this.setState({ showDelete: false })
+        });
     }
     
     render() {

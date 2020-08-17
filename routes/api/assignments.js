@@ -18,11 +18,11 @@ router
   .post(assignmentsController.create)
 
 router
-  .route("/update-assignment/:name")
+  .route("/update-assignment/:id")
   .put(assignmentsController.update)
 
 router
-  .route("/remove-assignment/:name")
+  .route("/remove-assignment/:id")
   .delete(assignmentsController.remove)
 
   router
