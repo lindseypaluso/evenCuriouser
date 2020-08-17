@@ -54,6 +54,7 @@ class Assignments extends Component {
                 </div>
                 { this.state.topics.map( element =>
                     <AssignmentCategory 
+                        topics = {this.state.topics}
                         topic = {element.topic}
                         key = {element.topic}
                     />

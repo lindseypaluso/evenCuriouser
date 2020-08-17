@@ -33,6 +33,13 @@ class Assignment extends Component {
 
     closeDeleteModal = () => this.setState({ showDelete: false })
     handleDeleteShow = () => this.setState({ showDelete: true })
+
+    closeDeleteModal = () => this.setState({ 
+        showEdit: true,
+        showDelete: false         
+    })
+
+
     
     handleInputChange(event) {
         const value = event.target.value;
@@ -211,7 +218,7 @@ class Assignment extends Component {
                         <h5><span id="modal-assignment-name">{this.props.name}</span></h5>
                     </Modal.Body>
                     <Modal.Footer className="modal-footer">
-                        <button className="btn float-right btnSubmit" onClick={this.handleEditShow}>Edit</button>
+                        <button className="btn float-right btnSubmit" onClick={this.closeDeleteOpenEdit}>Edit</button>
                         <input onClick={this.handleDeleteSubmit} type="submit" value="Submit"/>
                     </Modal.Footer>
                 </Modal>

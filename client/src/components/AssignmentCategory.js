@@ -3,10 +3,6 @@ import React, { Component } from "react";
 import Assignment from "./Assignment.js";
 //routes for pulling info from db
 import AssignmentsAPI from '../utils/API-assignments';
-//components for CRUD modals for each assignment
-import AssignmentView from "./AssignmentView.js";
-import AssignmentEdit from "./AssignmentView.js";
-import AssignmentDelete from "./AssignmentView.js";
 
 class AssignmentCategory extends Component {
     
@@ -56,6 +52,7 @@ class AssignmentCategory extends Component {
                     <tbody>
                         {this.state.class.map(assignment =>
                             <Assignment 
+                                topics = {this.props.topics}
                                 name = {assignment.name}
                                 description = {assignment.description}
                                 due = {assignment.dueDate}
