@@ -26,7 +26,7 @@ class AssignmentCategory extends Component {
                 dueDate: assignment.due_date,
                 points: assignment.points,
                 link: assignment.link,
-                key: assignment.id
+                id: assignment.id
             }));
             console.log(assignments);
             this.setState({
@@ -59,6 +59,7 @@ class AssignmentCategory extends Component {
                                 points = {assignment.points}
                                 link = {assignment.link}
                                 key = {assignment.id}
+                                id = {assignment.id}
                             />
                         )}    
                     </tbody>

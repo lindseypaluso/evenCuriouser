@@ -19,7 +19,9 @@ router
 
 router
   .route("/update-assignment/:id")
-  .put(assignmentsController.update)
+  .put(assignmentsController.update(
+    
+  ))
 
 router
   .route("/remove-assignment/:id")

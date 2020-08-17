@@ -48,16 +48,26 @@ module.exports = {
         db.Assignment
             .destroy({
                 where: {
-                    name: req.params.name,
-                },
+                    id: req.params.id
+                }
             })
             .then(dbAssignment => res.json(dbAssignment))
             .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
-      db.Assignment
-        .findOneAndUpdate({ name: req.params.name }, req.body)
-        .then(dbAssignment => res.json(dbAssignment))
-        .catch(err => res.status(422).json(err));
+        db.Assignment
+            .update(
+                {
+                    name: req.body.name,
+                    description: req.body.description,
+                    topic: req.body.topic,
+                    due_date: req.body.due_date,
+                    points_available: req.body.points_available,
+                    link: req.body.link
+                },
+                {where: req.params.id} 
+            )
+            .then(dbAssignment => res.json(dbAssignment))
+            .catch(err => res.status(422).json(err));
     },
 };
