@@ -76,66 +76,83 @@ class Hero extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-md-12 col-lg-7">
-            <div className="card email-cont col-12 pt-3 shadow border-0">
-              <form action="#">
-                
-                <div className="col-12 text-center">
-                  <h3>Email Your Teacher</h3>
-                  <hr />
-                </div>
-                <div className="d-flex">
-                  <div className="col-lg-6">
-                    <div className="form-email form-group ">
-                      <label htmlFor="name">Name:</label>
-                      <input
-                        type="text"
-                        className="form-email form-control"
-                        placeholder="Enter name"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="form-email form-group ">
-                      <label htmlFor="email">Email:</label>
-                      <input
-                        type="email"
-                        className="form-email form-control"
-                        placeholder="Enter email"
-                        id="email"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12 ">
-                  <div className="form-email form-group ">
-                    <label htmlFor="subject">Subject:</label>
-                    <br />
-                    <input list="subjects" className="form-email form-control" />
-                  </div>
-                </div>
-                <div className="col-lg-12 mb-2">
-                  <div className="form-email form-group ">
-                    <label htmlFor="message">Messages:</label>
-                    <textarea
-                      name="message"
-                      id="Message"
-                      className="form-email form-control"
-                      rows="4"
-                      placeholder="Enter messages"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn btn-primary btn-block btn-email border-0"
-                  >
-                    Send Email
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+          {/* <div className="col-md-12 col-lg-7">
+            <div className="card email-cont col-12 pt-3 shadow border-0"> */}
+              {/* <form action="mailto:evencuriouser@gmail.com"> */}
+              <p>Contact Me</p>
+<div>
+<form action="/action_page.php">
+<label>First Name</label>
+<input type="text"id="fname"name="firstname"placeholder="Your name.."/>
+<label>Last Name</label>
+<input type="text"id="lname" name="lastname" placeholder="Your last name.."/>
+
+
+<label>Email</label>
+<input type="email"id="email"name="email"placeholder="Your email"/>
+
+
+<label>Subject</label>
+<textarea id="subject"name="subject"placeholder="Write something.."></textarea>
+<input type="submit"value="Submit"/>
+</form>
+</div>
+              {/* //   <div className="col-12 text-center">
+              //     <h3>Email Your Teacher</h3>
+              //     <hr />
+              //   </div>
+              //   <div className="d-flex">
+              //     <div className="col-lg-6">
+              //       <div className="form-email form-group ">
+              //         <label htmlFor="name">Name:</label>
+              //         <input */}
+              {/* //           type="text"
+              //           className="form-email form-control"
+              //           placeholder="Enter name"
+              //         />
+              //       </div>
+              //     </div>
+              //     <div className="col-lg-6">
+              //       <div className="form-email form-group ">
+              //         <label htmlFor="email">Email:</label>
+              //         <input
+              //           type="email"
+              //           className="form-email form-control"
+              //           placeholder="Enter email"
+              //           id="email"
+              //         />
+              //       </div>
+              //     </div>
+              //   </div>
+              //   <div className="col-lg-12 ">
+              //     <div className="form-email form-group ">
+              //       <label htmlFor="subject">Subject:</label>
+              //       <br />
+              //       <input list="subjects" className="form-email form-control" />
+              //     </div>
+              //   </div>
+              //   <div className="col-lg-12 mb-2">
+              //     <div className="form-email form-group ">
+              //       <label htmlFor="message">Messages:</label>
+              //       <textarea
+              //         name="message"
+              //         id="Message"
+              //         className="form-email form-control"
+              //         rows="4"
+              //         placeholder="Enter messages"
+              //       ></textarea>
+              //     </div>
+              //     <button
+              //       type="submit"
+              //       className="btn btn-primary btn-block btn-email border-0"
+              //     >
+              //       Send Email
+              //     </button>
+              //   </div>
+              // </form>
+        //     </div>
+        //   </div> */}
+        </div> 
       </div>
       
     );
