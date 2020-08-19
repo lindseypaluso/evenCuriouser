@@ -58,14 +58,19 @@ module.exports = {
         db.Assignment
             .update(
                 {
-                    name: req.body.name,
-                    description: req.body.description,
-                    topic: req.body.topic,
-                    due_date: req.body.due_date,
-                    points_available: req.body.points_available,
-                    link: req.body.link
+                    default: true
                 },
-                {where: req.params.id} 
+                {
+                    name: req.params.name,
+                    description: req.params.description,
+                    topic: req.params.topic,
+                    due_date: req.params.due_date,
+                    points_available: req.params.points_available,
+                    link: req.params.link
+                },
+                {where: 
+                    {id: req.params.id}
+                } 
             )
             .then(dbAssignment => res.json(dbAssignment))
             .catch(err => res.status(422).json(err));
