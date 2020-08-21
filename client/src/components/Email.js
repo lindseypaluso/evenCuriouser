@@ -17,7 +17,7 @@ class Email extends Component {
   
   handleFormSubmit(e) {
     e.preventDefault();
-    console.log(state);
+    console.log(this.state);
     
   }
 
