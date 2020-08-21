@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 
+
 class Email extends Component {
   constructor(props) {
     super(props);
@@ -13,10 +14,11 @@ class Email extends Component {
       error: null
     };
   }
-
-  handleFormSubmit(event) {
-    event.preventDefault();
-    console.log(this.state);
+  
+  handleFormSubmit(e) {
+    e.preventDefault();
+    console.log(state);
+    
   }
 
   render() {
