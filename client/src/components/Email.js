@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import { response } from "express";
-
 
 class Email extends Component {
   constructor(props) {
@@ -19,23 +17,24 @@ class Email extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    axios({
-      method: "POST",
-      url:"http://localhost:8080/send",
-      data: {
-        name: this.state.name,
-        email: this.state.email,
-        subject: this.state.subject,
-        message: this .state.message
-      }
-      }).then((res) => {
-        if (res.data.msg === "success"){
-          alert('Message Sent.');
-          this.restForm();
-        }else if(res.data.msg === "fail"){
-          alert('Message failed to send.');
-        }
-    })
+    // axios({
+    //   method: "POST",
+    //   url:"http://localhost:8080/api/send/email",
+    //   data: {
+    //     name: this.state.name,
+    //     email: this.state.email,
+    //     subject: this.state.subject,
+    //     message: this .state.message
+    //   }
+    //   }).then((res) => {
+    //     if (res.data.msg === "success"){
+    //       alert('Message Sent.');
+    //       this.resetForm();
+    //     }else if(res.data.msg === "fail"){
+    //       alert('Message failed to send.');
+    //     }
+    // })
+    this.resetForm();
   }
 
   resetForm(){
