@@ -8,6 +8,7 @@ class Hero extends React.Component {
     super(props);
 
     this.state = {
+      username: '',
       message: "",
       messages: [],
     };
@@ -27,6 +28,7 @@ class Hero extends React.Component {
     this.sendMessage = (ev) => {
       ev.preventDefault();
       this.socket.emit("SEND_MESSAGE", {
+        author: this.state.username,
         message: this.state.message,
       });
       this.setState({ message: "" });
@@ -49,16 +51,16 @@ class Hero extends React.Component {
                   {this.state.messages.map((message) => {
                     return (
                       <div>
-                        <UserName />: {message.message}
+                        {message.author}: {message.message}
                       </div>
                     );
                   })}
                 </div>
               </div>
               <div className="card-footer chat-footer shadow">
-                <h4>
-                  <UserName />
-                </h4>
+                
+                <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="chat form-control"/>
+          
                 <br />
                 <input
                   type="text"
