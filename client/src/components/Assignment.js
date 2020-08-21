@@ -36,10 +36,6 @@ class Assignment extends Component {
     closeDeleteModal = () => this.setState({ showDelete: false })
     handleDeleteShow = () => this.setState({ showDelete: true })
 
-    // closeDeleteModal = () => this.setState({ 
-    //     showEdit: true,
-    //     showDelete: false         
-    // })
     refreshPage = () => {
         window.location.reload(false);
     }
@@ -76,10 +72,8 @@ class Assignment extends Component {
         event.preventDefault();
         var id = event.target.value;
         console.log("Id: ", + id);
-        // var showDelete = this.state.showDelete;
         AssignmentsAPI.removeAssignment(id).then((res) => {
             console.log(res);
-            // this.setState({ showDelete: false })
         });
     }
     

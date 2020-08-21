@@ -36,21 +36,7 @@ class AssignmentCreate extends Component {
         });
         
     }
-        // var name = event.target.value;
-        // var description = event.target.value;
-        // var topic = event.target.value;
-        // var due_date = event.target.value;
-        // var points_available = event.target.value;
-        // var link = event.target.value;
 
-        // this.setState({
-        //     inputName: name,
-        //     inputDescription: description,
-        //     selectTopic: topic,
-        //     inputPoints: points_available,
-        //     selectDueDate: due_date,
-        //     inputLocation: link
-        // });
 
 
     handleSubmit(event) {
