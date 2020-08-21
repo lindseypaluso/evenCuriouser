@@ -36,10 +36,10 @@ class Assignment extends Component {
     closeDeleteModal = () => this.setState({ showDelete: false })
     handleDeleteShow = () => this.setState({ showDelete: true })
 
-    closeDeleteModal = () => this.setState({ 
-        showEdit: true,
-        showDelete: false         
-    })
+    // closeDeleteModal = () => this.setState({ 
+    //     showEdit: true,
+    //     showDelete: false         
+    // })
 
     
     handleInputChange(event) {
@@ -71,12 +71,13 @@ class Assignment extends Component {
 
     handleDeleteSubmit(event) {
         event.preventDefault();
-        var id = this.state.id;
+        var id = event.target.value;
         console.log("Id: ", + id);
-        var showDelete = this.state.showDelete;
-        AssignmentsAPI.removeAssignment(id, showDelete).then((res) => {
+        // var showDelete = this.state.showDelete;
+        AssignmentsAPI.removeAssignment(id).then((res) => {
             console.log(res);
-            this.setState({ showDelete: false })
+            // this.setState({ showDelete: false })
+            closeDeleteModal();
         });
     }
     
@@ -224,7 +225,7 @@ class Assignment extends Component {
                         <h5><span id="modal-assignment-name">{this.props.name}</span></h5>
                     </Modal.Body>
                     <Modal.Footer className="modal-footer">
-                        <button onClick={this.handleDeleteSubmit} type="submit" value="Submit">Submit</button>
+                        <button onClick={this.handleDeleteSubmit} type="submit" value={this.state.id}>Submit</button>
                     </Modal.Footer>
                 </Modal>
             </>
