@@ -57,16 +57,16 @@ module.exports = {
     update: function(req, res) {
         db.Assignment
             .update(
+                // {
+                //     default: true
+                // },
                 {
-                    default: true
-                },
-                {
-                    name: req.params.name,
-                    description: req.params.description,
-                    topic: req.params.topic,
-                    due_date: req.params.due_date,
-                    points_available: req.params.points_available,
-                    link: req.params.link
+                    name: req.body.name,
+                    description: req.body.description,
+                    topic: req.body.topic,
+                    due_date: req.body.due_date,
+                    points_available: req.body.points_available,
+                    link: req.body.link
                 },
                 {where: 
                     {id: req.params.id}
