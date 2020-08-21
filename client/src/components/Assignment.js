@@ -40,7 +40,9 @@ class Assignment extends Component {
     //     showEdit: true,
     //     showDelete: false         
     // })
-
+    refreshPage = () => {
+        window.location.reload(false);
+    }
     
     handleInputChange(event) {
         var value = event.target.value;
@@ -66,6 +68,7 @@ class Assignment extends Component {
         AssignmentsAPI.updateAssignment(id, data, showEdit).then((res) => {
             console.log(res);
             this.setState({ showEdit: false })
+            this.refreshPage();
         });
     }
 
@@ -77,7 +80,6 @@ class Assignment extends Component {
         AssignmentsAPI.removeAssignment(id).then((res) => {
             console.log(res);
             // this.setState({ showDelete: false })
-            closeDeleteModal();
         });
     }
     
@@ -218,14 +220,14 @@ class Assignment extends Component {
                     show={this.state.showDelete} 
                     onHide={this.closeDeleteModal}
                     aria-labelledby="ModalHeader">
-                    <Modal.Header className="modal-header" closeButton>
+                    <Modal.Header className="modal-header" onClick={()=>window.location.reload(false)} closeButton>
                         <Modal.Title id='DeleteModalHeader'><h3>Are you sure you want to delete this assignment?</h3></Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="modal-body">
                         <h5><span id="modal-assignment-name">{this.props.name}</span></h5>
                     </Modal.Body>
                     <Modal.Footer className="modal-footer">
-                        <button onClick={this.handleDeleteSubmit} type="submit" value={this.state.id}>Submit</button>
+                        <button onClick={this.handleDeleteSubmit} type="submit" value={this.state.id} >Submit</button>
                     </Modal.Footer>
                 </Modal>
             </>

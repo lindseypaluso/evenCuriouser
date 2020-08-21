@@ -24,6 +24,10 @@ class AssignmentCreate extends Component {
     closeModal = () => this.setState({ show: false })
     handleShow = () => this.setState({ show: true })
 
+    refreshPage = () => {
+        window.location.reload(false);
+    }
+
     handleInputChange(event) {
         const value = event.target.value;
 
@@ -63,6 +67,7 @@ class AssignmentCreate extends Component {
         AssignmentsAPI.createAssignment(data, show).then((res) => {
             console.log(res);
             this.setState({ show: false })
+            this.refreshPage();
         });
         
     }
