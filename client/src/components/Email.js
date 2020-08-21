@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import { response } from "express";
 
 
 class Email extends Component {
@@ -18,13 +19,33 @@ class Email extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    
+    axios({
+      method: "POST",
+      url:"http://localhost:8080/send",
+      data: {
+        name: this.state.name,
+        email: this.state.email,
+        subject: this.state.subject,
+        message: this .state.message
+      }
+      }).then((res) => {
+        if (res.data.msg === "success"){
+          alert('Message Sent.');
+          this.restForm();
+        }else if(res.data.msg === "fail"){
+          alert('Message failed to send.');
+        }
+    })
+  }
+
+  resetForm(){
+    document.getElementById("contact-form").reset();
   }
 
   render() {
     return (
       <div className="card email-cont col-12 pt-3 shadow border-0">
-        <form action="#">
+        <form id="contact-form" action="#">
           <div className="col-12 text-center">
             <h3>Email Your Teacher</h3>
             <hr />
