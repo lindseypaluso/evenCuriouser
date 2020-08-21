@@ -3,10 +3,6 @@ import React, { Component } from "react";
 import Assignment from "./Assignment.js";
 //routes for pulling info from db
 import AssignmentsAPI from '../utils/API-assignments';
-//components for CRUD modals for each assignment
-import AssignmentView from "./AssignmentView.js";
-import AssignmentEdit from "./AssignmentView.js";
-import AssignmentDelete from "./AssignmentView.js";
 
 class AssignmentCategory extends Component {
     
@@ -30,7 +26,7 @@ class AssignmentCategory extends Component {
                 dueDate: assignment.due_date,
                 points: assignment.points,
                 link: assignment.link,
-                key: assignment.id
+                id: assignment.id
             }));
             console.log(assignments);
             this.setState({
@@ -56,38 +52,18 @@ class AssignmentCategory extends Component {
                     <tbody>
                         {this.state.class.map(assignment =>
                             <Assignment 
+                                topics = {this.props.topics}
                                 name = {assignment.name}
                                 description = {assignment.description}
                                 due = {assignment.dueDate}
+                                points = {assignment.points}
                                 link = {assignment.link}
                                 key = {assignment.id}
+                                id = {assignment.id}
                             />
                         )}    
                     </tbody>
                 </table>
-                {this.state.class.map(assignment =>
-                    <AssignmentView 
-                        name = {assignment.name}
-                        description = {assignment.description}
-                        key = {assignment.id}
-                    />
-                )}
-                {this.state.class.map(assignment =>
-                    <AssignmentEdit 
-                        name = {assignment.name}
-                        description = {assignment.description}
-                        due = {assignment.dueDate}
-                        topic = {assignment.topic}
-                        points = {assignment.points}
-                        key = {assignment.id}
-                    />
-                )}
-                {this.state.class.map(assignment =>
-                    <AssignmentDelete 
-                        name = {assignment.name}
-                        key = {assignment.id}
-                    />
-                )}
             </div>
         )
     }

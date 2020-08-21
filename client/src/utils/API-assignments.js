@@ -16,10 +16,10 @@ export default {
     createAssignment: function (body) {
         return axios.post("/api/assignments/new-assignment", body);
     },
-    updateAssignment: function (name, body) {
-        return axios.put("/api/assignments/update-assignment" + name, body);
+    updateAssignment: function (id, body) {
+        return axios.put("/api/assignments/update-assignment/" + id, body);
     },
-    removeAssignment: function (name) {
-        return axios.delete("api/assignments/remove-assignment/" + name)
+    removeAssignment: function (id) {
+        return axios.delete("api/assignments/remove-assignment/" + id)
     }
 };

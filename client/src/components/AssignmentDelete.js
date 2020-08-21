@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class AssignmentDelete extends Component {
     render() {
-        return (
+        return ( 
             <div id={"deleteAssignment" + this.props.name} className="modal fade" role="dialog">
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content">
