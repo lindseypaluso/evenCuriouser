@@ -15,7 +15,7 @@ class Email extends React.Component {
             e.preventDefault();
             axios({
                 method: "POST",
-                url: "http://localhost:8080/api/send/send",
+                url: "http://localhost:8080/api/email/send",
                 data:{
                     name: this.state.name,
                     email: this.state.email,
