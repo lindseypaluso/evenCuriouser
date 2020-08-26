@@ -61,7 +61,7 @@ class AssignmentCreate extends Component {
     render() {
         return (
             <div>
-                <button type="button" id="create-assignment" onClick={this.handleShow}>
+                <button class="btn text-white ml-3" type="button" id="create-assignment" onClick={this.handleShow}>
                     <i className="fa fa-plus fa-1x pr-2" aria-hidden="true"></i>Create
                 </button>
                 <Modal 
@@ -119,9 +119,9 @@ class AssignmentCreate extends Component {
                                                 )} 
                                             </select>
                                         </div>
-                                        <div className="row form-group">
-                                        <label htmlFor="inputLocation">Location</label>
-                                        <br />
+                                        <div className="col-sm-6">
+                                            <label htmlFor="inputLocation">Location</label>
+                                            <br />
                                             <input 
                                                 type="text" 
                                                 id="inputLocation" 

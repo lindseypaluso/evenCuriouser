@@ -163,18 +163,19 @@ class Assignment extends Component {
                                                     )} 
                                                 </select>
                                             </div>
-                                            <div className="row form-group">
-                                            <label htmlFor="inputLocation">Location</label>
-                                            <br />
-                                                <input 
-                                                    type="text" 
-                                                    id="inputLocation" 
-                                                    className="form-control"
-                                                    name="inputLocation" 
-                                                    placeholder={this.props.link} 
-                                                    value={this.state.inputLocation}
-                                                    onChange={this.handleInputChange}/>
+                                            <div className="col-sm-6">
+                                                <label htmlFor="inputLocation">Location</label>
+                                                <br />
+                                                    <input 
+                                                        type="text" 
+                                                        id="inputLocation" 
+                                                        className="form-control"
+                                                        name="inputLocation" 
+                                                        placeholder={this.props.link} 
+                                                        value={this.state.inputLocation}
+                                                        onChange={this.handleInputChange}/>
 
+                                                
                                             </div>
                                         </div>
                                         <div className="row form-group">
