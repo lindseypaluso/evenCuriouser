@@ -11,6 +11,7 @@ This application was designed to try and bring all of the links, assignments, gr
 ## Pictures of the Site
 
 [EvenCuriouser](https://even-curiouser.herokuapp.com/)
+[Teacher Perspective Demo](https://youtu.be/etqJMtu9AgA)
 
 ![Alt](./readme.assets/login.png)
 ![Alt](./readme.assets/dashboard.png)
