@@ -1,5 +1,4 @@
-  
 module.exports = {
-    USER: 'maybelle.baumbach86@ethereal.email', 
-    PASS: 'YsmJd8wCwK77ZKpBbm'
+    USER: 'evencuriouser@gmail.com', 
+    PASS: 'j6K8WZ9aInMJYfGy'
 };
