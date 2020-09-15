@@ -72,7 +72,7 @@ class Hero extends React.Component {
                 <br />
                 <button
                   onClick={this.sendMessage}
-                  className="btn btn-primary btn-chat form-control border-0"
+                  className="btn btn-primary btn-chat form-control"
                 >
                   Send
                 </button>
