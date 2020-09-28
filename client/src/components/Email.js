@@ -80,7 +80,7 @@ class Email extends React.Component {
                   <input
                     list="subjects"
                     id="subject"
-                    placeholder="subject"
+                    placeholder="Subject"
                     className="form-email form-control"
                     value={this.state.subject}
                     onChange={(e) => this.setState({ subject: e.target.value })}
@@ -100,7 +100,7 @@ class Email extends React.Component {
                     onChange={(e) => this.setState({ message: e.target.value })}
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary btn-email form-control">Send</button>
               </div>
             </form>
           </div> 

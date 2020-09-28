@@ -2,6 +2,20 @@ import React, { Component } from "react";
 import AssignmentsAPI from "../utils/API-assignments";
 import UserAPI from "../utils/API-students";
 import UserAssignmentAPI from "../utils/API-user_assignments";
+const sum = (input) => {
+    if (toString.call(input) !== '[object Array]'){
+      return false;
+    } else {
+      let total = 0
+      for(let i = 0; i < input.length; i++){
+        if(isNaN(input[i])){
+          continue;
+        }
+        total += Number(input[i]);
+      }
+      return total;
+    }
+  };
 
 class Gradebook extends Component {
   constructor(props) {
@@ -52,6 +66,8 @@ class Gradebook extends Component {
       });
     });
   }
+
+  
 
   render() {
     return (
@@ -127,17 +143,17 @@ class Gradebook extends Component {
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>71.8</td>
+                  <td>{ ((sum(this.state.grades1)/((this.state.grades1.length) * 100)) * 100).toFixed(2) }</td>
                   <td>C</td>
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>67.8</td>
+                  <td>{ ((sum(this.state.grades2)/((this.state.grades2.length) * 100)) * 100).toFixed(2) }</td>
                   <td>C-</td>
                 </tr>
                 <tr>
                   <td>0</td>
-                  <td>82.1</td>
+                  <td>{ ((sum(this.state.grades3)/((this.state.grades3.length) * 100)) * 100).toFixed(2) }</td>
                   <td>B</td>
                 </tr>
               </tbody>

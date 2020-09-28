@@ -13,16 +13,18 @@ class MyCalendar extends Component {
   };
 
   convertDate = (date) => {
-    return moment.utc(date).toDate();
+    let newDate = moment(date).add(1, 'days');
+    return moment.utc(newDate).toDate();
   };
 
   componentDidMount() {
     AssignmentsAPI.getAssignments().then(res => {
       const events = res.data.map((date) => ({
         title: date.name,
-        start: date.due_date,
-        end: date.due_date,
+        start: this.convertDate(date.due_date),
+        end: this.convertDate(date.due_date),
         allDay: true,
+        
       }));
       console.log(events)
       this.setState({

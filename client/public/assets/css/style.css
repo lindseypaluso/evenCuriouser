@@ -296,21 +296,26 @@ a:hover {
     margin-bottom: 200px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    background: #fffbeb;
 }
 
 .chat-footer{
     position: absolute;
     bottom: 0px;
-    width: 93.5%;
+    width: 93.7%;
     background-color: #8d46b4;
     color: white;
     }
 
 .form-email, .chat{
-  background: #fcfcfc !important;
+  background: #fffbeb !important;
   border-radius: 5px !important;
   padding: 10px !important;
   font-size: 1.2em;
+}
+
+.email-cont {
+  background: #fffbeb !important;
 }
 
 .btn-email, .btn-chat{
